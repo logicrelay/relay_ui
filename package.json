@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/relay_ui/relay_ui.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.9",
+    "tailwindcss": "^4.0.9"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.autoIndent": "advanced",
+  "editor.rulers": [
+    80
+  ],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "rubyLsp.erbSupport": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn"
+  },
+  "tailwindCSS.includeLanguages": {
+    "ruby": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class:\\s*\"([^\"]*)\""
+  ]
+}

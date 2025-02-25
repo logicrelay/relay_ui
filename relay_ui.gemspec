@@ -3,8 +3,8 @@ require_relative "lib/relay_ui/version"
 Gem::Specification.new do |spec|
   spec.name = "relay_ui"
   spec.version = RelayUi::VERSION
-  spec.authors = ["logicrelay"]
-  spec.email = ["hello@logicrelay.com"]
+  spec.authors = [ "logicrelay" ]
+  spec.email = [ "hello@logicrelay.com" ]
   spec.homepage = "https://www.relayui.com"
   spec.summary = "A delightfully opinionated UI kit for Rails apps."
   spec.description = <<~STRING
@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 8.0.0"
   spec.add_dependency "phlex-rails", "~> 2.0.0"
+  spec.add_dependency "tabler_icons_ruby", "~> 3.11.0"
 end

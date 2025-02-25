@@ -4,6 +4,7 @@ PATH
     relay_ui (0.1.0)
       phlex-rails (~> 2.0.0)
       rails (>= 8.0.0)
+      tabler_icons_ruby (~> 3.11.0)
 
 GEM
   remote: https://rubygems.org/
@@ -244,6 +245,8 @@ GEM
     sqlite3 (2.6.0-x86_64-linux-gnu)
     sqlite3 (2.6.0-x86_64-linux-musl)
     stringio (3.1.5)
+    tabler_icons_ruby (3.11.0)
+      nokogiri
     thor (1.3.2)
     timeout (0.4.3)
     tzinfo (2.0.6)

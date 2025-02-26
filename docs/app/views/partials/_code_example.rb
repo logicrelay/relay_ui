@@ -1,11 +1,10 @@
 module Views
-  module Home
-    class IndexView < Views::Base
+  module Partials
+    class CodeExample < Views::Base
       def view_template
-        render Layouts::ApplicationLayout.new do
-          pre do
-            code(class: "language-ruby") do
-              <<-RUBY
+        pre do
+          code(class: "language-ruby") do
+            <<-RUBY
 class MyComponent
   include Phlex::Component
 
@@ -15,8 +14,7 @@ class MyComponent
     end
   end
 end
-              RUBY
-            end
+            RUBY
           end
         end
       end

@@ -1,5 +1,5 @@
 class ComponentsController < ApplicationController
-  def link
-    render Views::Components::LinkView.new
+  def headings
+    render Views::Components::Headings::IndexView.new
   end
 end

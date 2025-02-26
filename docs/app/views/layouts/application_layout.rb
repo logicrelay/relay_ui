@@ -36,7 +36,9 @@ module Views
             main class: "container mx-auto my-6" do
               div(class: "flex flex-row gap-3") do
                 div(class: "flex flex-col w-48") do
-                  p { "Link" }
+                  a(href: root_path) { "About" }
+                  p(class: "font-semibold") { "Components" }
+                  a(href: heading_component_path) { "Headings" }
                 end
                 div { yield }
               end

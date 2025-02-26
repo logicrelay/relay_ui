@@ -1,3 +1,3 @@
-class HomeController < ApplicationController
-  def index = render Views::Home::IndexView.new
+class ComponentsController < ApplicationController
+  def headings = render Views::Components::Headings::IndexView.new
 end

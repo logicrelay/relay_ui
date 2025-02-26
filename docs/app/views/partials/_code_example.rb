@@ -5,15 +5,14 @@ module Views
         pre do
           code(class: "language-ruby") do
             <<-RUBY
-class MyComponent
-  include Phlex::Component
+QUICK_BROWN_FOX = "The quick brown fox jumps over the lazy dog"
 
-  def render
-    div(class: "bg-blue-500 text-white p-4") do
-      "Hello, world!"
-    end
-  end
-end
+render RUI::Headings::H1.new { QUICK_BROWN_FOX }
+render RUI::Headings::H2.new { QUICK_BROWN_FOX }
+render RUI::Headings::H3.new { QUICK_BROWN_FOX }
+render RUI::Headings::H4.new { QUICK_BROWN_FOX }
+render RUI::Headings::H5.new { QUICK_BROWN_FOX }
+render RUI::Headings::H6.new { QUICK_BROWN_FOX }
             RUBY
           end
         end

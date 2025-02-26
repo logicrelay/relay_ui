@@ -25,8 +25,11 @@ module Views
 
             stylesheet_link_tag :app, "data-turbo-track": "reload"
             stylesheet_link_tag "relay_ui/relay_ui.css"
-            stylesheet_link_tag "rouge_rails/rouge.css"
             javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+            # TODO: Put this in the asset pipeline
+            link rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+            script src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+            script src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/ruby.min.js"
           end
 
           body do
@@ -37,6 +40,11 @@ module Views
                 end
                 div { yield }
               end
+            end
+            script do
+              <<-JS
+                hljs.highlightAll()
+              JS
             end
           end
         end

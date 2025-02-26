@@ -4,6 +4,8 @@ class RUI::Icon < RUI::Base
   end
 
   def view_template
-    raw TablerIconsRuby.render(@icon)
+    div(class: "size-6") do
+      raw TablerIconsRuby.render(@icon)
+    end
   end
 end

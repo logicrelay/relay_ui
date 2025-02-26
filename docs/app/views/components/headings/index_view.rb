@@ -3,6 +3,10 @@ class Views::Components::Headings::IndexView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
+      render RUI::Toggle.new do |t|
+        t.option(icon: "eye") { "Preview" }
+        t.option(icon: "code") { "Code" }
+      end
       render RUI::Headings::H1.new { QUICK_BROWN_FOX }
       render RUI::Headings::H2.new { QUICK_BROWN_FOX }
       render RUI::Headings::H3.new { QUICK_BROWN_FOX }

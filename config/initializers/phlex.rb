@@ -1,16 +1,9 @@
 # frozen_string_literal: true
 
-module Views
-end
-
-module Components
+module RUI
   extend Phlex::Kit
 end
 
 Rails.autoloaders.main.push_dir(
-  "#{Rails.root}/app/views", namespace: Views
-)
-
-Rails.autoloaders.main.push_dir(
-  "#{Rails.root}/app/components", namespace: Components
+  "#{Gem::Specification.find_by_name('relay_ui').gem_dir}/app/components", namespace: RUI
 )

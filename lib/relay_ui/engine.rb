@@ -6,7 +6,7 @@ module RelayUi
 
     initializer "relay_ui.assets.precompile" do |app|
       app.config.assets.paths << root.join("vendor", "assets", "stylesheets")
-      app.config.assets.paths << root.join("vendor", "javascripts")
+      app.config.assets.paths << root.join("vendor", "assets", "javascripts")
     end
 
     initializer "relay_ui.autoload.components" do

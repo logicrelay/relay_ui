@@ -25,8 +25,7 @@ module Views
 
             stylesheet_link_tag :app, "data-turbo-track": "reload"
             stylesheet_link_tag "relay_ui/relay_ui", media: "all"
-            javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
-            # TODO: Put this in the asset pipeline
+            javascript_include_tag "application", "relay_ui/dist/relay_ui", "data-turbo-track": "reload", type: "module"
             link rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
             script src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
             script src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/ruby.min.js"

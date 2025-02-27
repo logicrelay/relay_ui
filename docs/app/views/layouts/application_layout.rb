@@ -39,6 +39,7 @@ module Views
                   p(class: "font-semibold") { "Components" }
                   a(href: code_block_component_path) { "Code Blocks" }
                   a(href: heading_component_path) { "Headings" }
+                  a(href: list_component_path) { "Lists" }
                   a(href: text_component_path) { "Text" }
                 end
                 div { yield }

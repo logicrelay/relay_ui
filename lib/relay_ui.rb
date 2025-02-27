@@ -1,4 +1,9 @@
-require "relay_ui/version"
-require "relay_ui/engine"
+# frozen_string_literal: true
 
-module RelayUi; end
+require_relative "relay_ui/version"
+require_relative "relay_ui/engine"
+
+module RelayUi
+  class Error < StandardError; end
+  # Your code goes here...
+end

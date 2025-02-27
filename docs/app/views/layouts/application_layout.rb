@@ -24,7 +24,7 @@ module Views
             link rel: "apple-touch-icon", href: "/icon.png"
 
             stylesheet_link_tag :app, "data-turbo-track": "reload"
-            stylesheet_link_tag "relay_ui/relay_ui.css"
+            stylesheet_link_tag "relay_ui/relay_ui", media: "all"
             javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
             # TODO: Put this in the asset pipeline
             link rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"

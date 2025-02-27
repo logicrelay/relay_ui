@@ -1,11 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/components/**/*.{rb,js,html}",
+    "./app/components/**/*.rb",
+    "./app/assets/javascripts/relay_ui/**/*.js"
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-  // prefix: "rui"
 }

@@ -1,9 +1,14 @@
 {
-  "scripts": {
-    "build": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/relay_ui/relay_ui.css --watch"
-  },
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.0",
     "@tailwindcss/cli": "^4.0.9",
     "tailwindcss": "^4.0.9"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "scripts": {
+    "build:js": "esbuild app/assets/javascripts/relay_ui/index.js --bundle --outfile=vendor/javascript/relay_ui/dist/relay_ui.js",
+    "build:css": "npx @tailwindcss/cli -i ./app/assets/stylesheets/relay_ui/application.css -o ./vendor/assets/stylesheets/relay_ui/relay_ui.css"
   }
 }

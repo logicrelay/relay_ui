@@ -2,9 +2,8 @@ PATH
   remote: ..
   specs:
     relay_ui (0.1.0)
-      phlex-rails (~> 2.0.0)
-      rails (>= 8.0.0)
-      tabler_icons_ruby (~> 3.11.0)
+      phlex
+      tabler_icons_ruby
 
 GEM
   remote: https://rubygems.org/

@@ -37,7 +37,9 @@ module Views
                 div(class: "flex flex-col w-48") do
                   a(href: root_path) { "About" }
                   p(class: "font-semibold") { "Components" }
+                  a(href: code_block_component_path) { "Code Blocks" }
                   a(href: heading_component_path) { "Headings" }
+                  a(href: text_component_path) { "Text" }
                 end
                 div { yield }
               end

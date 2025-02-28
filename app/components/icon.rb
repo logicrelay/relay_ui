@@ -4,8 +4,6 @@ class RelayUi::Icon < RelayUi::Base
   end
 
   def view_template
-    div(class: "size-6") do
-      raw TablerIconsRuby.render(@icon)
-    end
+    raw TablerIconsRuby.render(@icon)
   end
 end

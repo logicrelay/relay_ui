@@ -32,20 +32,24 @@ module Views
           end
 
           body do
-            main class: "container mx-auto my-6" do
-              div(class: "flex flex-row gap-3") do
-                div(class: "flex flex-col w-48") do
-                  a(href: root_path) { "About" }
-                  p(class: "font-semibold") { "Components" }
-                  a(href: badge_component_path) { "Badges" }
-                  a(href: button_component_path) { "Buttons" }
-                  a(href: code_block_component_path) { "Code Blocks" }
-                  a(href: heading_component_path) { "Headings" }
-                  a(href: list_component_path) { "Lists" }
-                  a(href: text_component_path) { "Text" }
+            main class: "flex flex-row gap-10" do
+              div(class: "w-[400px]") do
+                render RelayUi::Navigation.new do |nav|
+                  nav.icon_link(href: root_path, icon: "home") { "About" }
+                  nav.section_heading { "Components" }
+                  nav.coming_soon { "Alerts" }
+                  nav.text_link(badge_component_path) { "Badges" }
+                  nav.text_link(button_component_path) { "Buttons" }
+                  nav.text_link(code_block_component_path) { "Code Blocks" }
+                  nav.text_link(heading_component_path) { "Headings" }
+                  nav.text_link(list_component_path) { "Lists" }
+                  nav.coming_soon { "Navigation" }
+                  nav.coming_soon { "Profile Images" }
+                  nav.coming_soon { "Slideouts" }
+                  nav.text_link(text_component_path) { "Text" }
                 end
-                div { yield }
               end
+              div(class: "max-w-[800px] py-10") { yield }
             end
             script do
               <<-JS

@@ -976,6 +976,9 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * 0.5);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -2298,6 +2301,13 @@
     :is(& *) {
       &:is(svg) {
         stroke: var(--color-blue-500);
+      }
+    }
+  }
+  .\*\*\:\[svg\]\:stroke-blue-700 {
+    :is(& *) {
+      &:is(svg) {
+        stroke: var(--color-blue-700);
       }
     }
   }

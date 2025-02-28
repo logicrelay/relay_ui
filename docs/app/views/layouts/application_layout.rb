@@ -37,6 +37,7 @@ module Views
                 div(class: "flex flex-col w-48") do
                   a(href: root_path) { "About" }
                   p(class: "font-semibold") { "Components" }
+                  a(href: badge_component_path) { "Badges" }
                   a(href: button_component_path) { "Buttons" }
                   a(href: code_block_component_path) { "Code Blocks" }
                   a(href: heading_component_path) { "Headings" }

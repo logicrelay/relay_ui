@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "about", to: "info#about"
 
   # Components
+  get "components/badges", as: :badge_component
   get "components/buttons", as: :button_component
   get "components/code_blocks", as: :code_block_component
   get "components/headings", as: :heading_component

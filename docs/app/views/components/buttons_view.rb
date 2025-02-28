@@ -80,6 +80,17 @@ render RelayUi::Buttons::Ghost.new(icon: "eye")
 RUBY
         end
       end
+
+      render Components::Description.new("Link Button") do
+        div class: "flex flex-row gap-4" do
+          render RelayUi::Buttons::Link.new { "Click here to do things!" }
+        end
+        render RelayUi::CodeBlock.new do
+<<-RUBY
+render RelayUi::Buttons::Link.new { "Click here to do things!" }
+RUBY
+        end
+      end
     end
   end
 end

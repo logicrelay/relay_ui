@@ -5,5 +5,6 @@ class ComponentsController < ApplicationController
   def headings = render Views::Components::HeadingsView.new
   def lists = render Views::Components::ListsView.new
   def navigation = render Views::Components::NavigationView.new
+  def slideout = render Views::Components::SlideoutView.new
   def text = render Views::Components::TextView.new
 end

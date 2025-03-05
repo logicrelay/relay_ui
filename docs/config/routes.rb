@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get "components/headings", as: :heading_component
   get "components/lists", as: :list_component
   get "components/navigation", as: :navigation_component
+  get "components/slideout", as: :slideout_component
   get "components/text", as: :text_component
+
+  # Examples
+  get "examples/slideout", as: :slideout_example
 end

@@ -44,7 +44,7 @@ module Views
                 nav.text_link(list_component_path) { "Lists" }
                 nav.text_link(navigation_component_path) { "Navigation" }
                 nav.coming_soon { "Profile Images" }
-                nav.coming_soon { "Slideouts" }
+                nav.text_link(slideout_component_path) { "Slideouts" }
                 nav.text_link(text_component_path) { "Text" }
               end
               div(class: "max-w-[800px] py-10") { yield }

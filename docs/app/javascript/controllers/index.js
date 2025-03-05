@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import SlideoutController from "./slideout_controller"
+application.register("slideout", SlideoutController)

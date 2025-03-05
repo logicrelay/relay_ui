@@ -26,4 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "phlex"
   spec.add_dependency "tabler_icons_ruby"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-livereload" # TODO: Pin versions?
+  spec.add_development_dependency "base64"
 end

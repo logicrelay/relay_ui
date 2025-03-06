@@ -5,6 +5,7 @@ require_relative "lib/relay_ui/version"
 Gem::Specification.new do |spec|
   spec.name = "relay_ui"
   spec.version = RelayUi::VERSION
+  spec.required_ruby_version = ">= 3.0.0"
   spec.authors = [ "logicrelay" ]
   spec.email = [ "hello@logicrelay.com" ]
   spec.homepage = "https://www.relayui.com"
@@ -16,17 +17,14 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/logicrelay/relay_ui"
   spec.metadata["changelog_uri"] = "https://github.com/logicrelay/relay_ui/blob/main/CHANGELOG.md"
-  # spec.metadata["allowed_push_host"] = ""
-
   spec.files = Dir.glob("lib/**/*") +
             Dir.glob("app/**/*") +
-            Dir.glob("vendor/**/*") +
             %w[tailwind.config.js package.json Rakefile]
 
-  spec.add_dependency "phlex"
-  spec.add_dependency "tabler_icons_ruby"
+  spec.add_dependency "phlex", "~> 2.1.0"
+  spec.add_dependency "tabler_icons_ruby", "~> 3.11.0"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "guard"
-  spec.add_development_dependency "guard-livereload" # TODO: Pin versions?
+  spec.add_development_dependency "guard-livereload"
   spec.add_development_dependency "base64"
 end

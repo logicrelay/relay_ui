@@ -1,42 +1,53 @@
-# RelayUi
+# RelayUI
 
-TODO: Delete this and the text below, and describe your gem
+RelayUI is an opinionated UI kit for Ruby and Rails apps designed for speed of development. It is written in Phlex, uses TailwindCSS for styling and Hotwire for interactivity.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/relay_ui`. To experiment with that code, run `bin/console` for an interactive prompt.
+[Read more about the UI kit on our documentation site.](https://www.relayui.com)
+
+> [!WARNING]
+> It is currently very early in the development of this gem. The API is likely to change rapidly over the coming weeks and months as we work toward a v1.0.0 release. Use at your own risk for now.
+
+RelayUI is based on the following principles:
+- **Ease of use over flexibility** - Many similar UI kits are built with customization in mind, making them flexible at the cost of complexity. We prioritize an intuitive and concise DSL over making this gem everything to all people. We say it is "delightfully inflexible."
+- **No code generation** - We don't rely on generators to make local copies of components. By installing this gem, you get all the things you need to make passable UIs for business applications _very quickly_.
+- **Prescriptive selection of companion gems** - We've included gems like `tabler_icons_ruby` and others that bring a ton of functionality without any cognitive overhead. We want the experience with this gem to be very turn-key. Choosing a different icon library isn't going to be the difference between failure and success for your product, so don't spend any time considering it!
+- **Subclassing over heavy configuration** - Whenever possible we try and pull key variant indicators up to the class name level, so we'd opt for something like `RUI::Button::Primary` over `RUI::Button(variant: :primary)`. This brings key design decisions up to the class level, turning your IDE's autocomplete into a search engine for available components. To the extent that these variants have parameters to be passed, the lists are very small and direct, focusing on composition over customization.
 
 ## Installation
-
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
 
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+bundle add relay_ui
 ```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
 ```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+gem install relay_ui
 ```
 
 ## Usage
 
-TODO: Write usage instructions here
+The usage docs can be found at https://www.relayui.com
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+In the root of the repository, run `rake watch` to dynamically generate CSS for Phlex components that are added during development. This generated CSS should be committed to the repository.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The documentation directory is included in the source of this repository so that documentation can stay in sync with the gem's source. Please be sure that PRs with updates to the gem also include the associated documentation.
 
 ## Contributing
+
+If you're interested in contributing on this project we'd love to have you on [our Discord server](https://discord.gg/wPyvK87KFe).
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relay_ui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/relay_ui/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+[Maintained by the team @ LogicRelay](https://www.logicrelay.com/)
 
 ## Code of Conduct
 

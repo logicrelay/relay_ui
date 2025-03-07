@@ -1,11 +1,11 @@
 # RelayUI
 
+> [!WARNING]
+> This is a _very_ new gem. The API is still emerging and changing extremely rapidly. You may even find that this gem doesn't respect [semver](https://semver.org/) principles at this stage. Use at your own risk until you see this gem hit v1.0.0. We released this publicly in hopes of connecting with potential contributors. If that is you, feel free to [join our Discord](https://discord.gg/wPyvK87KFe)!
+
 RelayUI is an opinionated UI kit for Ruby and Rails apps designed for speed of development. It is written in Phlex, uses TailwindCSS for styling and Hotwire for interactivity.
 
 [Read more about the UI kit on our documentation site.](https://www.relayui.com)
-
-> [!WARNING]
-> It is currently very early in the development of this gem. The API is likely to change rapidly over the coming weeks and months as we work toward a v1.0.0 release. Use at your own risk for now.
 
 RelayUI is based on the following principles:
 - **Ease of use over flexibility** - Many similar UI kits are built with customization in mind, making them flexible at the cost of complexity. We prioritize an intuitive and concise DSL over making this gem everything to all people. We say it is "delightfully inflexible."
@@ -40,6 +40,10 @@ The documentation directory is included in the source of this repository so that
 ## Contributing
 
 If you're interested in contributing on this project we'd love to have you on [our Discord server](https://discord.gg/wPyvK87KFe).
+
+This repo uses [mise](https://mise.jdx.dev/getting-started.html) for dev env config. If you want to work on this project locally, copy `.env.example` to a new file `.env` and set an environment variable `RELAY_UI_PATH` that points to the path to this repo on your local machine.
+
+Then, run the server from the docs directory: `./bin/dev`
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relay_ui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/relay_ui/blob/main/CODE_OF_CONDUCT.md).
 

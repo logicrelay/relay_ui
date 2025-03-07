@@ -1,13 +1,13 @@
 class Views::Components::NavigationView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Navigation" }
-      render RelayUi::Text::Large.new do
+      render RUI::Headings::H1.new { "Navigation" }
+      render RUI::Text::Large.new do
         "This section demonstrates the different navigation styles available in RelayUi."
       end
 
       render Components::Description.new("Side Navigation") do
-        render RelayUi::Navigation.new do |n|
+        render RUI::Navigation.new do |n|
           n.icon_link(href: root_path, icon: "home") { "Home" }
           n.icon_link(href: root_path, icon: "help-hexagon") { "About" }
           n.section_heading { "Components" }
@@ -17,9 +17,9 @@ class Views::Components::NavigationView < Views::Base
           n.section_heading { "Another Section" }
           n.coming_soon { "Disabled" }
         end
-        render RelayUi::CodeBlock.new do
+        render RUI::CodeBlock.new do
 <<-RUBY
-render RelayUi::Navigation.new do |n|
+render RUI::Navigation.new do |n|
   n.icon_link(href: root_path, icon: "home") { "Home" }
   n.icon_link(href: root_path, icon: "help-hexagon") { "About" }
   n.section_heading { "Components" }

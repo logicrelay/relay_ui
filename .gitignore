@@ -8,6 +8,7 @@
 /tmp/
 /node_modules/
 .DS_Store
+.env
 
 # rspec failure tracking
 .rspec_status

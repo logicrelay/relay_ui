@@ -5,7 +5,7 @@ class Components::Description < Components::Base
 
   def view_template
     div(class: "flex flex-col gap-3 py-12") do
-      render RelayUi::Headings::H2.new { @component_name }
+      render RUI::Headings::H2.new { @component_name }
       yield
     end
   end

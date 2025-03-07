@@ -1,4 +1,4 @@
-class RelayUi::Buttons::Base < RelayUi::Base
+class RUI::Buttons::Base < RUI::Base
   def initialize(data: {}, href: "#", icon: nil)
     @data = data
     @href = href
@@ -11,7 +11,7 @@ class RelayUi::Buttons::Base < RelayUi::Base
         div(class: "flex flex-row items-center gap-2") do
           if @icon
             div(class: "size-4 my-1") do
-              render RelayUi::Icon.new(@icon)
+              render RUI::Icon.new(@icon)
             end
           end
           span { yield } if block_given?

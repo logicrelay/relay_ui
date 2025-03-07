@@ -3,34 +3,34 @@ class Views::Components::TextView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Text" }
-      render RelayUi::Text::Large.new do
+      render RUI::Headings::H1.new { "Text" }
+      render RUI::Text::Large.new do
         "This section demonstrates the different text styles available in RelayUi."
       end
 
       render Components::Description.new("Small Text") do
-        render RelayUi::Text::Small.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
+        render RUI::Text::Small.new { LOREM_IPSUM }
+        render RUI::CodeBlock.new do
 <<-RUBY
-render RelayUi::Text::Small.new { LOREM_IPSUM }
+render RUI::Text::Small.new { LOREM_IPSUM }
 RUBY
         end
       end
 
       render Components::Description.new("Medium Text") do
-        render RelayUi::Text::Medium.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
+        render RUI::Text::Medium.new { LOREM_IPSUM }
+        render RUI::CodeBlock.new do
 <<-RUBY
-render RelayUi::Text::Medium.new { LOREM_IPSUM }
+render RUI::Text::Medium.new { LOREM_IPSUM }
 RUBY
         end
       end
 
       render Components::Description.new("Large Text") do
-        render RelayUi::Text::Large.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
+        render RUI::Text::Large.new { LOREM_IPSUM }
+        render RUI::CodeBlock.new do
 <<-RUBY
-render RelayUi::Text::Large.new { LOREM_IPSUM }
+render RUI::Text::Large.new { LOREM_IPSUM }
 RUBY
         end
       end

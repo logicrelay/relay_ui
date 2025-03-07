@@ -1,4 +1,4 @@
-class RelayUi::Slideout < RelayUi::Base
+class RUI::Slideout < RUI::Base
   include Phlex::Rails::Helpers::TurboFrameTag
 
   def view_template

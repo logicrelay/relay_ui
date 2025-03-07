@@ -1,5 +1,5 @@
-module RelayUi::Lists
-  class Base < RelayUi::Base
+module RUI::Lists
+  class Base < RUI::Base
     def view_template
       ul(class: list_classes) do
         yield

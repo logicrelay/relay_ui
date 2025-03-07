@@ -1,4 +1,4 @@
-class RelayUi::Navigation < RelayUi::Base
+class RUI::Navigation < RUI::Base
   def view_template
     div(class: "flex flex-col sticky top-0 max-h-screen overflow-y-auto mx-10 py-10") do
       yield
@@ -20,7 +20,7 @@ class RelayUi::Navigation < RelayUi::Base
 
     a(href:, class: "inline-flex items-center gap-2 py-1 #{state_classes}") do
       div(class: "size-4") do
-        render RelayUi::Icon.new(icon)
+        render RUI::Icon.new(icon)
       end
       span { yield }
     end
@@ -43,7 +43,7 @@ class RelayUi::Navigation < RelayUi::Base
       span(class: "text-zinc-400 px-5 py-1 border-l-3 border-transparent") do
         yield
       end
-      render RelayUi::Badges::Gray.new { "Coming Soon" }
+      render RUI::Badges::Gray.new { "Coming Soon" }
     end
   end
 end

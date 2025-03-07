@@ -4,27 +4,27 @@ class Views::Components::SlideoutView < Views::Base
   def view_template
     turbo_frame_tag "slideout"
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Slideouts" }
-      render RelayUi::Text::Large.new do
+      render RUI::Headings::H1.new { "Slideouts" }
+      render RUI::Text::Large.new do
         "This section demonstrates the different slideouts available in RelayUi."
       end
 
       render Components::Description.new("Slideout") do
-        render RelayUi::Buttons::Primary.new(
+        render RUI::Buttons::Primary.new(
           href: slideout_example_path,
           icon: "arrow-left-bar",
           data: { turbo_frame: "slideout" }
           ) { "Open Slideout" }
-        render RelayUi::CodeBlock.new do
+        render RUI::CodeBlock.new do
 <<-RUBY
 # In your application layout...
 turbo_frame_tag "slideout"
 
 # In the view containing the content for your slideout
-render RelayUi::Slideout.new do
+render RUI::Slideout.new do
   div(class: "flex flex-row justify-between items-center p-10") do
-    render RelayUi::Headings::H2.new { "Slideout title" }
-    render RelayUi::Buttons::Destructive.new(
+    render RUI::Headings::H2.new { "Slideout title" }
+    render RUI::Buttons::Destructive.new(
       icon: "x",#{' '}
       data: { action: "slideout#hide" }
     )
@@ -32,7 +32,7 @@ render RelayUi::Slideout.new do
 end
 
 # The button to open the slideout...
-render RelayUi::Buttons::Primary.new(
+render RUI::Buttons::Primary.new(
   href: slideout_example_path,#{' '}
   data: { turbo_frame: 'slideout' }
 ) { "Open Slideout" }

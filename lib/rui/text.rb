@@ -1,17 +1,17 @@
-module RelayUi::Text
-  class Large < RelayUi::Base
+module RUI::Text
+  class Large < RUI::Base
     def view_template
       p(class: "text-lg text-zinc-700") { yield }
     end
   end
 
-  class Medium < RelayUi::Base
+  class Medium < RUI::Base
     def view_template
       p(class: "text-base text-zinc-700") { yield }
     end
   end
 
-  class Small < RelayUi::Base
+  class Small < RUI::Base
     def view_template
       p(class: "text-sm text-zinc-700") { yield }
     end

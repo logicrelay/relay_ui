@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RelayUi::Base < Phlex::HTML
+class RUI::Base < Phlex::HTML
   include Components
   include Phlex::Rails::Helpers::Routes
 

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module RelayUi
+module RUI
   class Engine < ::Rails::Engine
-    isolate_namespace RelayUi
+    isolate_namespace RUI
 
     initializer "relay_ui.assets.precompile" do |app|
       app.config.assets.paths << root.join("dist")
@@ -10,8 +10,8 @@ module RelayUi
 
     initializer "relay_ui.autoload.components" do
       Rails.autoloaders.main.push_dir(
-        "#{Gem::Specification.find_by_name('relay_ui').gem_dir}/app/components",
-        namespace: RelayUi
+        "#{Gem::Specification.find_by_name('relay_ui').gem_dir}/lib/rui",
+        namespace: RUI
       )
     end
   end

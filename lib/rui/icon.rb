@@ -1,4 +1,4 @@
-class RelayUi::Icon < RelayUi::Base
+class RUI::Icon < RUI::Base
   def initialize(icon)
     @icon = icon
   end

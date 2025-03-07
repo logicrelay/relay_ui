@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./app/components/**/*.rb",
+    "./lib/rui/**/*.rb",
     "./app/javascript/**/*.js"
   ],
   theme: {

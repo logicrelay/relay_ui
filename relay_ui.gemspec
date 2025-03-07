@@ -4,7 +4,7 @@ require_relative "lib/relay_ui/version"
 
 Gem::Specification.new do |spec|
   spec.name = "relay_ui"
-  spec.version = RelayUi::VERSION
+  spec.version = RUI::VERSION
   spec.required_ruby_version = ">= 3.0.0"
   spec.authors = [ "logicrelay" ]
   spec.email = [ "hello@logicrelay.com" ]
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/logicrelay/relay_ui"
   spec.metadata["changelog_uri"] = "https://github.com/logicrelay/relay_ui/blob/main/CHANGELOG.md"
   spec.files = Dir.glob("lib/**/*.rb") +
-            Dir.glob("app/components/**/*.rb") +
+            Dir.glob("app/rui/**/*.rb") +
             %w[README.md LICENSE.txt]
 
   spec.add_dependency "phlex", "~> 2.1.0"

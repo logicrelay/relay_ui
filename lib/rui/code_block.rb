@@ -1,4 +1,4 @@
-class RelayUi::CodeBlock < RelayUi::Base
+class RUI::CodeBlock < RUI::Base
   def initialize(language: "ruby")
     @language = language
   end

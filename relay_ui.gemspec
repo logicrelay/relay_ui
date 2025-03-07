@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/logicrelay/relay_ui"
   spec.metadata["changelog_uri"] = "https://github.com/logicrelay/relay_ui/blob/main/CHANGELOG.md"
   spec.files = Dir.glob("lib/**/*") +
-            Dir.glob("app/**/*") +
-            %w[tailwind.config.js package.json Rakefile]
+            Dir.glob("app/components/**/*") +
+            %w[Rakefile]
 
   spec.add_dependency "phlex", "~> 2.1.0"
   spec.add_dependency "tabler_icons_ruby", "~> 3.11.0"

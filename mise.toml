@@ -1,2 +1,19 @@
+[tools]
+ruby = "3.4.2"
+
 [env]
 _.file = ".env"
+
+[tasks.watch]
+alias = "w"
+run = "npm run watch &"
+
+[tasks.guard]
+alias = "g"
+run = "bundle exec guard &"
+
+[tasks.dev]
+depends = ["guard"]
+alias = "s"
+dir = 'docs'
+run = "sleep 2 && ./bin/dev"

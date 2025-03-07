@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    relay_ui (0.1.0)
+    relay_ui (0.1.1)
       phlex (~> 2.1.0)
       tabler_icons_ruby (~> 3.11.0)
 

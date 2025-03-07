@@ -25,7 +25,7 @@ class RelayUi::Navigation < RelayUi::Base
       span { yield }
     end
   end
-  
+
   def text_link(href)
     if request.path == href
       state_classes = "border-blue-700 text-zinc-700"

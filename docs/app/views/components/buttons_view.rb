@@ -9,8 +9,8 @@ class Views::Components::ButtonsView < Views::Base
       render Components::Description.new("Primary Button") do
         div class: "flex flex-row gap-4" do
           render RelayUi::Buttons::Primary.new { "Send" }
-          render RelayUi::Buttons::Primary.new(icon: 'send') { "Send" }
-          render RelayUi::Buttons::Primary.new(icon: 'send')
+          render RelayUi::Buttons::Primary.new(icon: "send") { "Send" }
+          render RelayUi::Buttons::Primary.new(icon: "send")
         end
         render RelayUi::CodeBlock.new do
 <<-RUBY

@@ -1,9 +1,9 @@
 class RelayUi::Slideout < RelayUi::Base
   include Phlex::Rails::Helpers::TurboFrameTag
-  
+
   def view_template
     turbo_frame_tag "slideout" do
-      div(class: "absolute inset-0 z-50", data: {controller: "slideout"}) do
+      div(class: "absolute inset-0 z-50", data: { controller: "slideout" }) do
         a(href: "#", class: "cursor-default", data: { action: "slideout#hide" }) do
           div(id: "modal-curtain", class: "w-screen h-screen bg-black transition-opacity opacity-75")
         end

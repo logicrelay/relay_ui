@@ -1,6 +1,6 @@
 class Views::Components::SlideoutView < Views::Base
   include Phlex::Rails::Helpers::TurboFrameTag
-  
+
   def view_template
     turbo_frame_tag "slideout"
     render Views::Layouts::ApplicationLayout.new do
@@ -11,9 +11,9 @@ class Views::Components::SlideoutView < Views::Base
 
       render Components::Description.new("Slideout") do
         render RelayUi::Buttons::Primary.new(
-          href: slideout_example_path, 
+          href: slideout_example_path,
           icon: "arrow-left-bar",
-          data: {turbo_frame: 'slideout'}
+          data: { turbo_frame: "slideout" }
           ) { "Open Slideout" }
         render RelayUi::CodeBlock.new do
 <<-RUBY
@@ -25,7 +25,7 @@ render RelayUi::Slideout.new do
   div(class: "flex flex-row justify-between items-center p-10") do
     render RelayUi::Headings::H2.new { "Slideout title" }
     render RelayUi::Buttons::Destructive.new(
-      icon: "x", 
+      icon: "x",#{' '}
       data: { action: "slideout#hide" }
     )
   end
@@ -33,7 +33,7 @@ end
 
 # The button to open the slideout...
 render RelayUi::Buttons::Primary.new(
-  href: slideout_example_path, 
+  href: slideout_example_path,#{' '}
   data: { turbo_frame: 'slideout' }
 ) { "Open Slideout" }
 RUBY

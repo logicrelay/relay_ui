@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-livereload"
   spec.add_development_dependency "base64"
+  spec.add_development_dependency "rubocop-rails-omakase"
 end

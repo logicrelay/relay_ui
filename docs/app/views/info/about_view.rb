@@ -9,7 +9,7 @@ class Views::Info::AboutView < Views::Base
         div(class: "bg-red-50 border border-red-700 text-red-700 p-5 rounded") do
           div(class: "flex flex-row items-center gap-2") do
             div class: "size-6" do
-              render RelayUi::Icon.new('alert-circle')
+              render RelayUi::Icon.new("alert-circle")
             end
             span(class: "font-bold") { "Warning" }
           end

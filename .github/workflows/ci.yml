@@ -28,6 +28,9 @@ jobs:
         with:
           # bundler-cache: true
           working-directory: docs
+      - name: Bundle install
+        run: bundle install
+        working-directory: docs
       - name: Run linter
         run: bundle exec rubocop -f github
         working-directory: docs

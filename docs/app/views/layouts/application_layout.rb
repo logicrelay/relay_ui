@@ -34,7 +34,8 @@ module Views
           body do
             main class: "flex flex-row gap-10" do
               render RUI::Navigation.new do |nav|
-                nav.icon_link(href: root_path, icon: "home") { "About" }
+                nav.icon_link(href: root_path, icon: "home") { "About RelayUI" }
+                nav.icon_link(href: installation_path, icon: "rocket") { "Installation" }
                 nav.section_heading { "Components" }
                 nav.text_link(badge_component_path) { "Badges" }
                 nav.text_link(button_component_path) { "Buttons" }

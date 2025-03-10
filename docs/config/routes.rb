@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "info#about"
-  get "about", to: "info#about"
+  get "installation", to: "info#installation"
 
   # Components
   get "components/badges", as: :badge_component

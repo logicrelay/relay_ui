@@ -17,3 +17,5 @@ jobs:
         with:
           ruby-version: ruby-3.4.2
           bundler-cache: true
+      - name: Run linter
+        run: bundle exec rubocop -f github

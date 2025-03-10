@@ -34,6 +34,47 @@ render RUI::Text::Large.new { LOREM_IPSUM }
 RUBY
         end
       end
+
+      render Components::Description.new("Markdown Text") do
+        render RUI::Text::Markdown.new do
+<<-MARKDOWN
+# Text
+This is a paragraph with **bold** and *italic* text.
+
+[This is a link](https://www.logicrelay.com)
+
+## Lists
+- This is an unordered list
+  - And some subitems..
+  - One more...
+
+1. This is an ordered list
+  1. And some subitems...
+  1. One more...
+MARKDOWN
+        end
+        render RUI::CodeBlock.new do
+<<-RUBY
+  render RUI::Text::Markdown.new do
+\<<-MARKDOWN
+# Text
+This is a paragraph with **bold** and *italic* text.
+
+[This is a link](https://www.logicrelay.com)
+
+## Lists
+- This is an unordered list
+  - And some subitems..
+  - One more...
+
+1. This is an ordered list
+  1. And some subitems...
+  1. One more...
+MARKDOWN
+  end
+RUBY
+        end
+      end
     end
   end
 end

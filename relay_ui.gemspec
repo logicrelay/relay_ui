@@ -21,8 +21,9 @@ Gem::Specification.new do |spec|
             Dir.glob("app/rui/**/*.rb") +
             %w[README.md LICENSE.txt]
 
-  spec.add_dependency "phlex", "~> 2.1.0"
-  spec.add_dependency "tabler_icons_ruby", "~> 3.11.0"
+  spec.add_dependency "phlex", "~> 2.1"
+  spec.add_dependency "tabler_icons_ruby", "~> 3.11"
+  spec.add_dependency "redcarpet", "~> 3.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-livereload"

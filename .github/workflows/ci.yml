@@ -20,16 +20,14 @@ jobs:
         run: bundle exec rubocop -f github
   lint_docs:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: docs
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          # bundler-cache: true
+          bundler-cache: true
           working-directory: docs
       - name: Run linter
         run: bundle exec rubocop -f github
+        working-directory: docs

@@ -29,7 +29,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
+          # bundler-cache: true
           working-directory: docs
       - name: Run linter
         run: bundle exec rubocop -f github

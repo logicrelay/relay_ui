@@ -28,9 +28,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Ruby
-        working-directory: docs
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: docs
           ruby-version: ruby-3.4.2
           bundler-cache: true
       - name: Run linter

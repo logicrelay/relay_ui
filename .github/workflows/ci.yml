@@ -6,12 +6,27 @@ on:
     branches: [ main ]
 
 jobs:
-  lint:
+  lint_gem:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby-3.4.2
+          bundler-cache: true
+      - name: Run linter
+        run: bundle exec rubocop -f github
+  lint_docs:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:

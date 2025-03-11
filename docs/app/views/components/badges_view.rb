@@ -11,12 +11,14 @@ class Views::Components::BadgesView < Views::Base
 STRING
       end
 
-      render RUI::Badge::Blue.new { "Blue Badge" }
-      render RUI::Badge::Gray.new { "Gray Badge" }
-      render RUI::Badge::Green.new { "Green Badge" }
-      render RUI::Badge::Purple.new { "Purple Badge" }
-      render RUI::Badge::Red.new { "Red Badge" }
-      render RUI::Badge::Yellow.new { "Yellow Badge" }
+      div class: "flex flex-row gap-3" do
+        render RUI::Badge::Blue.new { "Blue Badge" }
+        render RUI::Badge::Gray.new { "Gray Badge" }
+        render RUI::Badge::Green.new { "Green Badge" }
+        render RUI::Badge::Purple.new { "Purple Badge" }
+        render RUI::Badge::Red.new { "Red Badge" }
+        render RUI::Badge::Yellow.new { "Yellow Badge" }
+      end
 
       render RUI::Markdown.new(html_safe: false) do
 <<-STRING

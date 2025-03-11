@@ -42,7 +42,7 @@ This repo uses [mise](https://mise.jdx.dev/getting-started.html) for dev env con
 1. Start the watcher to begin generating CSS: `mise run watch`
 1. Run the docs server: `./docs/bin/dev`
 
-> [!INFO]
+> [!TIP]
 > You can get livereload functionality in development by installing the [livereload plugin for Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/) and running Guard from the root of the repo: `bundle exec guard`. Also be sure hit the "connect" button in Firefox once Guard is running.
 
 As long as the watcher is running, changes you make will generate CSS automatically. The docs site will also have access to new components and CSS from the gem automatically in development.

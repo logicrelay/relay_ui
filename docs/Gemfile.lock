@@ -1,11 +1,12 @@
 GIT
   remote: https://github.com/logicrelay/relay_ui
-  revision: a1e02ce125ef493fe93295de8a5a07d8bcac430b
+  revision: 95fd4779e0a7c5aec3fcb6326bbcc7ef4609a668
   branch: 0.2.0
   specs:
     relay_ui (0.1.1)
       phlex (~> 2.1)
       redcarpet (~> 3.6)
+      rouge (~> 4.5)
       tabler_icons_ruby (~> 3.11)
 
 GEM
@@ -273,6 +274,7 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.0)
       io-console (~> 0.5)
+    rouge (4.5.1)
     rubocop (1.73.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -376,7 +378,6 @@ DEPENDENCIES
   rubocop-rails-omakase
   sqlite3 (>= 2.1)
   stimulus-rails
-  tabler_icons_ruby
   tailwindcss-rails
   tailwindcss-ruby
   turbo-rails

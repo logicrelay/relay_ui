@@ -1,30 +1,38 @@
 class Views::Components::BadgesView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Headings::H1.new { "Badges" }
-      render RUI::Text::Large.new do
-        "This section demonstrates the different badge styles available in RelayUi."
+      render RUI::Markdown.new do
+<<-STRING
+# Badges
+
+`RUI::Badge` is a namespace containing several badge components that can be used to add visual indicators to your RelayUi application. Badges are useful for displaying status information, such as the number of unread messages in a user's inbox or the current state of a record in a database.
+
+## Examples
+STRING
       end
 
-      render Components::Description.new("All Badges") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Badges::Blue.new { "Blue Badge" }
-          render RUI::Badges::Gray.new { "Gray Badge" }
-          render RUI::Badges::Green.new { "Green Badge" }
-          render RUI::Badges::Purple.new { "Purple Badge" }
-          render RUI::Badges::Red.new { "Red Badge" }
-          render RUI::Badges::Yellow.new { "Yellow Badge" }
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Badges::Blue.new { "Blue Badge" }
-render RUI::Badges::Gray.new { "Gray Badge" }
-render RUI::Badges::Green.new { "Green Badge" }
-render RUI::Badges::Purple.new { "Purple Badge" }
-render RUI::Badges::Red.new { "Red Badge" }
-render RUI::Badges::Yellow.new { "Yellow Badge" }
-RUBY
-        end
+      render RUI::Badge::Blue.new { "Blue Badge" }
+      render RUI::Badge::Gray.new { "Gray Badge" }
+      render RUI::Badge::Green.new { "Green Badge" }
+      render RUI::Badge::Purple.new { "Purple Badge" }
+      render RUI::Badge::Red.new { "Red Badge" }
+      render RUI::Badge::Yellow.new { "Yellow Badge" }
+
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+## Code
+
+```ruby
+render RUI::Badge::Blue.new { "Blue Badge" }
+render RUI::Badge::Gray.new { "Gray Badge" }
+render RUI::Badge::Green.new { "Green Badge" }
+render RUI::Badge::Purple.new { "Purple Badge" }
+render RUI::Badge::Red.new { "Red Badge" }
+render RUI::Badge::Yellow.new { "Yellow Badge" }
+```
+
+
+STRING
       end
     end
   end

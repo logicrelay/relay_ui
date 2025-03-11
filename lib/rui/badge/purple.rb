@@ -1,4 +1,4 @@
-class RUI::Badges::Purple < RUI::Badges::Base
+class RUI::Badge::Purple < RUI::Badge::Base
   private
 
   def variant_classes = "bg-purple-100 text-purple-700"

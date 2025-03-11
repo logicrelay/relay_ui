@@ -3,37 +3,49 @@ class Views::Components::TextView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Headings::H1.new { "Text" }
-      render RUI::Text::Large.new do
-        "This section demonstrates the different text styles available in RelayUi."
-      end
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+# RUI::Text
 
-      render Components::Description.new("Small Text") do
-        render RUI::Text::Small.new { LOREM_IPSUM }
-        render RUI::CodeBlock.new do
-<<-RUBY
+`RUI::Text` is a namespace for text components in RelayUI. These components are used to render text in different sizes and styles. This page demonstrates the different text styles available in RelayUi.
+
+Note that Text components only render plain text. For rich text content, use the [RUI::Markdown](#{markdown_component_path}) component.
+
+## Code
+
+RUI::Text has three variants: `Small`, `Medium`, and `Large`. Each variant renders text in a different size.
+
+```ruby
 render RUI::Text::Small.new { LOREM_IPSUM }
-RUBY
-        end
-      end
-
-      render Components::Description.new("Medium Text") do
-        render RUI::Text::Medium.new { LOREM_IPSUM }
-        render RUI::CodeBlock.new do
-<<-RUBY
 render RUI::Text::Medium.new { LOREM_IPSUM }
-RUBY
-        end
+render RUI::Text::Large.new { LOREM_IPSUM }
+```
+
+## Examples
+
+### RUI::Text::Small
+STRING
       end
 
-      render Components::Description.new("Large Text") do
-        render RUI::Text::Large.new { LOREM_IPSUM }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Text::Large.new { LOREM_IPSUM }
-RUBY
-        end
+      render RUI::Text::Small.new { LOREM_IPSUM }
+
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### RUI::Text::Medium
+
+STRING
       end
+
+      render RUI::Text::Medium.new { LOREM_IPSUM }
+
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### RUI::Text::Large
+
+STRING
+      end
+
+      render RUI::Text::Large.new { LOREM_IPSUM }
     end
   end
 end

@@ -1,5 +1,7 @@
-PATH
-  remote: /Users/charles/logicrelay/relay_ui
+GIT
+  remote: https://github.com/logicrelay/relay_ui
+  revision: a1e02ce125ef493fe93295de8a5a07d8bcac430b
+  branch: 0.2.0
   specs:
     relay_ui (0.1.1)
       phlex (~> 2.1)

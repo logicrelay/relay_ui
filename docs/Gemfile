@@ -1,11 +1,5 @@
 source "https://rubygems.org"
 
-if ENV["RELAY_UI_PATH"]
-  gem "relay_ui", path: ENV["RELAY_UI_PATH"]
-else
-  gem "relay_ui"
-end
-
 gem "rails", "~> 8.0.1"
 gem "propshaft"
 gem "sqlite3", ">= 2.1"
@@ -16,10 +10,10 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem "relay_ui", git: "https://github.com/logicrelay/relay_ui", branch: "main"
 gem "phlex-rails"
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
-gem "tabler_icons_ruby"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

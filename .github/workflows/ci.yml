@@ -30,7 +30,7 @@ jobs:
           working-directory: docs
       - name: Bundle install
         run: bundle install
-        working-directory: docs
+        working-directory: ./docs
         env:
           RELAY_UI_PATH: "../"
       - name: Run linter

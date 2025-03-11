@@ -26,13 +26,13 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          # bundler-cache: true
+          bundler-cache: true
           working-directory: docs
       - name: Bundle install
         run: bundle install
         working-directory: ./docs
         env:
-          RELAY_UI_PATH: "../"
+          RELAY_UI_PATH: 
       - name: Run linter
         run: bundle exec rubocop -f github
         working-directory: docs

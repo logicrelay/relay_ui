@@ -38,9 +38,7 @@ If you're interested in contributing on this project we'd love to have you on [o
 This repo uses [mise](https://mise.jdx.dev/getting-started.html) for dev env config. If you want to work on this project locally, follow these instructions...
 
 1. Install gems in both the gem and docs directories: `bundle install && cd docs && bundle install`
-1. Copy `.env.example` to a new file `.env` and set an environment variable `RELAY_UI_PATH` that points to the path to this repo on your local machine.
-1. Start the watcher to begin generating CSS: `mise run watch`
-1. Run the docs server: `./docs/bin/dev`
+1. Configure bundler to point to your local copy of the relay_ui gem: `bundle config local.relay_ui ~/path/to/relay_ui`
 
 > [!TIP]
 > You can get livereload functionality in development by installing the [livereload plugin for Firefox](https://addons.mozilla.org/en-US/firefox/addon/livereload/) and running Guard from the root of the repo: `bundle exec guard`. Also be sure hit the "connect" button in Firefox once Guard is running.

@@ -1,9 +1,6 @@
 [tools]
 ruby = "3.4.2"
 
-[env]
-_.file = ".env"
-
 [tasks.watch]
 alias = "w"
 run = "npm run watch &"

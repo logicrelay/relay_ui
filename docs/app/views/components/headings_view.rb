@@ -3,63 +3,32 @@ class Views::Components::HeadingsView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Headings::H1.new { "Headings" }
-      render RUI::Text::Large.new do
-        "This section demonstrates the different heading styles available in RelayUi."
-      end
+      render RUI::Markdown.new(html_safe: false) do
+<<-MARKDOWN
+# Headings
 
-      render Components::Description.new("H1") do
-        render RUI::Headings::H1.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H1.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+To render a heading, use the `RUI::Markdown` component. For more information, see the [RUI::Markdown](#{markdown_component_path}) documentation.
 
-      render Components::Description.new("H2") do
-        render RUI::Headings::H2.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H2.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+## Examples
 
-      render Components::Description.new("H3") do
-        render RUI::Headings::H3.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H3.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
 
-      render Components::Description.new("H4") do
-        render RUI::Headings::H4.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H4.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+## Code
 
-      render Components::Description.new("H5") do
-        render RUI::Headings::H5.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H5.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
-
-      render Components::Description.new("H6") do
-        render RUI::Headings::H6.new { QUICK_BROWN_FOX }
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Headings::H6.new { QUICK_BROWN_FOX }
-RUBY
-        end
+```ruby
+render RUI::Markdown.new { "# Heading 1" }
+render RUI::Markdown.new { "## Heading 2" }
+render RUI::Markdown.new { "### Heading 3" }
+render RUI::Markdown.new { "#### Heading 4" }
+render RUI::Markdown.new { "##### Heading 5" }
+render RUI::Markdown.new { "###### Heading 6" }
+```
+MARKDOWN
       end
     end
   end

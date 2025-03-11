@@ -1,43 +1,53 @@
 class Views::Components::ListsView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Headings::H1.new { "Lists" }
-      render RUI::Text::Large.new do
-        "This section demonstrates the different list styles available in RelayUi."
-      end
+      render RUI::Markdown.new(html_safe: false) do
+<<-MARKDOWN
+# Lists
 
-      render Components::Description.new("Unordered Lists") do
-        render RUI::Lists::Unordered.new do |list|
-          list.item { "Item" }
-          list.item { "Another Item" }
-          list.item { "Yet Another Item" }
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Lists::Unordered.new do |list|
-  list.item { "Item" }
-  list.item { "Another Item" }
-  list.item { "Yet Another Item" }
-end
-RUBY
-        end
-      end
+To render a list, use the `RUI::Markdown` component. For more information, see the [RUI::Markdown](#{markdown_component_path}) documentation.
 
-      render Components::Description.new("Ordered Lists") do
-        render RUI::Lists::Ordered.new do |list|
-          list.item { "Item Number One" }
-          list.item { "Item Number Two" }
-          list.item { "Item Number Three" }
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Lists::Ordered.new do |list|
-  list.item { "Item Number One" }
-  list.item { "Item Number Two" }
-  list.item { "Item Number Three" }
-end
-RUBY
-        end
+## Unordered Lists
+
+### Code
+
+```ruby
+  render RUI::Markdown.new do
+<<-STRING
+- Here's a list item
+- Here's another list item
+- Here's item #3
+STRING
+  end
+```
+
+### Example
+
+- Here's a list item
+- Here's another list item
+- Here's item #3
+
+## Ordered Lists
+
+### Code
+
+```ruby
+  render RUI::Markdown.new do
+<<-STRING
+1. Here's a list item
+1. Here's another list item
+1. Here's item #3
+STRING
+  end
+```
+
+### Example
+
+1. Here's a list item
+1. Here's another list item
+1. Here's item #3
+
+MARKDOWN
       end
     end
   end

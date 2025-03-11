@@ -1,95 +1,138 @@
 class Views::Components::ButtonsView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Headings::H1.new { "Buttons" }
-      render RUI::Text::Large.new do
-        "This section demonstrates the different button styles available in RelayUi."
+      render RUI::Markdown.new do
+<<-STRING
+# RUI::Buttons
+
+`RUI::Buttons` is a namespace containing different button variations that can be used in RelayUI. Each button has a different style and purpose, but all buttons share a common interface.
+
+Note that RelayUI differentiates between buttons and links. Buttons are used to trigger actions, while links are used to navigate to a different page or location. For this reason, buttons do not take an `href` parameter, while links do.
+
+## Parameters
+
+## Parameters
+|Parameter|Type|Default|Description|
+|---|---|---|---|
+|`icon`|`string`|`nil`|The [tabler icon](https://tabler.io/icons) to be used for this link. If blank, no icon will be shown.|
+|`data`|`hash`|`{}`|HTML data attributes for the button, eg: `data: { action: slideout#hide }`|
+
+## RUI::Buttons::Primary
+
+### Examples
+STRING
       end
 
-      render Components::Description.new("Primary Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Primary.new { "Send" }
-          render RUI::Buttons::Primary.new(icon: "send") { "Send" }
-          render RUI::Buttons::Primary.new(icon: "send")
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Primary.new { "Send" }
-render RUI::Buttons::Primary.new(icon: "send") { "Send" }
-render RUI::Buttons::Primary.new(icon: 'send')
-RUBY
-        end
+      div(class: "flex flex-row gap-3 items-center") do
+        render RUI::Buttons::Primary.new { "Primary Button" }
+        render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
+        render RUI::Buttons::Primary.new(icon: 'star')
       end
 
-      render Components::Description.new("Secondary Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Secondary.new { "Cancel" }
-          render RUI::Buttons::Secondary.new(icon: "x") { "Cancel" }
-          render RUI::Buttons::Secondary.new(icon: "x")
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Secondary.new { "Cancel" }
-render RUI::Buttons::Secondary.new(icon: "x") { "Cancel" }
-render RUI::Buttons::Secondary.new(icon: "x")
-RUBY
-        end
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### Code
+
+```ruby
+render RUI::Buttons::Primary.new { "Primary Button" }
+render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
+render RUI::Buttons::Primary.new(icon: 'star')
+```
+
+## RUI::Buttons::Secondary
+
+### Examples
+STRING
       end
 
-      render Components::Description.new("Outline Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Outline.new { "Remove" }
-          render RUI::Buttons::Outline.new(icon: "square-rounded-minus") { "Remove" }
-          render RUI::Buttons::Outline.new(icon: "square-rounded-minus")
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Outline.new { "Remove" }
-render RUI::Buttons::Outline.new(icon: "square-rounded-minus") { "Remove" }
-render RUI::Buttons::Outline.new(icon: "square-rounded-minus")
-RUBY
-        end
+      div(class: "flex flex-row gap-3 items-center") do
+        render RUI::Buttons::Secondary.new { "Secondary Button" }
+        render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
+        render RUI::Buttons::Secondary.new(icon: 'star')
       end
 
-      render Components::Description.new("Destructive Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Destructive.new { "Delete" }
-          render RUI::Buttons::Destructive.new(icon: "trash") { "Delete" }
-          render RUI::Buttons::Destructive.new(icon: "trash")
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Destructive.new { "Delete" }
-render RUI::Buttons::Destructive.new(icon: "trash") { "Delete" }
-render RUI::Buttons::Destructive.new(icon: "trash")
-RUBY
-        end
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### Code
+
+```ruby
+render RUI::Buttons::Secondary.new { "Secondary Button" }
+render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
+render RUI::Buttons::Secondary.new(icon: 'star')
+```
+
+## RUI::Buttons::Outline
+
+### Examples
+STRING
       end
 
-      render Components::Description.new("Ghost Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Ghost.new { "Show Me" }
-          render RUI::Buttons::Ghost.new(icon: "eye") { "Show Me" }
-          render RUI::Buttons::Ghost.new(icon: "eye")
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Ghost.new { "Show Me" }
-render RUI::Buttons::Ghost.new(icon: "eye") { "Show Me" }
-render RUI::Buttons::Ghost.new(icon: "eye")
-RUBY
-        end
+      div(class: "flex flex-row gap-3 items-center") do
+        render RUI::Buttons::Outline.new { "Outline Button" }
+        render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
+        render RUI::Buttons::Outline.new(icon: 'star')
       end
 
-      render Components::Description.new("Link Button") do
-        div class: "flex flex-row gap-4" do
-          render RUI::Buttons::Link.new { "Click here to do things!" }
-        end
-        render RUI::CodeBlock.new do
-<<-RUBY
-render RUI::Buttons::Link.new { "Click here to do things!" }
-RUBY
-        end
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### Code
+
+```ruby
+render RUI::Buttons::Outline.new { "Outline Button" }
+render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
+render RUI::Buttons::Outline.new(icon: 'star')
+```
+
+## RUI::Buttons::Desctructive
+
+### Examples
+STRING
+      end
+
+      div(class: "flex flex-row gap-3 items-center") do
+        render RUI::Buttons::Destructive.new { "Destructive Button" }
+        render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
+        render RUI::Buttons::Destructive.new(icon: 'star')
+      end
+
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### Code
+
+```ruby
+render RUI::Buttons::Destructive.new { "Destructive Button" }
+render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
+render RUI::Buttons::Destructive.new(icon: 'star')
+```
+
+## RUI::Buttons::Ghost
+
+### Examples
+STRING
+      end
+
+      div(class: "flex flex-row gap-3 items-center") do
+        render RUI::Buttons::Ghost.new { "Ghost Button" }
+        render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }
+        render RUI::Buttons::Ghost.new(icon: 'star')
+      end
+
+      render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+### Code
+
+```ruby
+render RUI::Buttons::Ghost.new { "Ghost Button" }
+render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }
+render RUI::Buttons::Ghost.new(icon: 'star')
+```
+
+## Dependencies
+
+The following gems have been included in RelayUI to make this component work:
+
+- [tabler_icons_ruby](https://github.com/owaiswiz/tabler_icons_ruby) for rendering icons
+STRING
       end
     end
   end

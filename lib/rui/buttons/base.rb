@@ -1,21 +1,18 @@
 class RUI::Buttons::Base < RUI::Base
-  def initialize(data: {}, href: "#", icon: nil)
-    @data = data
-    @href = href
+  def initialize(icon: nil, data: {})
     @icon = icon
+    @data = data
   end
 
   def view_template
-    div do
-      a(href: @href, class: classes, data: @data) do
-        div(class: "flex flex-row items-center gap-2") do
-          if @icon
-            div(class: "size-4 my-1") do
-              render RUI::Icon.new(@icon)
-            end
+    button(class: classes, data: @data) do
+      div(class: "flex flex-row items-center gap-2") do
+        if @icon
+          div(class: "size-4 my-1") do
+            render RUI::Icon.new(@icon)
           end
-          span { yield } if block_given?
         end
+        span { yield } if block_given?
       end
     end
   end

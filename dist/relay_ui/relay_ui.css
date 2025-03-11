@@ -478,6 +478,9 @@
   .bg-zinc-700 {
     background-color: var(--color-zinc-700);
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }

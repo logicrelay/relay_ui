@@ -1,4 +1,6 @@
 class RUI::Navigation < RUI::Base
+  register_value_helper :request
+
   def view_template
     div(class: "flex flex-col sticky top-0 max-h-screen overflow-y-auto mx-10 py-10") do
       yield

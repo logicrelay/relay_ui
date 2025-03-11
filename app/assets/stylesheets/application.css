@@ -73,23 +73,24 @@
   margin-bottom: 8px;
 }
 
-.rui-markdown code {
-  font-family: monospace;
-  font-size: 14px;
+code {
   background-color: #f6f8fa;
-  padding: 2px 4px;
+  padding: 0.2em 0.4em;
   border-radius: 3px;
 }
 
-.rui-markdown pre {
-  background-color: #f6f8fa;
-  padding: 16px;
-  border-radius: 3px;
-  overflow-x: auto;
-  font-family: monospace;
-  font-size: 14px;
+.highlight>pre.codehilite {
+  background-color: #000;
+  padding: 24px;
+  border-radius: 10px;
   line-height: 1.45;
   margin-bottom: 16px;
+}
+
+.highlight>pre.codehilite>code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .rui-markdown blockquote {

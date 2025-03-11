@@ -3,11 +3,11 @@ ruby = "3.4.2"
 
 [tasks.watch]
 alias = "w"
-run = "npm run watch &"
+run = "npm run watch"
 
 [tasks.guard]
 alias = "g"
-run = "bundle exec guard &"
+run = "bundle exec guard"
 
 [tasks.dev]
 depends = ["guard"]

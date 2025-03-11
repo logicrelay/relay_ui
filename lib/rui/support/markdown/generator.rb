@@ -7,7 +7,8 @@ class RUI::Support::Markdown::Generator
     options = {
       filter_html: true,
       hard_wrap: true,
-      link_attributes: { rel: "nofollow", target: "_blank" }
+      link_attributes: { rel: "nofollow", target: "_blank" },
+      escape_html: true
     }
 
     renderer = RUI::Support::Markdown::Renderer.new options

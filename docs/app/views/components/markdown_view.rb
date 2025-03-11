@@ -22,27 +22,41 @@ Example:
 ```ruby
   render RUI::Markdown.new do
 <<-STRING
-This is some cool markdown, [LogicRelay](https://www.logicrelay.com).
+Here is some cool markdown from [LogicRelay](https://www.logicrelay.com).
 
-- This is a list item
-- This is another list item
+- Here is a list item
+- Here's another list item
 STRING
   end
 ```
 
 This will be rendered as:
 
-This is some cool markdown, [LogicRelay](https://www.logicrelay.com).
+Here is some cool markdown from [LogicRelay](https://www.logicrelay.com).
 
-- This is a list item
-- This is another list item
+- Here is a list item
+- Here's another list item
+
+For _**trusted**_ content that may contain code blocks, set `html_safe` to `false`:
+
+```ruby
+  render RUI::Markdown.new(html_safe: false) do
+<<-STRING
+```ruby
+def some_method
+  puts "Hello, world!"
+end
+```\ ‎
+STRING
+  end
+```
 
 ## Dependencies
 
 The following gems have been included in RelayUI to make this component work:
 
-- [redcarpet](https://github.com/vmg/redcarpet) for markdown rendering
-- [rouge](https://github.com/rouge-ruby/rouge) for code highlighting
+- [redcarpet](https://github.com/vmg/redcarpet) for rendering markdown
+- [rouge](https://github.com/rouge-ruby/rouge) for syntax highlighting
 MARKDOWN
       end
     end

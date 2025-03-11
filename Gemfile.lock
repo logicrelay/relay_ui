@@ -4,6 +4,7 @@ PATH
     relay_ui (0.1.1)
       phlex (~> 2.1)
       redcarpet (~> 3.6)
+      rouge (~> 4.5)
       tabler_icons_ruby (~> 3.11)
 
 GEM
@@ -113,6 +114,7 @@ GEM
       ffi (~> 1.0)
     redcarpet (3.6.1)
     regexp_parser (2.10.0)
+    rouge (4.5.1)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)

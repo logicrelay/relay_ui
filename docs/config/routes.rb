@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "components/code_blocks", as: :code_block_component
   get "components/headings", as: :heading_component
   get "components/lists", as: :list_component
+  get "components/markdown", as: :markdown_component
   get "components/navigation", as: :navigation_component
   get "components/slideout", as: :slideout_component
   get "components/text", as: :text_component

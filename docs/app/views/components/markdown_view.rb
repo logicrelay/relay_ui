@@ -5,7 +5,7 @@ class Views::Components::MarkdownView < Views::Base
 <<-MARKDOWN
 # RUI::Markdown
 
-This is RelayUI's primary component for displaying rich text content, whether that content is user-generated or static. There are sane defaults provided for rendered markdown elements like links and lists.
+This is RelayUI's primary component for displaying rich text content, whether that content is user-generated or static. There are sane defaults provided for rendered markdown elements like links and lists. In fact, this entire page is just one big Markdown block.
 
 ## Parameters
 |Parameter|Type|Default|Description|

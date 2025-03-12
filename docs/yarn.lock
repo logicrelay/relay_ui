@@ -30,10 +30,10 @@
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.2.201.tgz"
   integrity sha512-wsTdWoZ5EfG5k3t7ORdyQF0ZmDEgN4aVPCanHAiNEwCROqibSZMXXmCbH7IDJUVri4FOeAVwwbPINI7HVHPKBw==
 
-"@relay_ui/slideout@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@relay_ui/slideout/-/slideout-0.1.0.tgz"
-  integrity sha512-SzKMjbXdoeaCu3DVAS74PJoRpPoZmY2bTSULikp9m+uj535S5ij+8onI6geO+dpi8k9bDCg2vS6z6oZ43DSAMg==
+"@relay_ui/slideout@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/@relay_ui/slideout/-/slideout-0.2.0.tgz"
+  integrity sha512-+qMViwwitt3fi6VtCA8AenO6IAuY6D6vHHVAJIPXOYFoUCeI58pyOB1gZV7cQRR9ZMMCpUwtuYV5LCrtEn1kJA==
 
 esbuild@^0.25.0:
   version "0.25.0"

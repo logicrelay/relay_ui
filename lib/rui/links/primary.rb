@@ -1,5 +1,5 @@
 class RUI::Links::Primary < RUI::Links::Base
   private
 
-  def variant_classes = "bg-blue-700 hover:bg-blue-900 text-white"
+  def variant_classes = "rui:bg-blue-700 rui:hover:bg-blue-900 rui:text-white"
 end

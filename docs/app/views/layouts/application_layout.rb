@@ -39,6 +39,7 @@ module Views
                 nav.text_link(button_component_path) { "Buttons" }
                 nav.text_link(code_block_component_path) { "Code Blocks" }
                 nav.text_link(heading_component_path) { "Headings" }
+                nav.text_link(link_component_path) { "Links" }
                 nav.text_link(list_component_path) { "Lists" }
                 nav.text_link(markdown_component_path) { "Markdown" }
                 nav.text_link(navigation_component_path) { "Navigation" }

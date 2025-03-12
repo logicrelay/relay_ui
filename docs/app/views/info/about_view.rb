@@ -38,6 +38,12 @@ Our Phlex components [can be rendered in plain-old `erb` files](https://www.phle
 All of RelayUI's components are housed in the `RUI::` namespace. This turns your IDE's autocomplete into a powerful tool for building UIs quickly. Just type `RUI::` and see what's available!
 
 With this in mind, we prefer pulling basic variants up to the model level. Whereas many UI kits may specify variants via parameters (eg: `Component.new(variant: :primary)`), we prefer to give major variants class-level importance. So, we'll opt for patterns like `RUI::Buttons::Primary` and `RUI::Buttons::Secondary` instead.
+
+## On TailwindCSS
+
+RelayUI uses [TailwindCSS v4](https://tailwindcss.com/) for styling under the hood. One of the challenges we aimed to solve is how to include the styles Tailwind provides in a way that doesn't collide with any other CSS styles or frameworks being used. For example, we wanted to make sure RelayUI still worked well in projects that used Tailwind v3, or even Bootstrap.
+
+For that reason, we've decided to prefix our CSS classes with `rui:`. This way, RelayUI is able to come out of the box with all of the styles you need to make our components work, you can choose to use any CSS framework you want and not risk any CSS class conflicts or collisions.
 STRING
       end
     end

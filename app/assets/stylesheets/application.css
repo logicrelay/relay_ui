@@ -1,93 +1,92 @@
-@import "tailwindcss" prefix(rui);
+@import "tailwindcss/theme" prefix(rui);
+@import "tailwindcss/utilities" prefix(rui);
 
-@layer utilities {
-  .rui\:markdown {
-    @apply rui:font-sans rui:text-zinc-700
-  }
+.rui\:markdown {
+  @apply rui:font-sans rui:text-zinc-700
+}
 
-  .rui\:markdown h1,
-  .rui\:markdown h2,
-  .rui\:markdown h3,
-  .rui\:markdown h4,
-  .rui\:markdown h5,
-  .rui\:markdown h6 {
-    @apply rui:mt-6 rui:mb-4 rui:font-semibold;
-  }
+.rui\:markdown h1,
+.rui\:markdown h2,
+.rui\:markdown h3,
+.rui\:markdown h4,
+.rui\:markdown h5,
+.rui\:markdown h6 {
+  @apply rui:mt-6 rui:mb-4 rui:font-semibold;
+}
 
-  .rui\:markdown h1 {
-    @apply rui:text-4xl;
-  }
+.rui\:markdown h1 {
+  @apply rui:text-4xl;
+}
 
-  .rui\:markdown h2 {
-    @apply rui:text-3xl;
-  }
+.rui\:markdown h2 {
+  @apply rui:text-3xl;
+}
 
-  .rui\:markdown h3 {
-    @apply rui:text-2xl;
-  }
+.rui\:markdown h3 {
+  @apply rui:text-2xl;
+}
 
-  .rui\:markdown h4 {
-    @apply rui:text-xl;
-  }
+.rui\:markdown h4 {
+  @apply rui:text-xl;
+}
 
-  .rui\:markdown h5 {
-    @apply rui:text-lg;
-  }
+.rui\:markdown h5 {
+  @apply rui:text-lg;
+}
 
-  .rui\:markdown h6 {
-    @apply rui:text-base;
-  }
+.rui\:markdown h6 {
+  @apply rui:text-base;
+}
 
-  .rui\:markdown p {
-    @apply rui:mb-4;
-  }
+.rui\:markdown p {
+  @apply rui:mb-4;
+}
 
-  .rui\:markdown a {
-    @apply rui:text-blue-700 rui:no-underline;
-  }
+.rui\:markdown a {
+  @apply rui:text-blue-700 rui:no-underline;
+}
 
-  .rui\:markdown a:hover {
-    @apply rui:underline;
-  }
+.rui\:markdown a:hover {
+  @apply rui:underline;
+}
 
-  .rui\:markdown ul {
-    @apply rui:list-disc rui:pl-8 rui:mb-4;
-  }
+.rui\:markdown ul {
+  @apply rui:list-disc rui:pl-8 rui:mb-4;
+}
 
-  .rui\:markdown ol {
-    @apply rui:list-decimal rui:pl-8 rui:mb-4;
-  }
+.rui\:markdown ol {
+  @apply rui:list-decimal rui:pl-8 rui:mb-4;
+}
 
-  .rui\:markdown code {
-    @apply rui:bg-zinc-200 rui:px-2 rui:py-0.5 rui:rounded-sm rui:whitespace-break-spaces;
-  }
+.rui\:markdown code {
+  @apply rui:bg-zinc-200 rui:px-2 rui:py-0.5 rui:rounded-sm rui:whitespace-break-spaces;
+}
 
-  .rui\:markdown>div.highlight>pre.codehilite {
-    @apply rui:bg-black rui:p-6 rui:rounded-lg rui:mb-4;
-  }
+.rui\:markdown>div.highlight>pre.codehilite {
+  @apply rui:bg-black rui:p-6 rui:rounded-lg rui:mb-4;
+}
 
-  .rui\:markdown>div.highlight>pre.codehilite>code {
-    @apply rui:text-zinc-300 rui:bg-transparent rui:p-0 rui:rounded-none;
-  }
+.rui\:markdown>div.highlight>pre.codehilite>code {
+  @apply rui:text-zinc-300 rui:bg-transparent rui:p-0 rui:rounded-none;
+}
 
-  .rui\:markdown blockquote {
-    @apply rui:border-l-4 rui:border-zinc-300 rui:pl-4 rui:mb-4;
-  }
+.rui\:markdown blockquote {
+  @apply rui:border-l-4 rui:border-zinc-300 rui:pl-4 rui:mb-4;
+}
 
-  .rui\:markdown hr {
-    @apply rui:border-0 rui:border-t rui:border-zinc-300 rui:my-6;
-  }
+.rui\:markdown hr {
+  @apply rui:border-0 rui:border-t rui:border-zinc-300 rui:my-6;
+}
 
-  .rui\:markdown table {
-    @apply rui:border-collapse rui:mb-4 rui:w-full;
-  }
+.rui\:markdown table {
+  @apply rui:border-collapse rui:mb-4 rui:w-full;
+}
 
-  .rui\:markdown th,
-  .rui\:markdown td {
-    @apply rui:border rui:border-zinc-300 rui:px-4 rui:py-2 rui:text-left;
-  }
+.rui\:markdown th,
+.rui\:markdown td {
+  @apply rui:border rui:border-zinc-300 rui:px-4 rui:py-2 rui:text-left;
+}
 
-  .rui\:markdown th {
-    @apply rui:font-semibold;
-  }
+.rui\:markdown th {
+  @apply rui:font-semibold;
 }

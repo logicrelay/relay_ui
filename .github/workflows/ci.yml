@@ -11,10 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        
+      - name: Bundle install
+        run: bundle install
+        working-directory: ./docs
       - name: Run linter
         run: bundle exec rubocop -f github
   lint_docs:
@@ -30,8 +31,6 @@ jobs:
       - name: Bundle install
         run: bundle install
         working-directory: ./docs
-        env:
-          RELAY_UI_PATH: 
       - name: Run linter
         run: bundle exec rubocop -f github
         working-directory: docs

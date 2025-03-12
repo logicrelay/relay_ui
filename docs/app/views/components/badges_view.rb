@@ -12,12 +12,12 @@ STRING
       end
 
       div class: "flex flex-row gap-3" do
-        render RUI::Badge::Blue.new { "Blue Badge" }
-        render RUI::Badge::Gray.new { "Gray Badge" }
-        render RUI::Badge::Green.new { "Green Badge" }
-        render RUI::Badge::Purple.new { "Purple Badge" }
-        render RUI::Badge::Red.new { "Red Badge" }
-        render RUI::Badge::Yellow.new { "Yellow Badge" }
+        render RUI::Badges::Blue.new { "Blue Badge" }
+        render RUI::Badges::Gray.new { "Gray Badge" }
+        render RUI::Badges::Green.new { "Green Badge" }
+        render RUI::Badges::Purple.new { "Purple Badge" }
+        render RUI::Badges::Red.new { "Red Badge" }
+        render RUI::Badges::Yellow.new { "Yellow Badge" }
       end
 
       render RUI::Markdown::Unsafe.new do
@@ -25,12 +25,12 @@ STRING
 ## Code
 
 ```ruby
-render RUI::Badge::Blue.new { "Blue Badge" }
-render RUI::Badge::Gray.new { "Gray Badge" }
-render RUI::Badge::Green.new { "Green Badge" }
-render RUI::Badge::Purple.new { "Purple Badge" }
-render RUI::Badge::Red.new { "Red Badge" }
-render RUI::Badge::Yellow.new { "Yellow Badge" }
+render RUI::Badges::Blue.new { "Blue Badge" }
+render RUI::Badges::Gray.new { "Gray Badge" }
+render RUI::Badges::Green.new { "Green Badge" }
+render RUI::Badges::Purple.new { "Purple Badge" }
+render RUI::Badges::Red.new { "Red Badge" }
+render RUI::Badges::Yellow.new { "Yellow Badge" }
 ```
 
 

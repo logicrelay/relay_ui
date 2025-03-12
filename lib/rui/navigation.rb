@@ -45,7 +45,7 @@ class RUI::Navigation < RUI::Base
       span(class: "rui:text-zinc-400 rui:px-5 rui:py-1 rui:border-l-3 rui:border-transparent") do
         yield
       end
-      render RUI::Badge::Gray.new { "Coming Soon" }
+      render RUI::Badges::Gray.new { "Coming Soon" }
     end
   end
 end

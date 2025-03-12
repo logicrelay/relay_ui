@@ -17,7 +17,7 @@ Note that RelayUI differentiates between buttons and links. Buttons are used to 
 
 ## Variants
 
-Button variants are listed below
+Button variants are listed below.
 
 ### RUI::Buttons::Primary
 STRING

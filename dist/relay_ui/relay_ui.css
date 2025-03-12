@@ -87,6 +87,9 @@
 .rui\:mt-6 {
   margin-top: calc(var(--rui-spacing) * 6);
 }
+.rui\:mb-4 {
+  margin-bottom: calc(var(--rui-spacing) * 4);
+}
 .rui\:flex {
   display: flex;
 }

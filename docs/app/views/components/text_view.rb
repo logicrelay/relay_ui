@@ -11,19 +11,7 @@ class Views::Components::TextView < Views::Base
 
 Note that Text components only render plain text. For rich text content, use the [RUI::Markdown](#{markdown_component_path}) component.
 
-## Code
-
-RUI::Text has three variants: `Small`, `Medium`, and `Large`. Each variant renders text in a different size.
-
-```ruby
-render RUI::Text::Small.new { LOREM_IPSUM }
-render RUI::Text::Medium.new { LOREM_IPSUM }
-render RUI::Text::Large.new { LOREM_IPSUM }
-```
-
-## Examples
-
-### RUI::Text::Small
+## RUI::Text::Small
 STRING
       end
 
@@ -31,7 +19,11 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### RUI::Text::Medium
+```ruby
+render RUI::Text::Small.new { LOREM_IPSUM }
+```
+
+## RUI::Text::Medium
 
 STRING
       end
@@ -40,12 +32,23 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### RUI::Text::Large
+```ruby
+render RUI::Text::Medium.new { LOREM_IPSUM }
+```
+
+## RUI::Text::Large
 
 STRING
       end
 
       render RUI::Text::Large.new { LOREM_IPSUM }
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+```ruby
+render RUI::Text::Large.new { LOREM_IPSUM }
+```
+STRING
+      end
     end
   end
 end

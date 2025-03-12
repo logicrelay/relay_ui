@@ -9,7 +9,9 @@ To render a list, use the `RUI::Markdown` component. For more information, see t
 
 ## Unordered Lists
 
-### Code
+- Here's a list item
+- Here's another list item
+- Here's item #3
 
 ```ruby
   render RUI::Markdown::Safe.new do
@@ -20,16 +22,12 @@ To render a list, use the `RUI::Markdown` component. For more information, see t
 STRING
   end
 ```
-
-### Example
-
-- Here's a list item
-- Here's another list item
-- Here's item #3
 
 ## Ordered Lists
 
-### Code
+1. Here's a list item
+1. Here's another list item
+1. Here's item #3
 
 ```ruby
   render RUI::Markdown::Safe.new do
@@ -40,13 +38,6 @@ STRING
 STRING
   end
 ```
-
-### Example
-
-1. Here's a list item
-1. Here's another list item
-1. Here's item #3
-
 MARKDOWN
       end
     end

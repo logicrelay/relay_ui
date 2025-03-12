@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import SlideoutController from "@relay_ui/slideout"
+import SlideoutController from "../../../../app/javascript/slideout/slideout_controller.js"
 application.register("slideout", SlideoutController)

@@ -2,7 +2,7 @@ require "rouge"
 require "rouge/plugins/redcarpet"
 require "redcarpet"
 
-class RUI::Support::Markdown::Renderer < Redcarpet::Render::XHTML
+class RUI::Markdown::UnsafeRenderer < Redcarpet::Render::XHTML
   include Rouge::Plugins::Redcarpet
 
   def block_code(code, lang)

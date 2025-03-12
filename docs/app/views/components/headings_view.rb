@@ -3,7 +3,7 @@ class Views::Components::HeadingsView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-MARKDOWN
 # Headings
 
@@ -21,12 +21,12 @@ To render a heading, use the `RUI::Markdown` component. For more information, se
 ## Code
 
 ```ruby
-render RUI::Markdown.new { "# Heading 1" }
-render RUI::Markdown.new { "## Heading 2" }
-render RUI::Markdown.new { "### Heading 3" }
-render RUI::Markdown.new { "#### Heading 4" }
-render RUI::Markdown.new { "##### Heading 5" }
-render RUI::Markdown.new { "###### Heading 6" }
+render RUI::Markdown::Safe.new { "# Heading 1" }
+render RUI::Markdown::Safe.new { "## Heading 2" }
+render RUI::Markdown::Safe.new { "### Heading 3" }
+render RUI::Markdown::Safe.new { "#### Heading 4" }
+render RUI::Markdown::Safe.new { "##### Heading 5" }
+render RUI::Markdown::Safe.new { "###### Heading 6" }
 ```
 MARKDOWN
       end

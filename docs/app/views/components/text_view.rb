@@ -3,7 +3,7 @@ class Views::Components::TextView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 # RUI::Text
 
@@ -29,7 +29,7 @@ STRING
 
       render RUI::Text::Small.new { LOREM_IPSUM }
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### RUI::Text::Medium
 
@@ -38,7 +38,7 @@ STRING
 
       render RUI::Text::Medium.new { LOREM_IPSUM }
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### RUI::Text::Large
 

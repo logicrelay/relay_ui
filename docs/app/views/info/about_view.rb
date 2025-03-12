@@ -13,7 +13,7 @@ class Views::Info::AboutView < Views::Base
         end
       end
 
-      render RUI::Markdown.new do
+      render RUI::Markdown::Safe.new do
 <<-STRING
 # About RelayUI
 

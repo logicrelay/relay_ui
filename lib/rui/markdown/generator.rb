@@ -1,6 +1,6 @@
 require "redcarpet"
 
-class RUI::Support::Markdown::Generator
+class RUI::Markdown::Generator
   include Singleton
 
   def initialize
@@ -11,8 +11,8 @@ class RUI::Support::Markdown::Generator
       escape_html: true
     }
 
-    renderer = RUI::Support::Markdown::Renderer.new options
-    safe_renderer = RUI::Support::Markdown::SafeRenderer.new options
+    unsafe_renderer = RUI::Markdown::UnsafeRenderer.new options
+    safe_renderer = RUI::Markdown::SafeRenderer.new options
 
     extensions = {
       autolink: true,
@@ -25,11 +25,11 @@ class RUI::Support::Markdown::Generator
       disable_indented_code_blocks: true
     }
 
-    @generator = Redcarpet::Markdown.new renderer, extensions
+    @unsafe_generator = Redcarpet::Markdown.new unsafe_renderer, extensions
     @safe_generator = Redcarpet::Markdown.new safe_renderer, extensions
   end
 
-  def get(markdown) = @generator.render(markdown).html_safe
+  def get_unsafe(markdown) = @unsafe_generator.render(markdown).html_safe
 
   def get_safe(markdown) = @safe_generator.render(markdown).html_safe
 end

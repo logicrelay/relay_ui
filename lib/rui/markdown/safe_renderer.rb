@@ -2,7 +2,7 @@ require "rouge"
 require "rouge/plugins/redcarpet"
 require "redcarpet"
 
-class RUI::Support::Markdown::SafeRenderer < Redcarpet::Render::HTML
+class RUI::Markdown::SafeRenderer < Redcarpet::Render::XHTML
   include Rouge::Plugins::Redcarpet
 
   private

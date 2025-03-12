@@ -1,7 +1,7 @@
 class Views::Components::LinksView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new do
+      render RUI::Markdown::Safe.new do
 <<-STRING
 # RUI::Links
 
@@ -30,7 +30,7 @@ STRING
         render RUI::Links::Primary.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -52,7 +52,7 @@ STRING
         render RUI::Links::Secondary.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -74,7 +74,7 @@ STRING
         render RUI::Links::Outline.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -96,7 +96,7 @@ STRING
         render RUI::Links::Destructive.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -118,7 +118,7 @@ STRING
         render RUI::Links::Ghost.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 

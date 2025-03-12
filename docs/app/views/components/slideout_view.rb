@@ -5,7 +5,7 @@ class Views::Components::SlideoutView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       turbo_frame_tag "slideout"
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 # RUI::Slideout
 
@@ -23,7 +23,7 @@ STRING
           data: { turbo_frame: "slideout" }
         ) { "Open Slideout" }
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ## Usage
 

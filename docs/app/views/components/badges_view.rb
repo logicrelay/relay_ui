@@ -1,7 +1,7 @@
 class Views::Components::BadgesView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new do
+      render RUI::Markdown::Safe.new do
 <<-STRING
 # Badges
 
@@ -20,7 +20,7 @@ STRING
         render RUI::Badge::Yellow.new { "Yellow Badge" }
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ## Code
 

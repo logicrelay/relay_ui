@@ -1,7 +1,7 @@
 class Views::Components::ListsView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-MARKDOWN
 # Lists
 
@@ -12,7 +12,7 @@ To render a list, use the `RUI::Markdown` component. For more information, see t
 ### Code
 
 ```ruby
-  render RUI::Markdown.new do
+  render RUI::Markdown::Safe.new do
 <<-STRING
 - Here's a list item
 - Here's another list item
@@ -32,7 +32,7 @@ STRING
 ### Code
 
 ```ruby
-  render RUI::Markdown.new do
+  render RUI::Markdown::Safe.new do
 <<-STRING
 1. Here's a list item
 1. Here's another list item

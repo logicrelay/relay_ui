@@ -1,7 +1,7 @@
 class Views::Components::ButtonsView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown.new do
+      render RUI::Markdown::Safe.new do
 <<-STRING
 # RUI::Buttons
 
@@ -29,7 +29,7 @@ STRING
         render RUI::Buttons::Primary.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -51,7 +51,7 @@ STRING
         render RUI::Buttons::Secondary.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -73,7 +73,7 @@ STRING
         render RUI::Buttons::Outline.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -95,7 +95,7 @@ STRING
         render RUI::Buttons::Destructive.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 
@@ -117,7 +117,7 @@ STRING
         render RUI::Buttons::Ghost.new(icon: 'star')
       end
 
-      render RUI::Markdown.new(html_safe: false) do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 ### Code
 

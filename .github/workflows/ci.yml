@@ -16,6 +16,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Disable bundler frozen
+        run: bundle config set frozen false
       - name: Run linter
         run: bundle exec rubocop -f github
   lint_docs:

@@ -118,6 +118,14 @@
 .rui\:max-w-1\/2 {
   max-width: calc(1/2 * 100%);
 }
+.rui\:-translate-x-0 {
+  --tw-translate-x: calc(var(--rui-spacing) * -0);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.rui\:translate-x-full {
+  --tw-translate-x: 100%;
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
 .rui\:cursor-default {
   cursor: default;
 }
@@ -135,6 +143,9 @@
 }
 .rui\:overflow-y-auto {
   overflow-y: auto;
+}
+.rui\:overflow-y-hidden {
+  overflow-y: hidden;
 }
 .rui\:rounded {
   border-radius: 0.25rem;
@@ -286,6 +297,10 @@
   transition-property: opacity;
   transition-timing-function: var(--tw-ease, var(--rui-default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--rui-default-transition-duration));
+}
+.rui\:duration-100 {
+  --tw-duration: 100ms;
+  transition-duration: 100ms;
 }
 .rui\:duration-200 {
   --tw-duration: 200ms;
@@ -487,6 +502,21 @@
 .rui\:markdown th {
   --tw-font-weight: var(--rui-font-weight-semibold);
   font-weight: var(--rui-font-weight-semibold);
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-border-style {
   syntax: "*";

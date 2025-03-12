@@ -67,7 +67,7 @@
   }
 
   .rui\:markdown>div.highlight>pre.codehilite>code {
-    @apply rui:text-zinc-700 rui:bg-transparent rui:p-0 rui:rounded-none;
+    @apply rui:text-zinc-300 rui:bg-transparent rui:p-0 rui:rounded-none;
   }
 
   .rui\:markdown blockquote {

@@ -33,11 +33,11 @@ RelayUI is supported by [LogicRelay](https://www.logicrelay.com), a software dev
 
 Our Phlex components [can be rendered in plain-old `erb` files](https://www.phlex.fun/components/rendering.html#rendering-phlex-components-in-erb), but we think you'll find that the Phlex DSL is so easy to use that you'll want to use it everywhere.
 
-## The `RUI::` Namespace
+## The RUI Namespace
 
 All of RelayUI's components are housed in the `RUI::` namespace. This turns your IDE's autocomplete into a powerful tool for building UIs quickly. Just type `RUI::` and see what's available!
 
-With this in mind, we prefer pulling basic variants up to the model level. Whereas many UI kits may specify variants via parameters (eg: `Component(variant: :primary)`), we prefer to give variants class-level importance. So, we'll opt for patterns like `RUI::Buttons::Primary` and `RUI::Buttons::Secondary` instead.
+With this in mind, we prefer pulling basic variants up to the model level. Whereas many UI kits may specify variants via parameters (eg: `Component.new(variant: :primary)`), we prefer to give major variants class-level importance. So, we'll opt for patterns like `RUI::Buttons::Primary` and `RUI::Buttons::Secondary` instead.
 STRING
       end
     end

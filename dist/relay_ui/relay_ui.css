@@ -601,7 +601,7 @@
     border-radius: 0;
     background-color: transparent;
     padding: calc(var(--rui-spacing) * 0);
-    color: var(--rui-color-zinc-700);
+    color: var(--rui-color-zinc-300);
   }
   .rui\:markdown blockquote {
     margin-bottom: calc(var(--rui-spacing) * 4);

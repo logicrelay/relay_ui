@@ -10,20 +10,20 @@ class Views::Components::ButtonsView < Views::Base
 Note that RelayUI differentiates between buttons and links. Buttons are used to trigger actions, while links are used to navigate to a different page or location. For this reason, buttons do not take an `href` parameter, while links do.
 
 ## Parameters
-
-## Parameters
 |Parameter|Type|Default|Description|
 |---|---|---|---|
 |`icon`|`string`|`nil`|The [tabler icon](https://tabler.io/icons) to be used for this link. If blank, no icon will be shown.|
 |`data`|`hash`|`{}`|HTML data attributes for the button, eg: `data: { action: slideout#hide }`|
 
-## RUI::Buttons::Primary
+## Variants
 
-### Examples
+Button variants are listed below
+
+### RUI::Buttons::Primary
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center") do
+      div(class: "flex flex-row gap-3 items-center mb-3") do
         render RUI::Buttons::Primary.new { "Primary Button" }
         render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
         render RUI::Buttons::Primary.new(icon: 'star')
@@ -31,21 +31,17 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### Code
-
 ```ruby
 render RUI::Buttons::Primary.new { "Primary Button" }
 render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
 render RUI::Buttons::Primary.new(icon: 'star')
 ```
 
-## RUI::Buttons::Secondary
-
-### Examples
+### RUI::Buttons::Secondary
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center") do
+      div(class: "flex flex-row gap-3 items-center mb-3") do
         render RUI::Buttons::Secondary.new { "Secondary Button" }
         render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
         render RUI::Buttons::Secondary.new(icon: 'star')
@@ -53,21 +49,17 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### Code
-
 ```ruby
 render RUI::Buttons::Secondary.new { "Secondary Button" }
 render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
 render RUI::Buttons::Secondary.new(icon: 'star')
 ```
 
-## RUI::Buttons::Outline
-
-### Examples
+### RUI::Buttons::Outline
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center") do
+      div(class: "flex flex-row gap-3 items-center mb-3") do
         render RUI::Buttons::Outline.new { "Outline Button" }
         render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
         render RUI::Buttons::Outline.new(icon: 'star')
@@ -75,21 +67,17 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### Code
-
 ```ruby
 render RUI::Buttons::Outline.new { "Outline Button" }
 render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
 render RUI::Buttons::Outline.new(icon: 'star')
 ```
 
-## RUI::Buttons::Desctructive
-
-### Examples
+### RUI::Buttons::Desctructive
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center") do
+      div(class: "flex flex-row gap-3 items-center mb-3") do
         render RUI::Buttons::Destructive.new { "Destructive Button" }
         render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
         render RUI::Buttons::Destructive.new(icon: 'star')
@@ -97,21 +85,17 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### Code
-
 ```ruby
 render RUI::Buttons::Destructive.new { "Destructive Button" }
 render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
 render RUI::Buttons::Destructive.new(icon: 'star')
 ```
 
-## RUI::Buttons::Ghost
-
-### Examples
+### RUI::Buttons::Ghost
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center") do
+      div(class: "flex flex-row gap-3 items-center mb-3") do
         render RUI::Buttons::Ghost.new { "Ghost Button" }
         render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }
         render RUI::Buttons::Ghost.new(icon: 'star')
@@ -119,8 +103,6 @@ STRING
 
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-### Code
-
 ```ruby
 render RUI::Buttons::Ghost.new { "Ghost Button" }
 render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }

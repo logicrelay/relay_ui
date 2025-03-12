@@ -9,8 +9,7 @@ run = "npm run watch"
 alias = "g"
 run = "bundle exec guard"
 
-[tasks.dev]
-depends = ["guard"]
+[tasks.server]
 alias = "s"
 dir = 'docs'
-run = "sleep 2 && ./bin/dev"
+run = "./bin/dev"

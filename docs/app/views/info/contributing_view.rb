@@ -25,8 +25,8 @@ There are a couple of things you'll need to do to get your environment set up fo
 
 There are three processes to run locally when developing...
 - `mise run watch` starts the watch process that generates a combined CSS file using TailwindCSS.
-- `mise run server` starts the local server.
 - `mise run guard` runs `guard` and `guard-livereload` (optional)
+- `mise run server` starts the local server.
 STRING
       end
     end

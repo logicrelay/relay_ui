@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/logicrelay/relay_ui"
   spec.metadata["changelog_uri"] = "https://github.com/logicrelay/relay_ui/blob/main/CHANGELOG.md"
   spec.files = Dir.glob("lib/**/*.rb") +
-            Dir.glob("app/rui/**/*.rb") +
+            Dir.glob("dist/**/*.css") +
             %w[README.md LICENSE.txt]
 
   spec.add_dependency "phlex", "~> 2.1"

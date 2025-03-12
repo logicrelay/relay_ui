@@ -3,63 +3,48 @@ class Views::Components::HeadingsView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Headings" }
-      render RelayUi::Text::Large.new do
-        "This section demonstrates the different heading styles available in RelayUi."
-      end
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+# Headings
 
-      render Components::Description.new("H1") do
-        render RelayUi::Headings::H1.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H1.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+To render a heading, use the `RUI::Markdown` components. For more information, see the [RUI::Markdown](#{markdown_component_path}) documentation.
 
-      render Components::Description.new("H2") do
-        render RelayUi::Headings::H2.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H2.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+# Heading 1
 
-      render Components::Description.new("H3") do
-        render RelayUi::Headings::H3.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H3.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+```ruby
+render RUI::Markdown::Safe.new { "# Heading 1" }
+```
 
-      render Components::Description.new("H4") do
-        render RelayUi::Headings::H4.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H4.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+## Heading 2
 
-      render Components::Description.new("H5") do
-        render RelayUi::Headings::H5.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H5.new { QUICK_BROWN_FOX }
-RUBY
-        end
-      end
+```ruby
+render RUI::Markdown::Safe.new { "## Heading 2" }
+```
 
-      render Components::Description.new("H6") do
-        render RelayUi::Headings::H6.new { QUICK_BROWN_FOX }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Headings::H6.new { QUICK_BROWN_FOX }
-RUBY
-        end
+### Heading 3
+
+```ruby
+render RUI::Markdown::Safe.new { "### Heading 3" }
+```
+
+#### Heading 4
+
+```ruby
+render RUI::Markdown::Safe.new { "#### Heading 4" }
+```
+
+##### Heading 5
+
+```ruby
+render RUI::Markdown::Safe.new { "##### Heading 5" }
+```
+
+###### Heading 6
+
+```ruby
+render RUI::Markdown::Safe.new { "###### Heading 6" }
+```
+STRING
       end
     end
   end

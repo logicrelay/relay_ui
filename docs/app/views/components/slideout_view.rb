@@ -1,43 +1,81 @@
 class Views::Components::SlideoutView < Views::Base
   include Phlex::Rails::Helpers::TurboFrameTag
-  
+
   def view_template
-    turbo_frame_tag "slideout"
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Slideouts" }
-      render RelayUi::Text::Large.new do
-        "This section demonstrates the different slideouts available in RelayUi."
+      turbo_frame_tag "slideout"
+
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+# RUI::Slideout
+
+The `RUI::Slideout` component is a container that slides out from the right side of the screen. It is useful for displaying additional content without navigating away from the current page.
+
+## Example
+
+Try me!
+STRING
       end
 
-      render Components::Description.new("Slideout") do
-        render RelayUi::Buttons::Primary.new(
-          href: slideout_example_path, 
+        render RUI::Links::Primary.new(
+          href: slideout_example_path,
           icon: "arrow-left-bar",
-          data: {turbo_frame: 'slideout'}
-          ) { "Open Slideout" }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-# In your application layout...
-turbo_frame_tag "slideout"
+          data: { turbo_frame: "slideout" }
+        ) { "Open Slideout" }
 
-# In the view containing the content for your slideout
-render RelayUi::Slideout.new do
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+## Usage
+
+Follow these steps to create a slideout in your RelayUi application:
+
+### Include the turbo frame in your view:
+
+```ruby
+turbo_frame_tag "slideout"
+```
+
+### Install the stimulus controller from npm:
+
+```shell
+npm install @relay_ui/slideout
+# or...
+./bin/importmap pin @relay_ui/slideout
+```
+
+### Register the controller in your index.js:
+
+```javascript
+import SlideoutController from "@relay_ui/slideout"
+application.register("slideout", SlideoutController)
+```
+
+### Create a view for the slideout contents and wrap it in a `RUI::Slideout` component:
+
+```ruby
+render RUI::Slideout.new do
   div(class: "flex flex-row justify-between items-center p-10") do
-    render RelayUi::Headings::H2.new { "Slideout title" }
-    render RelayUi::Buttons::Destructive.new(
-      icon: "x", 
+    render RUI::Headings::H2.new { "Slideout" }
+
+    # Note the href and data...
+    render RUI::Links::Destructive.new(
+      href: "#",
+      icon: "x",
       data: { action: "slideout#hide" }
     )
   end
 end
+```
 
-# The button to open the slideout...
-render RelayUi::Buttons::Primary.new(
-  href: slideout_example_path, 
+### Add a button to trigger the slideout:
+
+```ruby
+render RUI::Buttons::Primary.new(
+  href: slideout_example_path,
   data: { turbo_frame: 'slideout' }
 ) { "Open Slideout" }
-RUBY
-        end
+```
+STRING
       end
     end
   end

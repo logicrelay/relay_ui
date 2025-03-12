@@ -14,7 +14,6 @@ gem "relay_ui"
 gem "phlex-rails"
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
-gem "tabler_icons_ruby"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -24,4 +23,6 @@ end
 
 group :development do
   gem "web-console"
+  gem "guard"
+  gem "guard-livereload"
 end

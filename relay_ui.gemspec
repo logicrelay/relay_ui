@@ -4,7 +4,7 @@ require_relative "lib/relay_ui/version"
 
 Gem::Specification.new do |spec|
   spec.name = "relay_ui"
-  spec.version = RelayUi::VERSION
+  spec.version = RUI::VERSION
   spec.required_ruby_version = ">= 3.0.0"
   spec.authors = [ "logicrelay" ]
   spec.email = [ "hello@logicrelay.com" ]
@@ -17,14 +17,17 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/logicrelay/relay_ui"
   spec.metadata["changelog_uri"] = "https://github.com/logicrelay/relay_ui/blob/main/CHANGELOG.md"
-  spec.files = Dir.glob("lib/**/*") +
-            Dir.glob("app/**/*") +
-            %w[tailwind.config.js package.json Rakefile]
+  spec.files = Dir.glob("lib/**/*.rb") +
+            Dir.glob("dist/**/*.css") +
+            %w[README.md LICENSE.txt]
 
-  spec.add_dependency "phlex", "~> 2.1.0"
-  spec.add_dependency "tabler_icons_ruby", "~> 3.11.0"
+  spec.add_dependency "phlex", "~> 2.1"
+  spec.add_dependency "tabler_icons_ruby", "~> 3.11"
+  spec.add_dependency "redcarpet", "~> 3.6"
+  spec.add_dependency "rouge", "~> 4.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-livereload"
   spec.add_development_dependency "base64"
+  spec.add_development_dependency "rubocop-rails-omakase"
 end

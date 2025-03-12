@@ -1,47 +1,93 @@
 # RelayUI
 
-RelayUI is an opinionated UI kit for Ruby and Rails apps designed for speed of development. It is written in Phlex, uses TailwindCSS for styling and Hotwire for interactivity.
-
-[Read more about the UI kit on our documentation site.](https://www.relayui.com)
-
 > [!WARNING]
-> It is currently very early in the development of this gem. The API is likely to change rapidly over the coming weeks and months as we work toward a v1.0.0 release. Use at your own risk for now.
+> This project is extremely new, and we're still working out the kinks. While it is just being used for the first time in new production apps, we're not yet ready to recommend it quite yet. It's highly likely that the API will change frequently in ways that will be extremely disruptive to your codebase. Use at your own risk for now, and we'll update this warning when we're ready to recommend it. Look for a 1.0.0 release sometime in Q2 2025.
 
-RelayUI is based on the following principles:
-- **Ease of use over flexibility** - Many similar UI kits are built with customization in mind, making them flexible at the cost of complexity. We prioritize an intuitive and concise DSL over making this gem everything to all people. We say it is "delightfully inflexible."
-- **No code generation** - We don't rely on generators to make local copies of components. By installing this gem, you get all the things you need to make passable UIs for business applications _very quickly_.
-- **Prescriptive selection of companion gems** - We've included gems like `tabler_icons_ruby` and others that bring a ton of functionality without any cognitive overhead. We want the experience with this gem to be very turn-key. Choosing a different icon library isn't going to be the difference between failure and success for your product, so don't spend any time considering it!
-- **Subclassing over heavy configuration** - Whenever possible we try and pull key variant indicators up to the class name level, so we'd opt for something like `RUI::Button::Primary` over `RUI::Button(variant: :primary)`. This brings key design decisions up to the class level, turning your IDE's autocomplete into a search engine for available components. To the extent that these variants have parameters to be passed, the lists are very small and direct, focusing on composition over customization.
+RelayUI is a set of highly prescriptive UI elements written in Phlex and designed for Ruby and Rails applications. We know what you're thinking: "Another UI kit? Really?" But hear us out...
 
-## Installation
+We generally see two types of UI kits available today:
+- **Highly flexible and customizable UI kits** - These are great for building consumer-facing apps where you need to have a unique look and feel, but they can create a lot of overhead for developers who just want to get business value out the door quickly. Many of them also rely on code generation, and we wanted a solution that could be updated via bundler.
+- **Paid UI kits** - These are great for businesses that want to get something out the door quickly and don't mind paying for it, but we like open-source software and we think that there's a place for a free, easy-to-use UI kit.
 
-Install the gem and add to the application's Gemfile by executing:
+This is why RelayUI was created. It's purposefully inflexible, meant to provide a baseline set of functionality that covers 80-90% of use cases so developers can skip decisions like what icons to use or how to style buttons and focus on the stuff that matters.
 
-```bash
-bundle add relay_ui
+RelayUI is supported by [LogicRelay](https://www.logicrelay.com), a software development agency that specializes in rapid creation of business software. We created RelayUI to help us build software faster and more consistently, and we're sharing it with the world in the hopes that it will help others do the same.
+
+## Why Phlex?
+
+[Phlex](https://github.com/phlex-ruby/phlex) is a Ruby-based DSL for building HTML views and components. After experimenting with [ViewComponents](https://viewcomponent.org/) and using the gem in some projects, we found the differentiation between views and presenter logic to be cumbersome at scale. Phlex provides the power of ruby in your views without the need for a separate presenter layer, and it's fast. Really fast.
+
+Our Phlex components [can be rendered in plain-old `erb` files](https://www.phlex.fun/components/rendering.html#rendering-phlex-components-in-erb), but we think you'll find that the Phlex DSL is so easy to use that you'll want to use it everywhere.
+
+## The RUI Namespace
+
+All of RelayUI's components are housed in the `RUI::` namespace. This turns your IDE's autocomplete into a powerful tool for building UIs quickly. Just type `RUI::` and see what's available!
+
+With this in mind, we prefer pulling basic variants up to the model level. Whereas many UI kits may specify variants via parameters (eg: `Component.new(variant: :primary)`), we prefer to give major variants class-level importance. So, we'll opt for patterns like `RUI::Buttons::Primary` and `RUI::Buttons::Secondary` instead.
+
+## Using TailwindCSS
+
+RelayUI uses [TailwindCSS v4](https://tailwindcss.com/) for styling under the hood. One of the challenges we aimed to solve is how to include the styles Tailwind provides in a way that doesn't collide with any other CSS styles or frameworks being used. For example, we wanted to make sure RelayUI still worked well in projects that used Tailwind v3, or even Bootstrap.
+
+For that reason, we've decided to prefix our CSS classes with `rui:`. This way, RelayUI is able to come out of the box with all of the styles you need to make our components work, but you can choose to use any CSS framework you want and not risk any CSS class conflicts or collisions.
+STRING
+
+# Installation
+
+### First, add the gem to your `Gemfile`:
+
+```ruby
+gem 'relay_ui'
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+### Then install your gems:
 
-```bash
+```shell
+bundle install
+```
+
+### Or install it directly:
+
+```shell
 gem install relay_ui
 ```
 
-## Usage
+### Include the gem's stylesheet in your application layout:
+
+```ruby
+stylesheet_link_tag "relay_ui/relay_ui", media: "all"
+```
+
+That's it! All of the basic functionality of the UI kit is now available to you. For certain components that require additional elements (like stimulus controllers), you'll need to include those separately. They will be documented in the component's usage instructions.
+
+# Usage
 
 The usage docs can be found at https://www.relayui.com
 
-## Development
+# Contributing
 
-In the root of the repository, run `rake watch` to dynamically generate CSS for Phlex components that are added during development. This generated CSS should be committed to the repository.
+**If you're interested in contributing on this project we'd love to chat with you on [our Discord server](https://discord.gg/wPyvK87KFe).**
 
-The documentation directory is included in the source of this repository so that documentation can stay in sync with the gem's source. Please be sure that PRs with updates to the gem also include the associated documentation.
+There's a lot of work to be done on this project, and we're always looking for help. Here's some details on how we're going about building this kit:
 
-## Contributing
+- We have a [public roadmap](https://github.com/orgs/logicrelay/projects/14/views/3) that we're using to track features that are slated for the next release and features that haven't been prioritized yet.
+- We're using [Github Projects](https://github.com/orgs/logicrelay/projects/14/views/1) to track WIP features and bugs.
+- We'll generally spec out a milestone in a JIT fashion as the previous milestone is released.
 
-If you're interested in contributing on this project we'd love to have you on [our Discord server](https://discord.gg/wPyvK87KFe).
+## Prerequisites
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relay_ui. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/relay_ui/blob/main/CODE_OF_CONDUCT.md).
+There are a couple of things you'll need to do to get your environment set up for contributing to this project:
+
+- **mise** - We use [`mise`](https://mise.jdx.dev/getting-started.html) to manage our development environment and provide easy access to the tools we need to work on the project.
+- **bundler config** - You'll need to set the local path to the root directory of the project by running the following command in the root of the repo: `bundle config local.relay_ui /path/to/relay_ui`. This will allow you to work on the UI kit locally and see changes in real time.
+- **LiveReload** - [LiveReload](https://addons.mozilla.org/en-US/firefox/addon/livereload/) is not a must have, but it's a nice to have. It will automatically refresh your browser when you're working on the UI kit locally.
+
+## Tooling
+
+There are three processes to run locally when developing...
+- `mise run watch` starts the watch process that generates a combined CSS file using TailwindCSS.
+- `mise run guard` runs `guard` and `guard-livereload` (optional)
+- `mise run server` starts the local server.
 
 ## License
 

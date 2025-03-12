@@ -3,36 +3,51 @@ class Views::Components::TextView < Views::Base
 
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RelayUi::Headings::H1.new { "Text" }
-      render RelayUi::Text::Large.new do
-        "This section demonstrates the different text styles available in RelayUi."
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+# RUI::Text
+
+`RUI::Text` is a namespace for text components in RelayUI. These components are used to render text in different sizes and styles. This page demonstrates the different text styles available in RelayUi.
+
+Note that Text components only render plain text. For rich text content, use the [RUI::Markdown](#{markdown_component_path}) component.
+
+## RUI::Text::Small
+STRING
       end
 
-      render Components::Description.new("Small Text") do
-        render RelayUi::Text::Small.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Text::Small.new { LOREM_IPSUM }
-RUBY
-        end
+      render RUI::Text::Small.new { LOREM_IPSUM }
+
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+```ruby
+render RUI::Text::Small.new { LOREM_IPSUM }
+```
+
+## RUI::Text::Medium
+
+STRING
       end
 
-      render Components::Description.new("Medium Text") do
-        render RelayUi::Text::Medium.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Text::Medium.new { LOREM_IPSUM }
-RUBY
-        end
+      render RUI::Text::Medium.new { LOREM_IPSUM }
+
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+```ruby
+render RUI::Text::Medium.new { LOREM_IPSUM }
+```
+
+## RUI::Text::Large
+
+STRING
       end
 
-      render Components::Description.new("Large Text") do
-        render RelayUi::Text::Large.new { LOREM_IPSUM }
-        render RelayUi::CodeBlock.new do
-<<-RUBY
-render RelayUi::Text::Large.new { LOREM_IPSUM }
-RUBY
-        end
+      render RUI::Text::Large.new { LOREM_IPSUM }
+      render RUI::Markdown::Unsafe.new do
+<<-STRING
+```ruby
+render RUI::Text::Large.new { LOREM_IPSUM }
+```
+STRING
       end
     end
   end

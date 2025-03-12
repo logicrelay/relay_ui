@@ -10,6 +10,7 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
   "rubyLsp.erbSupport": false,
+  "css.validate": false,
   "emmet.showSuggestionsAsSnippets": true,
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn"

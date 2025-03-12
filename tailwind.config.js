@@ -1,10 +1,13 @@
 module.exports = {
   content: [
-    "./app/components/**/*.rb",
-    "./app/assets/javascripts/relay_ui/**/*.js"
+    "./lib/rui/**/*.rb",
+    "./app/javascript/**/*.js"
   ],
   theme: {
     extend: {},
   },
   plugins: [],
+  experimental: {
+    optimizeUniversalDefaults: true
+  }
 }

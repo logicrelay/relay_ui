@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/logicrelay/relay_ui
-  revision: f541be206901553854c6f905cb2a96a1351854e2
+  revision: 0953aec4f98cc9395302fc71ec5e37a6b249052a
   branch: 0.2.0
   specs:
-    relay_ui (0.1.1)
+    relay_ui (0.2.0)
       phlex (~> 2.1)
       redcarpet (~> 3.6)
       rouge (~> 4.5)

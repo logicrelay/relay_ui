@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Links::Base < RUI::Base
   def initialize(href: "#", icon: nil, data: {})
     @href = href

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "tabler_icons_ruby"
 
 class RUI::Icon < RUI::Base

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RUI::Text
   class Large < RUI::Base
     def view_template

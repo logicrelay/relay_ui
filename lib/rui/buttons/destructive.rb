@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Buttons::Destructive < RUI::Buttons::Base
   private
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Buttons::Primary < RUI::Buttons::Base
   private
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Links::Outline < RUI::Links::Base
   private
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Buttons::Outline < RUI::Buttons::Base
   private
 

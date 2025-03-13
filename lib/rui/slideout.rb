@@ -1,8 +1,8 @@
-class RUI::Slideout < RUI::Base
-  include Phlex::Rails::Helpers::TurboFrameTag
+# frozen_string_literal: true
 
+class RUI::Slideout < RUI::Base
   def view_template
-    turbo_frame_tag "slideout" do
+    turbo-frame(id: "slideout") do
       div(class: "rui:absolute rui:inset-0 rui:z-50", data: { controller: "slideout" }) do
         a(href: "#", class: "rui:cursor-default", data: { action: "slideout#hide" }) do
           div(id: "modal-curtain", class: "rui:w-screen rui:h-screen rui:bg-black rui:transition-opacity rui:opacity-75", data: { slideout_target: "curtain" })

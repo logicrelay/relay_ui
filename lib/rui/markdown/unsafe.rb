@@ -1,3 +1,5 @@
+  # frozen_string_literal: true
+
   class RUI::Markdown::Unsafe < RUI::Base
     def view_template(&block)
       article(class: "rui:markdown") do

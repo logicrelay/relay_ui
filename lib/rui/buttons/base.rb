@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Buttons::Base < RUI::Base
   def initialize(icon: nil, data: {})
     @icon = icon

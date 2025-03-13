@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RUI::Badges::Red < RUI::Badges::Base
   private
 

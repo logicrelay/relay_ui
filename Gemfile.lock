@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    relay_ui (0.1.1)
+    relay_ui (0.2.3)
       phlex (~> 2.1)
       redcarpet (~> 3.6)
       rouge (~> 4.5)
@@ -62,6 +62,10 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     http_parser.rb (0.8.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
@@ -182,6 +186,7 @@ DEPENDENCIES
   base64
   guard
   guard-livereload
+  guard-rspec
   rake (~> 13.0)
   relay_ui!
   rspec (~> 3.0)

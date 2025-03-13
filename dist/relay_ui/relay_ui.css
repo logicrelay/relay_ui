@@ -103,6 +103,10 @@
   width: calc(var(--rui-spacing) * 4);
   height: calc(var(--rui-spacing) * 4);
 }
+.rui\:size-5 {
+  width: calc(var(--rui-spacing) * 5);
+  height: calc(var(--rui-spacing) * 5);
+}
 .rui\:h-full {
   height: 100%;
 }
@@ -141,8 +145,17 @@
 .rui\:items-center {
   align-items: center;
 }
+.rui\:gap-1 {
+  gap: calc(var(--rui-spacing) * 1);
+}
 .rui\:gap-2 {
   gap: calc(var(--rui-spacing) * 2);
+}
+.rui\:gap-3 {
+  gap: calc(var(--rui-spacing) * 3);
+}
+.rui\:gap-4 {
+  gap: calc(var(--rui-spacing) * 4);
 }
 .rui\:overflow-y-auto {
   overflow-y: auto;
@@ -155,6 +168,9 @@
 }
 .rui\:rounded-full {
   border-radius: calc(infinity * 1px);
+}
+.rui\:rounded-lg {
+  border-radius: var(--rui-radius-lg);
 }
 .rui\:border {
   border-style: var(--tw-border-style);
@@ -176,6 +192,9 @@
 }
 .rui\:border-zinc-200 {
   border-color: var(--rui-color-zinc-200);
+}
+.rui\:border-zinc-300 {
+  border-color: var(--rui-color-zinc-300);
 }
 .rui\:border-zinc-700 {
   border-color: var(--rui-color-zinc-700);
@@ -213,8 +232,17 @@
 .rui\:bg-zinc-700 {
   background-color: var(--rui-color-zinc-700);
 }
+.rui\:p-3 {
+  padding: calc(var(--rui-spacing) * 3);
+}
+.rui\:p-4 {
+  padding: calc(var(--rui-spacing) * 4);
+}
 .rui\:px-3 {
   padding-inline: calc(var(--rui-spacing) * 3);
+}
+.rui\:px-4 {
+  padding-inline: calc(var(--rui-spacing) * 4);
 }
 .rui\:px-5 {
   padding-inline: calc(var(--rui-spacing) * 5);
@@ -225,14 +253,24 @@
 .rui\:py-1 {
   padding-block: calc(var(--rui-spacing) * 1);
 }
+.rui\:py-2 {
+  padding-block: calc(var(--rui-spacing) * 2);
+}
 .rui\:py-10 {
   padding-block: calc(var(--rui-spacing) * 10);
+}
+.rui\:pt-4 {
+  padding-top: calc(var(--rui-spacing) * 4);
 }
 .rui\:pt-8 {
   padding-top: calc(var(--rui-spacing) * 8);
 }
 .rui\:pb-4 {
   padding-bottom: calc(var(--rui-spacing) * 4);
+}
+.rui\:text-2xl {
+  font-size: var(--rui-text-2xl);
+  line-height: var(--tw-leading, var(--rui-text-2xl--line-height));
 }
 .rui\:text-base {
   font-size: var(--rui-text-base);
@@ -245,6 +283,10 @@
 .rui\:text-sm {
   font-size: var(--rui-text-sm);
   line-height: var(--tw-leading, var(--rui-text-sm--line-height));
+}
+.rui\:text-xl {
+  font-size: var(--rui-text-xl);
+  line-height: var(--tw-leading, var(--rui-text-xl--line-height));
 }
 .rui\:text-xs {
   font-size: var(--rui-text-xs);

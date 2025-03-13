@@ -32,24 +32,55 @@ module Views
           body do
             main class: "flex flex-row gap-10" do
               render RUI::Navigation.new do |nav|
-                nav.icon_link(href: root_path, selected: request.path == root_path, icon: "home") { "About RelayUI" }
-                nav.icon_link(href: installation_path, selected: request.path == installation_path, icon: "rocket") { "Installation" }
-                nav.icon_link(href: contributing_path, selected: request.path == contributing_path, icon: "hexagon-plus") { "Contributing" }
+                nav.icon_link(
+                  href: root_path,
+                  selected: request.path == root_path,
+                  icon: "home") { "About RelayUI" }
+                nav.icon_link(
+                  href: installation_path,
+                  selected: request.path == installation_path,
+                  icon: "rocket") { "Installation" }
+                nav.icon_link(
+                  href: contributing_path,
+                  selected: request.path == contributing_path,
+                  icon: "hexagon-plus") { "Contributing" }
                 nav.section_heading { "Components" }
-                nav.text_link(href: badge_component_path, selected: request.path == badge_component_path) { "Badges" }
-                nav.text_link(href: button_component_path, selected: request.path == button_component_path) { "Buttons" }
-                nav.text_link(href: code_block_component_path, selected: request.path == code_block_component_path) { "Code Blocks" }
-                nav.text_link(href: heading_component_path, selected: request.path == heading_component_path) { "Headings" }
-                nav.text_link(href: link_component_path, selected: request.path == link_component_path) { "Links" }
-                nav.text_link(href: list_component_path, selected: request.path == list_component_path) { "Lists" }
-                nav.text_link(href: markdown_component_path, selected: request.path == markdown_component_path) { "Markdown" }
-                nav.text_link(href: navigation_component_path, selected: request.path == navigation_component_path) { "Navigation" }
-                nav.text_link(href: slideout_component_path, selected: request.path == slideout_component_path) { "Slideouts" }
-                nav.text_link(href: text_component_path, selected: request.path == text_component_path) { "Text" }
+                nav.text_link(
+                  href: badge_component_path,
+                  selected: request.path == badge_component_path) { "Badges" }
+                nav.text_link(
+                  href: button_component_path,
+                  selected: request.path == button_component_path) { "Buttons" }
+                nav.text_link(
+                  href: card_component_path,
+                  selected: request.path == card_component_path) { "Cards" }
+                nav.text_link(
+                  href: code_block_component_path,
+                  selected: request.path == code_block_component_path) { "Code Blocks" }
+                nav.text_link(
+                  href: heading_component_path,
+                  selected: request.path == heading_component_path) { "Headings" }
+                nav.text_link(
+                  href: link_component_path,
+                  selected: request.path == link_component_path) { "Links" }
+                nav.text_link(
+                  href: list_component_path,
+                  selected: request.path == list_component_path) { "Lists" }
+                nav.text_link(
+                  href: markdown_component_path,
+                  selected: request.path == markdown_component_path) { "Markdown" }
+                nav.text_link(
+                  href: navigation_component_path,
+                  selected: request.path == navigation_component_path) { "Navigation" }
+                nav.text_link(
+                  href: slideout_component_path,
+                  selected: request.path == slideout_component_path) { "Slideouts" }
+                nav.text_link(
+                  href: text_component_path,
+                  selected: request.path == text_component_path) { "Text" }
                 nav.section_heading { "Coming Soon" }
                 nav.coming_soon { "Accordions" }
                 nav.coming_soon { "Alerts" }
-                nav.coming_soon { "Cards" }
                 nav.coming_soon { "Forms" }
                 nav.coming_soon { "Profile Images" }
                 nav.coming_soon { "Snackbars" }

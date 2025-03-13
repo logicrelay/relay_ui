@@ -9,5 +9,6 @@ module.exports = {
   plugins: [],
   experimental: {
     optimizeUniversalDefaults: true
-  }
+  },
+  prefix: "rui:"
 }

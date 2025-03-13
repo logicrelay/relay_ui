@@ -13,12 +13,22 @@ See the navigation sidebar to the left. For an example of how to construct the e
 
 ```ruby
 render RUI::Navigation.new do |n|
-  n.icon_link(href: root_path, icon: "home") { "Home" }
-  n.icon_link(href: root_path, icon: "help-hexagon") { "About" }
+  n.icon_link(
+    href: root_path,
+    selected: request.path == root_path,
+    icon: "home") { "Home" }
+  n.icon_link(
+    href: about_path,
+    selected: request.path == about_path,
+    icon: "help-hexagon") { "About" }
   n.section_heading { "Components" }
   n.coming_soon { "Alerts" }
-  n.text_link(root_path) { "Badges" }
-  n.text_link(navigation_component_path) { "Navigation" }
+  n.text_link(
+    href: badges_component_path,
+    selected: request.path == badges_component_path) { "Badges" }
+  n.text_link(
+    href: navigation_component_path,
+    selected: request.path == navigation_component_path) { "Navigation" }
   n.section_heading { "Another Section" }
   n.coming_soon { "Disabled" }
 end
@@ -37,6 +47,7 @@ A link with plain text and a state-aware icon.
 |---|---|---|---|
 |`icon`|`string`|`nil`|The [tabler icon](https://tabler.io/icons) to be used for this link.|
 |`href`|`string`|`nil`|The url or path this link will navigate to.|
+|`selected`|`boolean`|`false`|Whether this link should be displayed in its selected state|
 
 ### text_link
 
@@ -46,6 +57,7 @@ A link with plain text and a state-aware indicator.
 |Parameter|Type|Default|Description|
 |---|---|---|---|
 |`href`|`string`|`nil`|The url or path this link will navigate to.|
+|`selected`|`boolean`|`false`|Whether this link should be displayed in its selected state|
 
 ### section_heading
 

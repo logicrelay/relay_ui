@@ -13,7 +13,7 @@ class RUI::Navigation < RUI::Base
     end
   end
 
-  def icon_link(icon:, selected: false)
+  def icon_link(icon:, href:, selected: false)
     if selected
       state_classes = "rui:border-blue-700 rui:text-zinc-700 rui:**:[svg]:stroke-blue-700"
     else
@@ -28,7 +28,7 @@ class RUI::Navigation < RUI::Base
     end
   end
 
-  def text_link(selected)
+  def text_link(href:, selected: false)
     if selected
       state_classes = "rui:border-blue-700 rui:text-zinc-700"
     else

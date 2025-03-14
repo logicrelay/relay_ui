@@ -14,6 +14,7 @@ gem "relay_ui", git: "git://github.com/relay-rb/relay-ui.git", branch: "0.3.0"
 gem "phlex-rails"
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
+gem "faker"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

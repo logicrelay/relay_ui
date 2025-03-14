@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "components/markdown", as: :markdown_component
   get "components/navigation", as: :navigation_component
   get "components/slideout", as: :slideout_component
+  get "components/table", as: :table_component
   get "components/text", as: :text_component
 
   # Examples

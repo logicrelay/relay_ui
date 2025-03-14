@@ -1,9 +1,10 @@
 GIT
   remote: git://github.com/relay-rb/relay-ui.git
-  revision: 358bd57be9ecf35619de28b68b1e0b3834274c13
+  revision: 424107f200e4f97ffb07ab849a48995c66f14b37
   branch: 0.3.0
   specs:
     relay_ui (0.2.3)
+      nokogiri (~> 1.18)
       phlex (~> 2.1)
       redcarpet (~> 3.6)
       rouge (~> 4.5)
@@ -107,6 +108,8 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.13.1)
     eventmachine (1.2.7)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.1-aarch64-linux-gnu)
     ffi (1.17.1-aarch64-linux-musl)
     ffi (1.17.1-arm-linux-gnu)
@@ -366,6 +369,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  faker
   guard
   guard-livereload
   jbuilder

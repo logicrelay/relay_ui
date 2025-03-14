@@ -7,7 +7,7 @@ run = "npm run watch"
 
 [tasks.guard]
 alias = "g"
-run = "bundle exec guard"
+run = "bundle exec guard --clear"
 
 [tasks.server]
 alias = "s"

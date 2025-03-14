@@ -2,6 +2,7 @@
 
 require "relay_ui"
 require "phlex"
+require "nokogiri"
 
 Dir[File.expand_path("../../lib/rui/*.rb", __FILE__)].each { |f| require f }
 Dir[File.expand_path("../../lib/rui/**/*.rb", __FILE__)].each { |f| require f }

@@ -1,8 +1,15 @@
 # frozen_string_literal: true
 
 class RUI::Card < RUI::Base
+  def initialize(**attrs, &)
+    @attrs = attrs
+    super(&)
+  end
+
   def view_template(&)
-    article(data: { component: "card" }, class: "rui:border rui:border-zinc-300 rui:rounded-lg", &)
+    div do
+      article("data-component": "card", class: "#{padding(capture(&))} rui:flex rui:flex-col rui:gap-4 rui:border rui:border-zinc-300 rui:rounded-lg", **@attrs, &)
+    end
   end
 
   def header(&)
@@ -14,7 +21,7 @@ class RUI::Card < RUI::Base
   end
 
   def body(&)
-    p(class: "rui:p-4", &)
+    div(class: "rui:px-4", &)
   end
 
   def footer(&)
@@ -23,20 +30,24 @@ class RUI::Card < RUI::Base
 
   class Header < RUI::Base
     def view_template(&)
-      header(class: "rui:flex rui:flex-row rui:gap-4 rui:p-4", &)
+      header(class: "rui:flex rui:flex-row rui:justify-between rui:items-center rui:gap-4 rui:px-4", &)
     end
 
     def thumbnail(&)
-      img(src: capture(&), class: "rui:inline-block")
+      img(src: capture(&), class: "rui:inline-block rui:rounded-full rui:size-10")
     end
 
     def titles(&)
       render Titles.new(&)
     end
 
+    def actions(&)
+      div(class: "rui:flex rui:flex-row rui:gap-2 rui:items-center", &)
+    end
+
     class Titles < RUI::Base
       def view_template(&)
-        div(class: "rui:flex rui:flex-col", &)
+        div(class: "rui:grow rui:shrink rui:basis-0 rui:flex rui:flex-col", &)
       end
 
       def title(&)
@@ -44,44 +55,39 @@ class RUI::Card < RUI::Base
       end
 
       def subtitle(&)
-        h3(&)
+        h3(class: "rui:text-lg", &)
       end
     end
   end
 
   class Footer < RUI::Base
     def view_template(&)
-      footer(class: "rui:flex rui:flex-row rui:gap-4 rui:px-4", &)
+      footer(class: "rui:flex rui:flex-row rui:justify-end rui:items-center rui:gap-4 rui:px-4", &)
     end
 
     def actions(&)
       render Actions.new(&)
     end
 
-    def icons(&)
-      render Icons.new(&)
-    end
-
     class Actions < RUI::Base
       def view_template(&)
-        div(class: "rui:flex rui:flex-row rui:gap-1", &)
+        div(class: "rui:flex rui:flex-row rui:gap-2 rui:items-center", &)
       end
 
-      def action(&)
-        button(&)
+      def action(href: "#", **kwargs, &)
+        a(href:, class: "rui:text-blue-700 rui:hover:underline rui:uppercase rui:text-sm rui:font-semibold", **kwargs, &)
       end
     end
+  end
 
-    class Icons < RUI::Base
-      def view_template(&)
-        div(class: "rui:flex rui:flex-row rui:gap-1", &)
-      end
+  private
 
-      def icon(&)
-        div(class: "rui:size-5") do
-          render RUI::Icon.new(capture(&))
-        end
-      end
-    end
+  def padding(content)
+    return if content.empty?
+    padding = []
+    doc = Nokogiri::HTML::DocumentFragment.parse(content)
+    padding << "rui:pt-4" if doc.children.first.name != "img"
+    padding << "rui:pb-4" if doc.children.last.name != "img"
+    padding.join(" ")
   end
 end

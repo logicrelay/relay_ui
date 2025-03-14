@@ -10,7 +10,12 @@
   --rui-color-green-100: oklch(0.962 0.044 156.743);
   --rui-color-green-700: oklch(0.527 0.154 150.069);
   --rui-color-blue-100: oklch(0.932 0.032 255.585);
+  --rui-color-blue-300: oklch(0.809 0.105 251.813);
+  --rui-color-blue-400: oklch(0.707 0.165 254.624);
+  --rui-color-blue-500: oklch(0.623 0.214 259.815);
+  --rui-color-blue-600: oklch(0.546 0.245 262.881);
   --rui-color-blue-700: oklch(0.488 0.243 264.376);
+  --rui-color-blue-800: oklch(0.424 0.199 265.638);
   --rui-color-blue-900: oklch(0.379 0.146 265.522);
   --rui-color-purple-100: oklch(0.946 0.033 307.174);
   --rui-color-purple-700: oklch(0.496 0.265 301.924);
@@ -20,6 +25,7 @@
   --rui-color-zinc-200: oklch(0.92 0.004 286.32);
   --rui-color-zinc-300: oklch(0.871 0.006 286.286);
   --rui-color-zinc-400: oklch(0.705 0.015 286.067);
+  --rui-color-zinc-500: oklch(0.552 0.016 285.938);
   --rui-color-zinc-700: oklch(0.37 0.013 285.805);
   --rui-color-zinc-900: oklch(0.21 0.006 285.885);
   --rui-color-black: #000;
@@ -93,6 +99,9 @@
 .rui\:flex {
   display: flex;
 }
+.rui\:grid {
+  display: grid;
+}
 .rui\:inline-block {
   display: inline-block;
 }
@@ -106,6 +115,14 @@
 .rui\:size-5 {
   width: calc(var(--rui-spacing) * 5);
   height: calc(var(--rui-spacing) * 5);
+}
+.rui\:size-10 {
+  width: calc(var(--rui-spacing) * 10);
+  height: calc(var(--rui-spacing) * 10);
+}
+.rui\:size-12 {
+  width: calc(var(--rui-spacing) * 12);
+  height: calc(var(--rui-spacing) * 12);
 }
 .rui\:h-full {
   height: 100%;
@@ -125,6 +142,18 @@
 .rui\:max-w-1\/2 {
   max-width: calc(1/2 * 100%);
 }
+.rui\:flex-auto {
+  flex: auto;
+}
+.rui\:shrink {
+  flex-shrink: 1;
+}
+.rui\:grow {
+  flex-grow: 1;
+}
+.rui\:basis-0 {
+  flex-basis: calc(var(--rui-spacing) * 0);
+}
 .rui\:-translate-x-0 {
   --tw-translate-x: calc(var(--rui-spacing) * -0);
   translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -136,6 +165,24 @@
 .rui\:cursor-default {
   cursor: default;
 }
+.rui\:grid-flow-col {
+  grid-auto-flow: column;
+}
+.rui\:grid-flow-col-dense {
+  grid-auto-flow: column dense;
+}
+.rui\:grid-flow-row-dense {
+  grid-auto-flow: row dense;
+}
+.rui\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.rui\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.rui\:grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
 .rui\:flex-col {
   flex-direction: column;
 }
@@ -144,6 +191,12 @@
 }
 .rui\:items-center {
   align-items: center;
+}
+.rui\:justify-between {
+  justify-content: space-between;
+}
+.rui\:justify-end {
+  justify-content: flex-end;
 }
 .rui\:gap-1 {
   gap: calc(var(--rui-spacing) * 1);
@@ -184,8 +237,23 @@
   border-left-style: var(--tw-border-style);
   border-left-width: 3px;
 }
+.rui\:border-blue-300 {
+  border-color: var(--rui-color-blue-300);
+}
+.rui\:border-blue-500 {
+  border-color: var(--rui-color-blue-500);
+}
 .rui\:border-blue-700 {
   border-color: var(--rui-color-blue-700);
+}
+.rui\:border-blue-800 {
+  border-color: var(--rui-color-blue-800);
+}
+.rui\:border-blue-900 {
+  border-color: var(--rui-color-blue-900);
+}
+.rui\:border-red-700 {
+  border-color: var(--rui-color-red-700);
 }
 .rui\:border-transparent {
   border-color: transparent;
@@ -196,6 +264,9 @@
 .rui\:border-zinc-300 {
   border-color: var(--rui-color-zinc-300);
 }
+.rui\:border-zinc-500 {
+  border-color: var(--rui-color-zinc-500);
+}
 .rui\:border-zinc-700 {
   border-color: var(--rui-color-zinc-700);
 }
@@ -204,6 +275,12 @@
 }
 .rui\:bg-blue-100 {
   background-color: var(--rui-color-blue-100);
+}
+.rui\:bg-blue-500 {
+  background-color: var(--rui-color-blue-500);
+}
+.rui\:bg-blue-600 {
+  background-color: var(--rui-color-blue-600);
 }
 .rui\:bg-blue-700 {
   background-color: var(--rui-color-blue-700);
@@ -268,6 +345,9 @@
 .rui\:pb-4 {
   padding-bottom: calc(var(--rui-spacing) * 4);
 }
+.rui\:align-middle {
+  vertical-align: middle;
+}
 .rui\:text-2xl {
   font-size: var(--rui-text-2xl);
   line-height: var(--tw-leading, var(--rui-text-2xl--line-height));
@@ -323,6 +403,9 @@
 .rui\:text-zinc-700 {
   color: var(--rui-color-zinc-700);
 }
+.rui\:capitalize {
+  text-transform: capitalize;
+}
 .rui\:uppercase {
   text-transform: uppercase;
 }
@@ -335,6 +418,16 @@
 }
 .rui\:transition {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-timing-function: var(--tw-ease, var(--rui-default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--rui-default-transition-duration));
+}
+.rui\:transition-all {
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--rui-default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--rui-default-transition-duration));
+}
+.rui\:transition-colors {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--rui-default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--rui-default-transition-duration));
 }
@@ -351,6 +444,10 @@
   --tw-duration: 200ms;
   transition-duration: 200ms;
 }
+.rui\:duration-500 {
+  --tw-duration: 500ms;
+  transition-duration: 500ms;
+}
 .rui\:ease-in-out {
   --tw-ease: var(--rui-ease-in-out);
   transition-timing-function: var(--rui-ease-in-out);
@@ -362,6 +459,34 @@
     }
   }
 }
+.rui\:hover\:border-blue-700 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-blue-700);
+    }
+  }
+}
+.rui\:hover\:border-blue-800 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-blue-800);
+    }
+  }
+}
+.rui\:hover\:border-blue-900 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-blue-900);
+    }
+  }
+}
+.rui\:hover\:border-red-900 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-red-900);
+    }
+  }
+}
 .rui\:hover\:border-zinc-200 {
   &:hover {
     @media (hover: hover) {
@@ -369,10 +494,38 @@
     }
   }
 }
+.rui\:hover\:border-zinc-500 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-zinc-500);
+    }
+  }
+}
+.rui\:hover\:border-zinc-700 {
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--rui-color-zinc-700);
+    }
+  }
+}
 .rui\:hover\:border-zinc-900 {
   &:hover {
     @media (hover: hover) {
       border-color: var(--rui-color-zinc-900);
+    }
+  }
+}
+.rui\:hover\:bg-blue-600 {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--rui-color-blue-600);
+    }
+  }
+}
+.rui\:hover\:bg-blue-700 {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--rui-color-blue-700);
     }
   }
 }
@@ -397,10 +550,59 @@
     }
   }
 }
+.rui\:hover\:bg-zinc-700 {
+  &:hover {
+    @media (hover: hover) {
+      background-color: var(--rui-color-zinc-700);
+    }
+  }
+}
 .rui\:hover\:bg-zinc-900 {
   &:hover {
     @media (hover: hover) {
       background-color: var(--rui-color-zinc-900);
+    }
+  }
+}
+.rui\:hover\:text-blue-400 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-blue-400);
+    }
+  }
+}
+.rui\:hover\:text-blue-500 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-blue-500);
+    }
+  }
+}
+.rui\:hover\:text-blue-700 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-blue-700);
+    }
+  }
+}
+.rui\:hover\:text-blue-900 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-blue-900);
+    }
+  }
+}
+.rui\:hover\:text-zinc-300 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-zinc-300);
+    }
+  }
+}
+.rui\:hover\:text-zinc-500 {
+  &:hover {
+    @media (hover: hover) {
+      color: var(--rui-color-zinc-500);
     }
   }
 }
@@ -415,6 +617,13 @@
   &:hover {
     @media (hover: hover) {
       color: var(--rui-color-zinc-900);
+    }
+  }
+}
+.rui\:hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
     }
   }
 }

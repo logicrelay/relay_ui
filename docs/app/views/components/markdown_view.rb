@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Views::Components::MarkdownView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ComponentsController < ApplicationController
   def badges = render Views::Components::BadgesView.new
   def buttons = render Views::Components::ButtonsView.new

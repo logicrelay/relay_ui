@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Views::Components::LinksView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do

@@ -14,6 +14,7 @@ STRING
         render RUI::Forms::Text.new { "RUI::Forms::Text" }
         render RUI::Forms::Email.new { "RUI::Forms::Email" }
         render RUI::Forms::Password.new { "RUI::Forms::Password" }
+        render RUI::Forms::Phone.new { "RUI::Forms::Phone" }
         render RUI::Forms::Checkbox.new { "RUI::Forms::Checkbox" }
         render RUI::Forms::Textarea.new { "RUI::Forms::Textarea" }
         render RUI::Forms::Select.new(label: "RUI::Forms::Select") do |s|

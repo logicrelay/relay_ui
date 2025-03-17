@@ -292,6 +292,9 @@
 .rui\:py-1 {
   padding-block: calc(var(--rui-spacing) * 1);
 }
+.rui\:py-1\.5 {
+  padding-block: calc(var(--rui-spacing) * 1.5);
+}
 .rui\:py-2 {
   padding-block: calc(var(--rui-spacing) * 2);
 }

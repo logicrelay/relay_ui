@@ -21,6 +21,11 @@ STRING
           s.option(value: "option2") { "Option 2" }
           s.option(value: "option3") { "Option 3" }
         end
+        render RUI::Forms::Radio.new(label: "RUI::Forms::Radio") do |s|
+          s.option(value: "option1", name: "foo") { "Option 1" }
+          s.option(value: "option2", name: "foo") { "Option 2" }
+          s.option(value: "option3", name: "foo") { "Option 3" }
+        end
       # render RUI::Forms::PhoneNumber.new
     end
     end

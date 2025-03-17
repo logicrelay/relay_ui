@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RUI::Forms::Password < RUI::Base
-  def initialize(kwargs)
+  def initialize(**kwargs)
     @kwargs = kwargs
   end
 

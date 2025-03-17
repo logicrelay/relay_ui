@@ -5,6 +5,7 @@ class ComponentsController < ApplicationController
   def buttons = render Views::Components::ButtonsView.new
   def cards = render Views::Components::CardsView.new
   def code_blocks = render Views::Components::CodeBlocksView.new
+  def forms = render Views::Components::FormsView.new
   def headings = render Views::Components::HeadingsView.new
   def links = render Views::Components::LinksView.new
   def lists = render Views::Components::ListsView.new

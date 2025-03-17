@@ -65,6 +65,10 @@ module Views
                   selected: on?(code_block_component_path)
                 ) { "Code Blocks" }
                 nav.text_link(
+                  href: form_component_path,
+                  selected: on?(form_component_path)
+                ) { "Forms" }
+                nav.text_link(
                   href: heading_component_path,
                   selected: on?(heading_component_path)
                 ) { "Headings" }
@@ -99,7 +103,6 @@ module Views
                 nav.section_heading { "Coming Soon" }
                 nav.coming_soon { "Accordions" }
                 nav.coming_soon { "Alerts" }
-                nav.coming_soon { "Forms" }
                 nav.coming_soon { "Profile Images" }
                 nav.coming_soon { "Snackbars" }
               end

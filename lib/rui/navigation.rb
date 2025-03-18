@@ -2,7 +2,7 @@
 
 class RUI::Navigation < RUI::Base
   def view_template
-    div(class: "md:flex md:flex-col sticky top-0 max-h-screen overflow-y-auto p-10 -translate-x-full md:translate-none", data: { "navigation-target": "sidebar" }) do
+    div(class: "hidden lg:flex lg:flex-col sticky top-0 max-h-screen overflow-y-auto p-10 -translate-x-full lg:translate-none", data: { "navigation-target": "sidebar" }) do
       yield
     end
   end
@@ -37,15 +37,6 @@ class RUI::Navigation < RUI::Base
 
     a(href:, class: "text-zinc-400 px-5 py-1 border-l-3 #{state_classes}") do
       span { yield }
-    end
-  end
-
-  def coming_soon
-    div(class: "flex flex-row items-center") do
-      span(class: "text-zinc-400 px-5 py-1 border-l-3 border-transparent") do
-        yield
-      end
-      render RUI::Badges::Gray.new { "Coming Soon" }
     end
   end
 end

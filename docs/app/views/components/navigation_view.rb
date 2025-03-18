@@ -24,15 +24,12 @@ render RUI::Navigation.new do |n|
     selected: request.path == about_path,
     icon: "help-hexagon") { "About" }
   n.section_heading { "Components" }
-  n.coming_soon { "Alerts" }
   n.text_link(
     href: badges_component_path,
     selected: request.path == badges_component_path) { "Badges" }
   n.text_link(
     href: navigation_component_path,
     selected: request.path == navigation_component_path) { "Navigation" }
-  n.section_heading { "Another Section" }
-  n.coming_soon { "Disabled" }
 end
 ```
 
@@ -64,10 +61,6 @@ A link with plain text and a state-aware indicator.
 ### section_heading
 
 A combination of text and a separator to denote a new navigation section.
-
-### coming_soon
-
-A disabled link with a "Coming Soon" badge.
 
 ## Dependencies
 

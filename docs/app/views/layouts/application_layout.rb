@@ -30,7 +30,7 @@ module Views
 
           body do
             main(class: "flex flex-col gap-10", data: { controller: "navigation" }) do
-              div class: "p-10 md:hidden" do
+              div class: "p-10 lg:hidden" do
                 render RUI::Buttons::Outline.new(icon: "menu", data: { action: "navigation#toggle" })
               end
               div class: "flex flex-row gap-10" do
@@ -103,11 +103,6 @@ module Views
                     href: text_component_path,
                     selected: on?(text_component_path)
                   ) { "Text" }
-                  nav.section_heading { "Coming Soon" }
-                  nav.coming_soon { "Accordions" }
-                  nav.coming_soon { "Alerts" }
-                  nav.coming_soon { "Profile Images" }
-                  nav.coming_soon { "Snackbars" }
                 end
                 div(class: "w-full max-w-[800px] p-10") { yield }
               end

@@ -14,8 +14,8 @@ class RUI::Forms::Radio < RUI::Base
   end
 
   def option(**attrs, &)
-    div(class: "rui:flex rui:flex-row rui:gap-3 rui:items-center") do
-      input(class: "rui:hover:cursor-pointer", type: :radio, **attrs)
+    div(class: "flex flex-row gap-3 items-center") do
+      input(class: "hover:cursor-pointer", type: :radio, **attrs)
       label(&)
     end
   end

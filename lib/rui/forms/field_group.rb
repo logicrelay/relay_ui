@@ -1,5 +1,5 @@
 class RUI::Forms::FieldGroup < RUI::Base
   def view_template(&)
-    div(class: "rui:flex rui:flex-col rui:gap-1", &)
+    div(class: "flex flex-col gap-1", &)
   end
 end

@@ -3,5 +3,5 @@
 class RUI::Buttons::Destructive < RUI::Buttons::Base
   private
 
-  def variant_classes = "rui:bg-red-700 rui:hover:bg-red-900 rui:text-white rui:border rui:border-red-700 rui:hover:border-red-900"
+  def variant_classes = "bg-red-700 hover:bg-red-900 text-white border border-red-700 hover:border-red-900"
 end

@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/relay-rb/relay-ui.git
-  revision: c1150d7d80ecf01587360ad0050c868507aede4c
-  branch: 0.3.0
+  revision: addd41bf99ae390761ee6302ff31a3126839173c
+  branch: tailwind
   specs:
     relay_ui (0.2.3)
       nokogiri (~> 1.18)

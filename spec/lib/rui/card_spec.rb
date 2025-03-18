@@ -22,9 +22,9 @@ RSpec.describe RUI::Card do
       end.call
     end
 
-    it("does not have top padding") { expect(subject).to_not include('rui:pt-4') }
+    it("does not have top padding") { expect(subject).to_not include('pt-4') }
 
-    it("has bottom padding") { expect(subject).to include('rui:pb-4') }
+    it("has bottom padding") { expect(subject).to include('pb-4') }
   end
 
   describe "when an image is last" do
@@ -35,8 +35,8 @@ RSpec.describe RUI::Card do
       end.call
     end
 
-    it("has top padding") { expect(subject).to include('rui:pt-4') }
+    it("has top padding") { expect(subject).to include('pt-4') }
 
-    it("does not have bottom padding") { expect(subject).to_not include('rui:pb-4') }
+    it("does not have bottom padding") { expect(subject).to_not include('pb-4') }
   end
 end

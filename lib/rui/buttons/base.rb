@@ -8,9 +8,9 @@ class RUI::Buttons::Base < RUI::Base
 
   def view_template
     button(class: classes, data: @data) do
-      div(class: "rui:flex rui:flex-row rui:items-center rui:gap-2") do
+      div(class: "flex flex-row items-center gap-2") do
         if @icon
-          div(class: "rui:size-4 rui:my-1") do
+          div(class: "size-4 my-1") do
             render RUI::Icon.new(@icon)
           end
         end
@@ -25,5 +25,5 @@ class RUI::Buttons::Base < RUI::Base
     "#{base_classes} #{variant_classes}"
   end
 
-  def base_classes = "rui:inline-block rui:px-3 rui:py-1 rui:hover:cursor-pointer rui:rounded rui:transition rui:duration-200 rui:ease-in-out"
+  def base_classes = "inline-block px-3 py-1 hover:cursor-pointer rounded transition duration-200 ease-in-out"
 end

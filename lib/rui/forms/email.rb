@@ -10,7 +10,7 @@ class RUI::Forms::Email < RUI::Base
       render RUI::Forms::Label.new(&) if block_given?
       input(
         type: "email",
-        class: "rui:border rui:border-zinc-300 rui:hover:border-zinc-400 rui:rounded rui:px-2 rui:py-1",
+        class: "border border-zinc-300 hover:border-zinc-400 rounded px-2 py-1",
         **@kwargs
       )
     end

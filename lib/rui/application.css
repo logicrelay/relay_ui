@@ -1,89 +1,89 @@
-/* .rui-markdown {
+.markdown {
   @apply font-sans text-zinc-700
 }
 
-.rui-markdown h1,
-.rui-markdown h2,
-.rui-markdown h3,
-.rui-markdown h4,
-.rui-markdown h5,
-.rui-markdown h6 {
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
   @apply mt-6 mb-4 font-semibold;
 }
 
-.rui-markdown h1 {
+.markdown h1 {
   @apply text-4xl;
 }
 
-.rui-markdown h2 {
+.markdown h2 {
   @apply text-3xl;
 }
 
-.rui-markdown h3 {
+.markdown h3 {
   @apply text-2xl;
 }
 
-.rui-markdown h4 {
+.markdown h4 {
   @apply text-xl;
 }
 
-.rui-markdown h5 {
+.markdown h5 {
   @apply text-lg;
 }
 
-.rui-markdown h6 {
+.markdown h6 {
   @apply text-base;
 }
 
-.rui-markdown p {
+.markdown p {
   @apply mb-4;
 }
 
-.rui-markdown a {
+.markdown a {
   @apply text-blue-700 no-underline;
 }
 
-.rui-markdown a:hover {
+.markdown a:hover {
   @apply underline;
 }
 
-.rui-markdown ul {
+.markdown ul {
   @apply list-disc pl-8 mb-4;
 }
 
-.rui-markdown ol {
+.markdown ol {
   @apply list-decimal pl-8 mb-4;
 }
 
-.rui-markdown code {
+.markdown code {
   @apply bg-zinc-200 px-2 py-0.5 rounded-sm whitespace-break-spaces;
 }
 
-.rui-markdown>div.highlight>pre.codehilite {
+.markdown>div.highlight>pre.codehilite {
   @apply bg-black p-6 rounded-lg mb-4;
 }
 
-.rui-markdown>div.highlight>pre.codehilite>code {
+.markdown>div.highlight>pre.codehilite>code {
   @apply text-zinc-300 bg-transparent p-0 rounded-none;
 }
 
-.rui-markdown blockquote {
+.markdown blockquote {
   @apply border-l-4 border-zinc-300 pl-4 mb-4;
 }
 
-.rui-markdown hr {
+.markdown hr {
   @apply border-0 border-t border-zinc-300 my-6;
 }
 
-.rui-markdown table {
+.markdown table {
   @apply border-collapse mb-4 w-full;
 }
 
-.rui-markdown th,
-.rui-markdown td {
+.markdown th,
+.markdown td {
   @apply border border-zinc-300 px-4 py-2 text-left;
 }
 
-.rui-markdown th {
+.markdown th {
   @apply font-semibold;
-} */
+}

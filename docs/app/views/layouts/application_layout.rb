@@ -25,7 +25,6 @@ module Views
             link rel: "apple-touch-icon", href: "/icon.png"
 
             stylesheet_link_tag :app, "data-turbo-track": "reload"
-            stylesheet_link_tag "relay_ui/relay_ui", media: "all"
             javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
           end
 

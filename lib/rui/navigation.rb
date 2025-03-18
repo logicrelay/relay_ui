@@ -2,7 +2,7 @@
 
 class RUI::Navigation < RUI::Base
   def view_template
-    div(class: "rui:flex rui:flex-col rui:sticky rui:top-0 rui:max-h-screen rui:overflow-y-auto rui:mx-10 rui:py-10") do
+    div(class: "rui:hidden rui:md:flex rui:md:flex-col rui:sticky rui:top-0 rui:max-h-screen rui:overflow-y-auto rui:p-10 rui:-translate-x-full rui:md:translate-none", data: { "navigation-target": "sidebar" }) do
       yield
     end
   end

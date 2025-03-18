@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import SlideoutController from "@relay_ui/slideout"
 application.register("slideout", SlideoutController)
+
+import NavigationController from "../../../../app/javascript/navigation/navigation_controller"
+application.register("navigation", NavigationController)

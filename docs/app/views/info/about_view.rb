@@ -3,7 +3,7 @@
 class Views::Info::AboutView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      div(class: "flex flex-col gap-2 bg-red-50 border border-red-700 text-red-700 p-5 rounded") do
+      div(class: "flex flex-col mb-10 gap-2 bg-red-50 border border-red-700 text-red-700 p-5 rounded") do
         div(class: "flex flex-row items-center gap-2") do
           div class: "size-6" do
             render RUI::Icon.new("alert-circle")

@@ -29,8 +29,8 @@ module Views
           end
 
           body do
-            main(class: "flex flex-col gap-10", data: { controller: "navigation" }) do
-              div class: "p-10 lg:hidden" do
+            main(class: "my-10 flex flex-col gap-10", data: { controller: "navigation" }) do
+              div class: "px-10 lg:hidden" do
                 render RUI::Buttons::Outline.new(icon: "menu", data: { action: "navigation#toggle" })
               end
               div class: "flex flex-row gap-10" do
@@ -104,7 +104,7 @@ module Views
                     selected: on?(text_component_path)
                   ) { "Text" }
                 end
-                div(class: "w-full max-w-[800px] p-10") { yield }
+                div(class: "w-full max-w-[800px] px-10") { yield }
               end
             end
           end

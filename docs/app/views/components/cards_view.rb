@@ -86,7 +86,7 @@ Here are some examples of configurations you can achieve using this component.
 STRING
       end
 
-      div(class: "rui:grid rui:grid-cols-3 rui:gap-2") do
+      div(class: "grid grid-cols-3 gap-2") do
         render RUI::Card.new do |c|
           c.image { "https://placehold.co/100x35" }
           c.header do |h|

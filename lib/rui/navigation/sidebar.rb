@@ -5,7 +5,7 @@ class RUI::Navigation::Sidebar < RUI::Base
     # a(href: "#", class: "hidden fixed inset-y-0 left-0 z-40 cursor-default opacity-0 transition-opacity duration-200 ease-in-out", data: { action: "navigation#toggle", "navigation-target": "curtain" }) do
     #   div(id: "modal-curtain", class: "w-screen h-screen bg-black opacity-75", data: { navigation_target: "curtain" })
     # end
-    div(class: "p-10 hidden lg:flex flex-col bg-white z-50 lg:z-0 fixed lg:relative w-screen md:w-auto h-screen lg:h-auto", data: { "navigation-target": "sidebar" }) do
+    div(class: "p-10 hidden lg:flex flex-col bg-white z-50 lg:z-0 fixed lg:relative w-screen md:w-auto h-screen lg:h-auto overflow-y-scroll", data: { "navigation-target": "sidebar" }) do
       yield
     end
     button(class: "hidden bg-black/75 fixed w-screen h-screen", data: { navigation_target: "curtain", action: "navigation#toggle" })

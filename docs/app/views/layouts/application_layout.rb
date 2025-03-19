@@ -30,7 +30,7 @@ module Views
 
           body(class: "flex flex-col", data: { controller: "navigation" }) do
             render RUI::Navigation::Top.new
-            main(class: "flex flex-row") do
+            div(class: "flex flex-row") do
               render RUI::Navigation::Sidebar.new do |nav|
                 nav.icon_link(
                   href: root_path,
@@ -100,8 +100,105 @@ module Views
                   href: text_component_path,
                   selected: on?(text_component_path)
                 ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
+                                nav.text_link(
+                  href: text_component_path,
+                  selected: on?(text_component_path)
+                ) { "Text" }
               end
-              div { yield }
+              main { yield }
             end
           end
         end

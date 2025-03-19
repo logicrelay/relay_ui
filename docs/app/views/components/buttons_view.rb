@@ -25,7 +25,7 @@ Button variants are listed below.
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center mb-3") do
+      div(class: "flex flex-row gap-3 items-center my-3") do
         render RUI::Buttons::Primary.new { "Primary Button" }
         render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
         render RUI::Buttons::Primary.new(icon: 'star')
@@ -43,7 +43,7 @@ render RUI::Buttons::Primary.new(icon: 'star')
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center mb-3") do
+      div(class: "flex flex-row gap-3 items-center my-3") do
         render RUI::Buttons::Secondary.new { "Secondary Button" }
         render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
         render RUI::Buttons::Secondary.new(icon: 'star')
@@ -61,7 +61,7 @@ render RUI::Buttons::Secondary.new(icon: 'star')
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center mb-3") do
+      div(class: "flex flex-row gap-3 items-center my-3") do
         render RUI::Buttons::Outline.new { "Outline Button" }
         render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
         render RUI::Buttons::Outline.new(icon: 'star')
@@ -79,7 +79,7 @@ render RUI::Buttons::Outline.new(icon: 'star')
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center mb-3") do
+      div(class: "flex flex-row gap-3 items-center my-3") do
         render RUI::Buttons::Destructive.new { "Destructive Button" }
         render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
         render RUI::Buttons::Destructive.new(icon: 'star')
@@ -97,7 +97,7 @@ render RUI::Buttons::Destructive.new(icon: 'star')
 STRING
       end
 
-      div(class: "flex flex-row gap-3 items-center mb-3") do
+      div(class: "flex flex-row gap-3 items-center my-3") do
         render RUI::Buttons::Ghost.new { "Ghost Button" }
         render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }
         render RUI::Buttons::Ghost.new(icon: 'star')

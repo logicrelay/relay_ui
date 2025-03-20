@@ -8,6 +8,6 @@ class RUI::Icon < RUI::Base
   end
 
   def view_template
-    html { TablerIconsRuby.render(@icon) }
+    div { TablerIconsRuby.render(@icon) }
   end
 end

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/relay-rb/relay-ui.git
-  revision: b010e377331597822307aea85415470ffbe4e627
+  revision: b1cb93e802b99cc8001fd9c038351dd9bfdbdddd
   branch: 0.3.0
   specs:
     relay_ui (0.2.3)

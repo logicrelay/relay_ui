@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 
   # Components
+  get "components/alerts", as: :alert_component
   get "components/badges", as: :badge_component
   get "components/buttons", as: :button_component
   get "components/cards", as: :card_component
@@ -20,5 +21,7 @@ Rails.application.routes.draw do
   get "components/text", as: :text_component
 
   # Examples
+  get "examples/flash_example", as: :flash_example
+  get "examples/flash_trigger", as: :flash_trigger
   get "examples/slideout", as: :slideout_example
 end

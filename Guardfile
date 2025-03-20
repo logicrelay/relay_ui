@@ -49,7 +49,7 @@ guard 'livereload' do
   end
 
   # file needing a full reload of the page anyway
-  watch(%r{app/components/.+\.rb})
+  watch(%r{lib/rui/.+\.rb})
   watch(%r{docs/app/views/.+\.(#{rails_view_exts * '|'})$})
   watch(%r{docs/app/helpers/.+\.rb})
   watch(%r{docs/app/components/.+\.rb})
@@ -82,7 +82,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   dsl.watch_spec_files_for(ruby.lib_files)
 
   # Rails files
-  rails = dsl.rails(view_extensions: %w(erb haml slim))
+  rails = dsl.rails(view_extensions: %w[erb haml slim])
   dsl.watch_spec_files_for(rails.app_files)
   dsl.watch_spec_files_for(rails.views)
 

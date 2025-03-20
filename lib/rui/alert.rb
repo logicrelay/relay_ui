@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-module RUI::Badges; end
+module RUI::Alerts; end

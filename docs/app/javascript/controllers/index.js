@@ -2,10 +2,13 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { application } from "./application";
 
-import SlideoutController from "@relay_ui/slideout"
-application.register("slideout", SlideoutController)
+import SlideoutController from "@relay_ui/slideout";
+application.register("slideout", SlideoutController);
 
-import NavigationController from "../../../../app/javascript/navigation/navigation_controller"
-application.register("navigation", NavigationController)
+import NavigationController from "../../../../app/javascript/navigation/navigation_controller";
+application.register("navigation", NavigationController);
+
+import AlertController from "../../../../app/javascript/alert/alert_controller";
+application.register("alert", AlertController);

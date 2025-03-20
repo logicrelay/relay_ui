@@ -6,7 +6,7 @@ class RUI::Alert < RUI::Base
   end
 
   def view_template
-    div(role: "alert", data: { controller: "alert" }, class: "lg:max-w-lg border p-3 lg:px-5 lg:py-3 rounded-lg " + classes) do
+    div(role: "alert", data: { controller: "alert" }, class: "lg:max-w-lg border p-3 lg:px-5 lg:py-3 rounded-lg opacity-0 transition-opacity duration-100 ease-in-out " + classes) do
       div(class: "flex flex-row items-center justify-between gap-3") do
         div(class: "w-6") { render RUI::Icon.new(icon) }
         p(class: "w-full") { yield }

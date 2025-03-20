@@ -5,9 +5,9 @@ class Views::Components::ButtonsView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-# RUI::Buttons
+# Buttons
 
-`RUI::Buttons` is a namespace containing button variants. Buttons will often be used with `data` attributes to handle user interactions.#{' '}
+`RUI::Buttons` is a namespace containing button variants. Buttons will often be used with `data` attributes to handle user interactions.
 
 Buttons are meant to trigger actions within the current page, like form submissions or toggling elements, whereas [links](/components/links) navigate to different pages. Use buttons for interactive functionality and links for moving between pages or sections.
 
@@ -40,8 +40,8 @@ STRING
       render RUI::Markdown::Unsafe.new do
 <<-STRING
 ```ruby
-render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
 render RUI::Buttons::Primary.new { "Primary Button" }
+render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
 render RUI::Buttons::Primary.new(icon: 'star')
 ```
 STRING

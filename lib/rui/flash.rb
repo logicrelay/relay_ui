@@ -35,7 +35,7 @@ class RUI::Flash < RUI::Base
 
   class Wrapper < RUI::Base
     def view_template(&)
-      div(class: "absolute left-0 lg:left-auto bottom-0 right-0 m-5 lg:m-10 flex flex-col gap-3", &)
+      div(class: "fixed left-0 lg:left-auto bottom-0 right-0 m-5 lg:m-10 flex flex-col gap-3", &)
     end
   end
 

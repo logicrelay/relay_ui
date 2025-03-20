@@ -5,16 +5,61 @@ class Views::Components::NavigationView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-# RUI::Navigation
+# Navigation
 
-`RUI::Navigation` is a component that provides a simple way to create a navigation menu. It is the components that is used to create the sidebar in the RelayUI documentation.
+`RUI::Navigation` is a namespace wrapping multiple interrelated components that serve to deliver a usable, responsive navigation experience out of the box. The navigation menu is modeled after [TailwindCSS's own docs](https://tailwindcss.com/docs), because originality is overrated.
 
-## Example
+## Installation
 
-See the navigation sidebar to the left. For an example of how to construct the elements of a `RUI::Navigation` component, see the code snippet below:
+In order to install the Navigation component, let's examine a working application layout structure:
 
 ```ruby
-render RUI::Navigation.new do |n|
+render RUI::Layout::Body do
+  render RUI::Navigation::Top.new do |t|
+    t.group { # Logo, additional nav, etc. }
+  end
+  render RUI::Layout::Page.new do
+    render RUI::Navigation::Sidebar.new do |nav|
+      # Main nav here...
+    end
+    render RUI::Layout::Main.new { yield }
+  end
+end
+```
+
+With this structure, you get a lot of things for free...
+- A top bar that can hold logos, additional nav elements, etc. (see [RUI::Navigation::Top](#top_navigation))
+- A responsive sidebar navigation that is easy to populate and edit (see [RUI::Navigation::Sidebar](#sidebar_navigation))
+- Wrappers for elements like the page body and main area that are also responsive and interact well with the core sidebar navigation element.
+
+## Components
+
+There are two components in the Navigation namespace: `Top` and `Sidebar`.
+
+### Top Navigation
+
+`RUI::Navigation::Top` is a responsive top navigation bar that can hold logos, additional nav elements or other elements. It is always visible and sticky to the top of the page. Each group is spaced as far apart as possible, so that...
+- With one group, the group is aligned to the left.
+- With two groups, the first group is aligned to the left and the second group is aligned to the right.
+- With three groups, the first group is aligned to the left, the second group is centered, and the third group is aligned to the right.
+
+For an example of how to construct the elements of a top navigation component, see the code snippet below:
+
+```ruby
+render RUI::Navigation::Top.new do |t|
+  t.group do
+    img(src: asset_path("logo.svg"), class: "size-8")
+    span(class: "font-mono") { "RelayUI" }
+  end
+end
+```
+
+### Sidebar Navigation
+
+`RUI::Navigation::Sidebar` is a responsive navigation sidebar. On larger screens the sidebar is always visible and sticky to the top. On smaller screens the sidebar collapses to a menu button and can be toggled. For an example of how to construct the elements of a sidebar component, see the code snippet below:
+
+```ruby
+render RUI::Navigation::Sidebar.new do |n|
   n.icon_link(
     href: root_path,
     selected: request.path == root_path,
@@ -32,41 +77,6 @@ render RUI::Navigation.new do |n|
     selected: request.path == navigation_component_path) { "Navigation" }
 end
 ```
-
-## Elements
-
-There are four elements available when creating a Navigation component:
-
-### icon_link
-
-A link with plain text and a state-aware icon.
-
-#### Parameters
-|Parameter|Type|Default|Description|
-|---|---|---|---|
-|`icon`|`string`|`nil`|The [tabler icon](https://tabler.io/icons) to be used for this link.|
-|`href`|`string`|`nil`|The url or path this link will navigate to.|
-|`selected`|`boolean`|`false`|Whether this link should be displayed in its selected state|
-
-### text_link
-
-A link with plain text and a state-aware indicator.
-
-#### Parameters
-|Parameter|Type|Default|Description|
-|---|---|---|---|
-|`href`|`string`|`nil`|The url or path this link will navigate to.|
-|`selected`|`boolean`|`false`|Whether this link should be displayed in its selected state|
-
-### section_heading
-
-A combination of text and a separator to denote a new navigation section.
-
-## Dependencies
-
-The following gems have been included in RelayUI to make this component work:
-
-- [tabler_icons_ruby](https://github.com/owaiswiz/tabler_icons_ruby) for rendering icons
 STRING
       end
     end

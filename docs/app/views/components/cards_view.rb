@@ -5,9 +5,9 @@ class Views::Components::CardsView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-# RUI::Card
+# Cards
 
-The `RUI::Card` component renders a material-style card. Block elements can be included or omitted to create different layouts. Cards will fill the width of their container and should work well in flex boxes, grids or as standalone components.
+The `RUI::Card` component renders a material-style card. Block elements can be included or omitted to create different layouts. Cards will fill the width of their container and should work well in flex boxes or grids.
 
 ## Parameters
 ```ruby

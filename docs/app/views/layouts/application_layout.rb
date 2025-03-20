@@ -30,26 +30,19 @@ module Views
             javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
           end
 
-          body(class: "flex flex-col", data: { controller: "navigation" }) do
+          render RUI::Layout::Body do
             render RUI::Flash::Wrapper.new do
               flash.each do |type, message|
                 render RUI::Flash.new(type) { message }
               end
             end
-            div(class: "fixed top-0 left-0 right-0 bg-white flex flex-col z-50") do
-              section class: "flex flex-row items-center gap-3 border-b border-zinc-300 p-3 lg:px-10" do
+            render RUI::Navigation::Top.new do |t|
+              t.group do
                 img(src: asset_path("logo.svg"), class: "size-8")
                 span(class: "font-mono") { "RelayUI" }
               end
-              section(class: "lg:hidden px-3 py-1.5 border-b border-zinc-300") do
-                button(class: "hover:cursor-pointer hover:bg-zinc-200 p-1.5 rounded-lg", data: { action: "navigation#toggle" }) do
-                  div(class: "size-5") do
-                    render RUI::Icon.new("menu")
-                  end
-                end
-              end
             end
-            div(class: "flex flex-row mt-25.5 lg:mt-14") do
+            render RUI::Layout::Page.new do
               render RUI::Navigation::Sidebar.new do |nav|
                 nav.icon_link(
                   href: root_path,
@@ -86,11 +79,12 @@ module Views
                 nav.text_link(
                   href: flash_component_path,
                   selected: on?(flash_component_path)
-                ) { "Flashes" }
-                nav.text_link(
-                  href: form_component_path,
-                  selected: on?(form_component_path)
-                ) { "Forms" }
+                ) do
+                  div(class: "flex flex-row items-center gap-2") do
+                    span { "Flashes" }
+                    render RUI::Badges::Green.new { "Stimulus" }
+                  end
+                end
                 nav.text_link(
                   href: heading_component_path,
                   selected: on?(heading_component_path)
@@ -114,11 +108,21 @@ module Views
                 nav.text_link(
                   href: navigation_component_path,
                   selected: on?(navigation_component_path)
-                ) { "Navigation" }
+                ) do
+                  div(class: "flex flex-row items-center gap-2") do
+                    span { "Navigation" }
+                    render RUI::Badges::Green.new { "Stimulus" }
+                  end
+                end
                 nav.text_link(
                   href: slideout_component_path,
                   selected: on?(slideout_component_path)
-                ) { "Slideouts" }
+                ) do
+                  div(class: "flex flex-row items-center gap-2") do
+                    span { "Slideouts" }
+                    render RUI::Badges::Green.new { "Stimulus" }
+                  end
+                end
                 nav.text_link(
                   href: table_component_path,
                   selected: on?(table_component_path)
@@ -128,7 +132,7 @@ module Views
                   selected: on?(text_component_path)
                 ) { "Text" }
               end
-              main(class: "p-5 lg:p-10 w-full max-w-[800px]") { yield }
+              render RUI::Layout::Main.new { yield }
             end
           end
         end

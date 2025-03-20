@@ -1,89 +1,16 @@
-.markdown {
-  @apply font-sans text-zinc-700
+/*
+This file is simply distributed with the RUI Library to be picked up by the host app's TailwindCSS watch process.
+*/
+
+article.prose code:not(pre.codehilite > code) {
+  @apply bg-zinc-200 px-2 py-0.5 rounded-lg;
 }
 
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6 {
-  @apply mt-6 mb-4 font-semibold;
+article.prose code::before,
+article.prose code::after {
+  @apply content-none;
 }
 
-.markdown h1 {
-  @apply text-4xl;
-}
-
-.markdown h2 {
-  @apply text-3xl;
-}
-
-.markdown h3 {
-  @apply text-2xl;
-}
-
-.markdown h4 {
-  @apply text-xl;
-}
-
-.markdown h5 {
-  @apply text-lg;
-}
-
-.markdown h6 {
-  @apply text-base;
-}
-
-.markdown p {
-  @apply mb-4;
-}
-
-.markdown a {
-  @apply text-blue-700 no-underline;
-}
-
-.markdown a:hover {
-  @apply underline;
-}
-
-.markdown ul {
-  @apply list-disc pl-8 mb-4;
-}
-
-.markdown ol {
-  @apply list-decimal pl-8 mb-4;
-}
-
-.markdown code {
-  @apply bg-zinc-200 px-2 py-0.5 rounded-sm whitespace-break-spaces;
-}
-
-.markdown>div.highlight>pre.codehilite {
-  @apply bg-black p-6 rounded-lg mb-4;
-}
-
-.markdown>div.highlight>pre.codehilite>code {
-  @apply text-zinc-300 bg-transparent p-0 rounded-none;
-}
-
-.markdown blockquote {
-  @apply border-l-4 border-zinc-300 pl-4 mb-4;
-}
-
-.markdown hr {
-  @apply border-0 border-t border-zinc-300 my-6;
-}
-
-.markdown table {
-  @apply border-collapse mb-4 w-full;
-}
-
-.markdown th,
-.markdown td {
-  @apply border border-zinc-300 px-4 py-2 text-left;
-}
-
-.markdown th {
-  @apply font-semibold;
+div.highlight {
+  @apply bg-[#1D2939] rounded-lg;
 }

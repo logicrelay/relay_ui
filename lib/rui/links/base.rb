@@ -26,5 +26,5 @@ class RUI::Links::Base < RUI::Base
     "#{base_classes} #{variant_classes}"
   end
 
-  def base_classes = "inline-block px-3 py-1 hover:cursor-pointer rounded transition duration-200 ease-in-out"
+  def base_classes = "inline-block px-2 py-1 hover:cursor-pointer rounded transition duration-200 ease-in-out"
 end

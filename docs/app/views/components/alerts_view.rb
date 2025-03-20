@@ -14,29 +14,37 @@ STRING
       end
 
       div class: "flex flex-col gap-3" do
-        render RUI::Links::Primary.new(
-          href: flash_trigger_path(
-            notice: "This is a notice message! You can put your own text here."
-          )
-        ) { "Flash Notice" }
+        div do
+          render RUI::Links::Primary.new(
+            href: flash_trigger_path(
+              notice: "This is a notice message! You can put your own text here."
+            )
+          ) { "Flash Notice" }
+        end
 
-        render RUI::Links::Primary.new(
-          href: flash_trigger_path(
-            success: "This is a success message! You can put your own text here."
-          )
-        ) { "Flash Success" }
+        div do
+          render RUI::Links::Primary.new(
+            href: flash_trigger_path(
+              success: "This is a success message! You can put your own text here."
+            )
+          ) { "Flash Success" }
+        end
 
-        render RUI::Links::Primary.new(
-          href: flash_trigger_path(
-            alert: "This is an alert message! You can put your own text here."
-          )
-        ) { "Flash Alert" }
+        div do
+          render RUI::Links::Primary.new(
+            href: flash_trigger_path(
+              alert: "This is an alert message! You can put your own text here."
+            )
+          ) { "Flash Alert" }
+        end
 
-        render RUI::Links::Primary.new(
-          href: flash_trigger_path(
-            failure: "This is a failure message! You can put your own text here."
-          )
-        ) { "Flash Failure" }
+        div do
+          render RUI::Links::Primary.new(
+            href: flash_trigger_path(
+              failure: "This is a failure message! You can put your own text here."
+            )
+          ) { "Flash Failure" }
+        end
       end
     end
   end

@@ -8,13 +8,9 @@ class RUI::Alert < RUI::Base
   def view_template
     div(role: "alert", class: "absolute left-0 lg:left-auto bottom-0 right-0 m-5 lg:m-10 lg:max-w-lg border p-3 lg:px-5 lg:py-3 rounded-lg " + classes) do
       div(class: "flex flex-row items-center justify-between gap-3") do
-        div class: "w-6" do
-          render RUI::Icon.new(icon)
-        end
+        div(class: "w-6") { render RUI::Icon.new(icon) }
         p(class: "w-full") { yield }
-        div class: "w-6" do
-          render RUI::Icon.new("x")
-        end
+        div(class: "w-6") { render RUI::Icon.new("x") }
       end
     end
   end
@@ -34,4 +30,14 @@ class RUI::Alert < RUI::Base
     "alert" => "alert-triangle",
     "failure" => "flag"
   }.fetch @variant, "alert-circle-filled"
+
+  module Flashes
+    def success(message)
+      flash[:success] = message
+    end
+
+    def failure(message)
+      flash[:failure] = message
+    end
+  end
 end

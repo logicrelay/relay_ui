@@ -45,6 +45,15 @@ STRING
             )
           ) { "Flash Failure" }
         end
+
+        div do
+          render RUI::Links::Primary.new(
+            href: flash_trigger_path(
+              notice: "This is a notice message! You can put your own text here.",
+              alert: "This is an alert message! You can put your own text here."
+            )
+          ) { "Flash Multiple" }
+        end
       end
     end
   end

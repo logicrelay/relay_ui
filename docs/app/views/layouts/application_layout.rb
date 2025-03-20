@@ -49,7 +49,7 @@ module Views
                 end
               end
             end
-            div(class: "flex flex-row mt-25.5") do
+            div(class: "flex flex-row mt-25.5 lg:mt-14") do
               render RUI::Navigation::Sidebar.new do |nav|
                 nav.icon_link(
                   href: root_path,

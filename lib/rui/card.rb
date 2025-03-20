@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class RUI::Card < RUI::Base
-  def initialize(**attrs, &)
-    @attrs = attrs
-    super(&)
-  end
-
   def view_template(&)
-    div do
-      article("data-component": "card", class: "#{padding(capture(&))} flex flex-col gap-4 border border-zinc-300 rounded-lg", **@attrs, &)
+    div(role: "region", aria: { label: "Card" }, **@attrs) do
+      div(
+        class: "#{padding(capture(&))} flex flex-col gap-4 border border-zinc-300 rounded-lg overflow-hidden",
+        data: { component: "card" },
+        &
+      )
     end
   end
 

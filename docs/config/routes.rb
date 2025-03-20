@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "components/flashes", as: :flash_component
   get "components/forms", as: :form_component
   get "components/headings", as: :heading_component
+  get "components/icons", as: :icon_component
   get "components/links", as: :link_component
   get "components/lists", as: :list_component
   get "components/markdown", as: :markdown_component

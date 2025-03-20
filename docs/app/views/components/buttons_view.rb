@@ -12,10 +12,23 @@ class Views::Components::ButtonsView < Views::Base
 Note that RelayUI differentiates between buttons and links. Buttons are used to trigger actions, while links are used to navigate to a different page or location. For this reason, buttons do not take an `href` parameter, while links do.
 
 ## Parameters
-|Parameter|Type|Default|Description|
-|---|---|---|---|
-|`icon`|`string`|`nil`|The [tabler icon](https://tabler.io/icons) to be used for this link. If blank, no icon will be shown.|
-|`data`|`hash`|`{}`|HTML data attributes for the button, eg: `data: { action: slideout#hide }`|
+`icon` (string)
+: The [tabler icon](https://tabler.io/icons) to be used for this link. If blank, no icon will be shown.
+
+`data` (hash)
+: HTML data attributes for the button, e.g., `data: { action: 'slideout#hide' }`.
+
+<dl>
+  <dt><code>icon</code> (string)</dt>
+  <dd>
+    The <a href="https://tabler.io/icons">tabler icon</a> to be used for this link. If blank, no icon will be shown.
+  </dd>
+
+  <dt><code>data</code> (hash)</dt>
+  <dd>
+    HTML data attributes for the button, e.g., <code>data: { action: 'slideout#hide' }</code>.
+  </dd>
+</dl>
 
 ## Variants
 

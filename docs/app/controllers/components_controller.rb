@@ -8,6 +8,7 @@ class ComponentsController < ApplicationController
   def flashes = render Views::Components::FlashesView.new
   def forms = render Views::Components::FormsView.new
   def headings = render Views::Components::HeadingsView.new
+  def icons = render Views::Components::IconsView.new
   def links = render Views::Components::LinksView.new
   def lists = render Views::Components::ListsView.new
   def markdown = render Views::Components::MarkdownView.new

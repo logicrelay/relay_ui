@@ -96,6 +96,10 @@ module Views
                   selected: on?(heading_component_path)
                 ) { "Headings" }
                 nav.text_link(
+                  href: icon_component_path,
+                  selected: on?(icon_component_path)
+                ) { "Icons" }
+                nav.text_link(
                   href: link_component_path,
                   selected: on?(link_component_path)
                 ) { "Links" }

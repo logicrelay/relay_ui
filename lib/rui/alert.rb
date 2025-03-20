@@ -21,33 +21,17 @@ class RUI::Alert < RUI::Base
 
   private
 
-  def classes
-    case @variant
-    when "notice"
-      "bg-blue-50 text-blue-900 border-blue-500"
-    when "success"
-      "bg-green-50 text-green-900 border-green-500"
-    when "alert"
-      "bg-yellow-50 text-yellow-900 border-yellow-500"
-    when "failure"
-      "bg-red-50 text-red-900 border-red-500"
-    else
-      "bg-zinc-50 text-zinc-900 border-zinc-500"
-    end
-  end
+  def classes = {
+    "notice" => "bg-blue-50 text-blue-900 border-blue-500",
+    "success" => "bg-green-50 text-green-900 border-green-500",
+    "alert" => "bg-yellow-50 text-yellow-900 border-yellow-500",
+    "failure" => "bg-red-50 text-red-900 border-red-500"
+  }.fetch @variant, "bg-zinc-50 text-zinc-900 border-zinc-500"
 
-  def icon
-    case @variant
-    when "notice"
-      "info-circle"
-    when "success"
-      "circle-check"
-    when "alert"
-      "alert-triangle"
-    when "failure"
-      "flag"
-    else
-      "alert-circle-filled"
-    end
-  end
+  def icon = {
+    "notice" => "info-circle",
+    "success" => "circle-check",
+    "alert" => "alert-triangle",
+    "failure" => "flag"
+  }.fetch @variant, "alert-circle-filled"
 end

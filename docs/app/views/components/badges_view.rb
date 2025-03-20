@@ -11,6 +11,10 @@ class Views::Components::BadgesView < Views::Base
 
 ## Parameters
 
+```ruby
+RUI::Badges::[Variant].new { &block }
+```
+
 `&block` _**(block)**_ (required)
 → The text content to be displayed inside the badge.
 

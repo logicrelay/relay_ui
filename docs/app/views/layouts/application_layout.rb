@@ -29,8 +29,20 @@ module Views
           end
 
           body(class: "flex flex-col", data: { controller: "navigation" }) do
-            render RUI::Navigation::Top.new
-            div(class: "flex flex-row") do
+            div(class: "fixed top-0 left-0 right-0 bg-white flex flex-col z-50") do
+              section class: "flex flex-row items-center gap-3 border-b border-zinc-300 p-3 lg:px-10" do
+                img(src: asset_path("logo.svg"), class: "size-8")
+                span(class: "font-mono") { "RelayUI" }
+              end
+              section(class: "lg:hidden px-3 py-1.5 border-b border-zinc-300") do
+                button(class: "hover:cursor-pointer hover:bg-zinc-200 p-1.5 rounded-lg", data: { action: "navigation#toggle" }) do
+                  div(class: "size-5") do
+                    render RUI::Icon.new("menu")
+                  end
+                end
+              end
+            end
+            div(class: "flex flex-row mt-25.5") do
               render RUI::Navigation::Sidebar.new do |nav|
                 nav.icon_link(
                   href: root_path,

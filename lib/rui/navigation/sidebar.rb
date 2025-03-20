@@ -2,10 +2,10 @@
 
 class RUI::Navigation::Sidebar < RUI::Base
   def view_template
-    div(class: "p-10 hidden lg:flex flex-col bg-white z-50 lg:z-0 fixed lg:relative w-screen md:w-auto h-screen lg:h-auto overflow-y-scroll lg:overflow-auto", data: { "navigation-target": "sidebar" }) do
+    div(class: "p-10 pb-36 hidden lg:flex flex-col bg-white z-50 lg:z-auto fixed lg:relative w-screen md:w-auto h-screen lg:h-auto overflow-auto", data: { "navigation-target": "sidebar" }) do
       yield
     end
-    button(class: "hidden bg-black/75 fixed w-screen h-screen", data: { navigation_target: "curtain", action: "navigation#toggle" })
+    button(class: "lg:hidden hidden bg-black/75 fixed w-screen h-screen", data: { navigation_target: "curtain", action: "navigation#toggle" })
   end
 
   def section_heading

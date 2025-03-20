@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RUI::Alert < RUI::Base
+class RUI::Flash < RUI::Base
   def initialize(variant = "alert")
     @variant = variant
   end
@@ -39,7 +39,7 @@ class RUI::Alert < RUI::Base
     end
   end
 
-  module Flashes
+  module Helper
     def success(message)
       flash[:success] = message
     end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-class Views::Components::AlertsView < Views::Base
+class Views::Components::FlashesView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Safe.new do
 <<-STRING
-# Alerts
+# Flashes
 
-`RUI::Alert` stuff
+`RUI::Flash` stuff
 
 ## Examples
 STRING

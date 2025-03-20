@@ -2,7 +2,7 @@
 
 class ExamplesController < ApplicationController
   def flash_example
-    render Views::Components::AlertsView.new
+    render Views::Components::FlashesView.new
   end
 
   def flash_trigger

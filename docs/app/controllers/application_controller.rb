@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  include RUI::Alert::Flashes
+  include RUI::Flash::Helper
 
   layout false
 end

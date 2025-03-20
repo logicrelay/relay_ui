@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
 
   # Components
-  get "components/alerts", as: :alert_component
   get "components/badges", as: :badge_component
   get "components/buttons", as: :button_component
   get "components/cards", as: :card_component
   get "components/code_blocks", as: :code_block_component
+  get "components/flashes", as: :flash_component
   get "components/forms", as: :form_component
   get "components/headings", as: :heading_component
   get "components/links", as: :link_component

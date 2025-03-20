@@ -31,9 +31,9 @@ module Views
           end
 
           body(class: "flex flex-col", data: { controller: "navigation" }) do
-            render RUI::Alert::Wrapper.new do
+            render RUI::Flash::Wrapper.new do
               flash.each do |type, message|
-                render RUI::Alert.new(type) { message }
+                render RUI::Flash.new(type) { message }
               end
             end
             div(class: "fixed top-0 left-0 right-0 bg-white flex flex-col z-50") do
@@ -68,10 +68,6 @@ module Views
                 ) { "Contributing" }
                 nav.section_heading { "Components" }
                 nav.text_link(
-                  href: alert_component_path,
-                  selected: on?(alert_component_path)
-                ) { "Alerts" }
-                nav.text_link(
                   href: badge_component_path,
                   selected: on?(badge_component_path)
                 ) { "Badges" }
@@ -87,6 +83,10 @@ module Views
                   href: code_block_component_path,
                   selected: on?(code_block_component_path)
                 ) { "Code Blocks" }
+                nav.text_link(
+                  href: flash_component_path,
+                  selected: on?(flash_component_path)
+                ) { "Flashes" }
                 nav.text_link(
                   href: form_component_path,
                   selected: on?(form_component_path)

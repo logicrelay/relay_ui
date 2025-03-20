@@ -4,7 +4,7 @@ require "rouge"
 require "rouge/plugins/redcarpet"
 require "redcarpet"
 
-class RUI::Markdown::UnsafeRenderer < Redcarpet::Render::XHTML
+class RUI::Markdown::UnsafeRenderer < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
 
   def block_code(code, lang)
@@ -26,6 +26,12 @@ class RUI::Markdown::UnsafeRenderer < Redcarpet::Render::XHTML
     unescaped = CGI.unescapeHTML(code)
 
     formatter.format(lexer.lex(unescaped))
+  end
+
+  def codespan(code)
+    unescaped = CGI.unescapeHTML(code)
+
+    "<code>#{unescaped}</code>"
   end
 
   private

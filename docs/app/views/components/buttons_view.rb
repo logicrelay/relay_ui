@@ -3,38 +3,31 @@
 class Views::Components::ButtonsView < Views::Base
   def view_template
     render Views::Layouts::ApplicationLayout.new do
-      render RUI::Markdown::Safe.new do
+      render RUI::Markdown::Unsafe.new do
 <<-STRING
 # RUI::Buttons
 
-`RUI::Buttons` is a namespace containing different button variations that can be used in RelayUI. Each button has a different style and purpose, but all buttons share a common interface.
+`RUI::Buttons` is a namespace containing button variants. Buttons will often be used with `data` attributes to handle user interactions.#{' '}
 
-Note that RelayUI differentiates between buttons and links. Buttons are used to trigger actions, while links are used to navigate to a different page or location. For this reason, buttons do not take an `href` parameter, while links do.
+Buttons are meant to trigger actions within the current page, like form submissions or toggling elements, whereas [links](/components/links) navigate to different pages. Use buttons for interactive functionality and links for moving between pages or sections.
 
 ## Parameters
-`icon` (string)
-: The [tabler icon](https://tabler.io/icons) to be used for this link. If blank, no icon will be shown.
+```ruby
+RUI::Buttons::[Variant].new(icon: nil, **attrs) { &block }
+```
 
-`data` (hash)
-: HTML data attributes for the button, e.g., `data: { action: 'slideout#hide' }`.
+`icon` _**(string)**_ optional
+→ The [tabler icon](https://tabler.io/icons) to be used for this link.
 
-<dl>
-  <dt><code>icon</code> (string)</dt>
-  <dd>
-    The <a href="https://tabler.io/icons">tabler icon</a> to be used for this link. If blank, no icon will be shown.
-  </dd>
+`**attrs` _**(hash)**_ (optional)
+→ Any additional attributes to be applied to the <button> HTML element.
 
-  <dt><code>data</code> (hash)</dt>
-  <dd>
-    HTML data attributes for the button, e.g., <code>data: { action: 'slideout#hide' }</code>.
-  </dd>
-</dl>
+`&block` _**(block)**_ (optional)
+→ The text content to be displayed inside the button.
 
 ## Variants
 
 Button variants are listed below.
-
-### RUI::Buttons::Primary
 STRING
       end
 
@@ -47,12 +40,10 @@ STRING
       render RUI::Markdown::Unsafe.new do
 <<-STRING
 ```ruby
-render RUI::Buttons::Primary.new { "Primary Button" }
 render RUI::Buttons::Primary.new(icon: 'star') { "Primary Button" }
+render RUI::Buttons::Primary.new { "Primary Button" }
 render RUI::Buttons::Primary.new(icon: 'star')
 ```
-
-### RUI::Buttons::Secondary
 STRING
       end
 
@@ -69,8 +60,6 @@ render RUI::Buttons::Secondary.new { "Secondary Button" }
 render RUI::Buttons::Secondary.new(icon: 'star') { "Secondary Button" }
 render RUI::Buttons::Secondary.new(icon: 'star')
 ```
-
-### RUI::Buttons::Outline
 STRING
       end
 
@@ -87,8 +76,6 @@ render RUI::Buttons::Outline.new { "Outline Button" }
 render RUI::Buttons::Outline.new(icon: 'star') { "Outline Button" }
 render RUI::Buttons::Outline.new(icon: 'star')
 ```
-
-### RUI::Buttons::Desctructive
 STRING
       end
 
@@ -105,8 +92,6 @@ render RUI::Buttons::Destructive.new { "Destructive Button" }
 render RUI::Buttons::Destructive.new(icon: 'star') { "Destructive Button" }
 render RUI::Buttons::Destructive.new(icon: 'star')
 ```
-
-### RUI::Buttons::Ghost
 STRING
       end
 
@@ -124,11 +109,19 @@ render RUI::Buttons::Ghost.new(icon: 'star') { "Ghost Button" }
 render RUI::Buttons::Ghost.new(icon: 'star')
 ```
 
-## Dependencies
+## Additonal attributes
 
-The following gems have been included in RelayUI to make this component work:
+See the following example of passing data attributes to a button:
 
-- [tabler_icons_ruby](https://github.com/owaiswiz/tabler_icons_ruby) for rendering icons
+```ruby
+render RUI::Buttons::Primary.new(icon: "trash", data: { action: "user#delete" }) { "Delete User" }
+```
+
+This would result in the following HTML:
+
+```html
+<button class="..." data-action="user#delete">...</button>
+```
 STRING
       end
     end

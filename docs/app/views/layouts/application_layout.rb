@@ -128,7 +128,7 @@ module Views
                   selected: on?(text_component_path)
                 ) { "Text" }
               end
-              main(class: "p-5 lg:p-10 max-w-[800px]") { yield }
+              main(class: "p-5 lg:p-10 w-full max-w-[800px]") { yield }
             end
           end
         end

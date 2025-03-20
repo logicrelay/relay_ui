@@ -32,7 +32,7 @@ module Views
 
           body(class: "flex flex-col", data: { controller: "navigation" }) do
             flash.each do |type, message|
-              render RUI::Alerts::Success.new { message }
+              render RUI::Alert.new(type) { message }
             end
             div(class: "fixed top-0 left-0 right-0 bg-white flex flex-col z-50") do
               section class: "flex flex-row items-center gap-3 border-b border-zinc-300 p-3 lg:px-10" do
@@ -68,7 +68,7 @@ module Views
                 nav.text_link(
                   href: alert_component_path,
                   selected: on?(alert_component_path)
-                ) { "Alert" }
+                ) { "Alerts" }
                 nav.text_link(
                   href: badge_component_path,
                   selected: on?(badge_component_path)

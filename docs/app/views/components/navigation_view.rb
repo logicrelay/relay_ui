@@ -28,9 +28,16 @@ end
 ```
 
 With this structure, you get a lot of things for free...
-- A top bar that can hold logos, additional nav elements, etc. (see [RUI::Navigation::Top](#top_navigation))
-- A responsive sidebar navigation that is easy to populate and edit (see [RUI::Navigation::Sidebar](#sidebar_navigation))
+- A top bar that can hold logos, additional nav elements, etc. (RUI::Navigation::Top)
+- A responsive sidebar navigation that is easy to populate and edit (RUI::Navigation::Sidebar)
 - Wrappers for elements like the page body and main area that are also responsive and interact well with the core sidebar navigation element.
+
+In order to handle user interactions, you will need to install the JavaScript controller from NPM:
+
+```js
+import NavigationController from "@relay_ui/navigation";
+application.register("navigation", NavigationController);
+```
 
 ## Components
 

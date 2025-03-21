@@ -32,7 +32,12 @@ render RUI::Flash::Wrapper.new do
 end
 ```
 
-Instructions for registering the stimulus controller are coming soon.
+Finally, install the JavaScript controller from NPM:
+
+```js
+import FlashController from "@relay_ui/flash";
+application.register("flash", FlashController);
+```
 
 ## Examples
 

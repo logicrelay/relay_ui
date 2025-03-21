@@ -7,8 +7,8 @@ import { application } from "./application";
 import SlideoutController from "@relay_ui/slideout";
 application.register("slideout", SlideoutController);
 
-import NavigationController from "../../../../app/javascript/navigation/navigation_controller";
+import NavigationController from "@relay_ui/navigation";
 application.register("navigation", NavigationController);
 
-import AlertController from "../../../../app/javascript/alert/alert_controller";
-application.register("alert", AlertController);
+import FlashController from "@relay_ui/flash";
+application.register("flash", FlashController);

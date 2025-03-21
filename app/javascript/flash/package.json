@@ -1,8 +1,8 @@
 {
-  "name": "@relay_ui/slideout",
+  "name": "@relay_ui/flash",
   "version": "0.3.0",
-  "description": "A controller for managing slideout functionality in relay_ui",
-  "main": "slideout_controller.js",
+  "description": "A controller for managing flash functionality in relay_ui",
+  "main": "flash_controller.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +11,9 @@
     "url": "https://github.com/logicrelay/relay_ui.git"
   },
   "keywords": [
-    "slideout",
+    "stimulus",
     "controller",
-    "ui"
+    "relayui"
   ],
   "author": "Charles Luzar <charlesluzar@logicrelay.com>",
   "license": "MIT",

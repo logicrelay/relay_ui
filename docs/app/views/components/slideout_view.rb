@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Views::Components::SlideoutView < Views::Base
   include Phlex::Rails::Helpers::TurboFrameTag
 

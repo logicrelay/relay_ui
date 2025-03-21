@@ -1,1 +1,19 @@
+@config "../../../tailwind.config.js";
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+article.prose code:not(pre.codehilite > code) {
+  @apply bg-zinc-200 px-2 py-0.5 rounded-lg;
+}
+
+article.prose code::before {
+  @apply content-none;
+}
+
+article.prose code::after {
+  @apply content-none;
+}
+
+div.highlight {
+  @apply bg-[#1D2939] rounded-lg;
+}

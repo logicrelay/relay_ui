@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.3.0] - 2025-03-20
+
+- Components:
+  - Cards
+  - Flashes
+- Responsive Navigation
+- Tailwind integration without a prefix
+
 ## [0.2.3] - 2025-03-12
 
 - Components:

@@ -1,0 +1,24 @@
+{
+  "name": "@relay_ui/flash",
+  "version": "0.3.0",
+  "description": "A controller for managing flash functionality in relay_ui",
+  "main": "flash_controller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logicrelay/relay_ui.git"
+  },
+  "keywords": [
+    "stimulus",
+    "controller",
+    "relayui"
+  ],
+  "author": "Charles Luzar <charlesluzar@logicrelay.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/logicrelay/relay_ui/issues"
+  },
+  "homepage": "https://www.relayui.com"
+}

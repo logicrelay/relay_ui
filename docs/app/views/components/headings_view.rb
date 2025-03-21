@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Views::Components::HeadingsView < Views::Base
   QUICK_BROWN_FOX = "The quick brown fox jumps over the lazy dog"
 

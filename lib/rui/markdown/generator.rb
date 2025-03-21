@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "redcarpet"
 
 class RUI::Markdown::Generator
@@ -7,7 +9,6 @@ class RUI::Markdown::Generator
     options = {
       filter_html: true,
       hard_wrap: true,
-      link_attributes: { rel: "nofollow", target: "_blank" },
       escape_html: true
     }
 

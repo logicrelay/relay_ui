@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Views::Examples::SlideoutView < Views::Base
   def view_template
     render RUI::Slideout.new do

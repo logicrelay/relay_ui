@@ -30,10 +30,20 @@
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.2.201.tgz"
   integrity sha512-wsTdWoZ5EfG5k3t7ORdyQF0ZmDEgN4aVPCanHAiNEwCROqibSZMXXmCbH7IDJUVri4FOeAVwwbPINI7HVHPKBw==
 
-"@relay_ui/slideout@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@relay_ui/slideout/-/slideout-0.2.0.tgz"
-  integrity sha512-+qMViwwitt3fi6VtCA8AenO6IAuY6D6vHHVAJIPXOYFoUCeI58pyOB1gZV7cQRR9ZMMCpUwtuYV5LCrtEn1kJA==
+"@relay_ui/flash@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@relay_ui/flash/-/flash-0.3.0.tgz"
+  integrity sha512-RAPL1jLnfw0R25524Vh1Yj/sgikkhyD2HxlgVIaE9GDRjI/wQ9BdSWRdzlEd3xj8BP3Du6bYK6rKtWHGRw4nGQ==
+
+"@relay_ui/navigation@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@relay_ui/navigation/-/navigation-0.3.0.tgz"
+  integrity sha512-pAkNpgiM6IowsOMglif3sq0ecUn+Kxm2KFTCppRoHlJfLPp7URoQtdyuj55rRskKYFX72wo4Lbplx9K8ZHAiNw==
+
+"@relay_ui/slideout@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@relay_ui/slideout/-/slideout-0.3.0.tgz"
+  integrity sha512-cvR/odP0lzSgSAaHO4qTgx/foKs9t53UQ54fSgmZVg1g3wSK5ph3LOdm9JJ1bxibQjV/sWGX5e484waMxC+vBg==
 
 esbuild@^0.25.0:
   version "0.25.0"

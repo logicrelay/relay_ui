@@ -1,6 +1,6 @@
 {
   "name": "@relay_ui/slideout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A controller for managing slideout functionality in relay_ui",
   "main": "slideout_controller.js",
   "scripts": {

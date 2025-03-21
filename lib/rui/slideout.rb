@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 class RUI::Slideout < RUI::Base
   include Phlex::Rails::Helpers::TurboFrameTag
 
-  def view_template
+  def view_template(&)
     turbo_frame_tag "slideout" do
-      div(class: "rui:absolute rui:inset-0 rui:z-50", data: { controller: "slideout" }) do
-        a(href: "#", class: "rui:cursor-default", data: { action: "slideout#hide" }) do
-          div(id: "modal-curtain", class: "rui:w-screen rui:h-screen rui:bg-black rui:transition-opacity rui:opacity-75", data: { slideout_target: "curtain" })
+      div(class: "absolute inset-0 z-50", data: { controller: "slideout" }) do
+        a(href: "#", class: "cursor-default", data: { action: "slideout#hide" }) do
+          div(id: "modal-curtain", class: "w-screen h-screen bg-black transition-opacity opacity-75", data: { slideout_target: "curtain" })
         end
-        div(class: "rui:right-0 rui:fixed rui:inset-y-0 rui:flex rui:max-w-1/2 rui:pointer-events-none") do
-          div(class: "rui:w-screen rui:pointer-events-auto", data: { slideout_target: "slideout" }) do
-            div(class: "rui:w-full rui:h-full rui:bg-white rui:shadow") do
-              yield
-            end
+        div(class: "right-0 fixed inset-y-0 flex max-w-1/2 pointer-events-none") do
+          div(class: "w-screen pointer-events-auto", data: { slideout_target: "slideout" }) do
+            div(class: "w-full h-full bg-white shadow", &)
           end
         end
       end

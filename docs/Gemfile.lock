@@ -1,9 +1,7 @@
-GIT
-  remote: git://github.com/relay-rb/relay-ui.git
-  revision: 1c482078f991e41e4626b823aaff501b13a9324e
-  branch: 0.3.0
+PATH
+  remote: ..
   specs:
-    relay_ui (0.2.3)
+    relay_ui (0.3.0)
       nokogiri (~> 1.18)
       phlex (~> 2.1)
       redcarpet (~> 3.6)

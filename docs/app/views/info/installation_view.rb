@@ -19,18 +19,6 @@ gem 'relay_ui'
 bundle install
 ```
 
-### Or install it directly:
-
-```shell
-gem install relay_ui
-```
-
-### Include the gem's stylesheet in your application layout:
-
-```ruby
-stylesheet_link_tag "relay_ui/relay_ui", media: "all"
-```
-
 That's it! All of the basic functionality of the UI kit is now available to you. For certain components that require additional elements (like stimulus controllers), you'll need to include those separately. They will be documented in the component's usage instructions.
 STRING
       end

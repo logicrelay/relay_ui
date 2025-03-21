@@ -9,17 +9,27 @@ class Views::Components::TableView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-# RUI::Table
+# Tables
 
-`RUI::Text` description...
+`RUI::Table` is coming soon...
+
+```ruby
+render RUI::Table.new(@employees) do |t|
+  t.column("First Name", &:first_name)
+  t.column("Last Name", &:last_name)
+  t.column("Email", &:email)
+  t.column("Phone", :center, &:phone)
+end
+```
 STRING
       end
-
-      render RUI::Table.new(@employees) do |t|
-        t.column("First Name", &:first_name)
-        t.column("Last Name", &:last_name)
-        t.column("Email", &:email)
-        t.column("Phone", :center, &:phone)
+      div class: "my-6" do
+        render RUI::Table.new(@employees) do |t|
+          t.column("First Name", &:first_name)
+          t.column("Last Name", &:last_name)
+          t.column("Email", &:email)
+          t.column("Phone", :center, &:phone)
+        end
       end
     end
   end

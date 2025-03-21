@@ -7,11 +7,22 @@ class Views::Components::TextView < Views::Base
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
 <<-STRING
-# RUI::Text
+# Text
 
-`RUI::Text` is a namespace for text components in RelayUI. These components are used to render text in different sizes and styles. This page demonstrates the different text styles available in RelayUi.
+`RUI::Text` is a namespace for text components in RelayUI. These components are used to render text in different sizes and styles. This page demonstrates the different text styles available in RUI.
 
 Note that Text components only render plain text. For rich text content, use the [RUI::Markdown](#{markdown_component_path}) component.
+
+## Parameters
+```ruby
+RUI::Text::[Variant].new(**attrs) { &block }
+```
+
+`**attrs` _**(hash)**_ (optional)
+→ Any additional attributes to be applied to the <p> HTML element.
+
+`&block` _**(block)**_ (optional)
+→ The text content to be displayed inside the <p> tag.
 
 ## RUI::Text::Small
 STRING

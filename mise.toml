@@ -1,3 +1,6 @@
+[env]
+_.file = ".env.json"
+
 [tools]
 ruby = "3.4.2"
 

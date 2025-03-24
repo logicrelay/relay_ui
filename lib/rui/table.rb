@@ -14,7 +14,6 @@ class RUI::Table < RUI::Base
             column[:header]
           end
         end
-        th(class: "border border-zinc-300 px-2 text-center") { "" }
       end
 
       tbody do
@@ -25,12 +24,6 @@ class RUI::Table < RUI::Base
                 column[:content].call(row)
               end
             end
-            td(class: "border border-zinc-300 py-1 px-2 text-center") do
-              div(class: "flex flex-row justify-center gap-3") do
-                render RUI::Buttons::Ghost.new(icon: "edit")
-                render RUI::Buttons::Ghost.new(icon: "archive")
-              end
-            end
           end
         end
       end
@@ -39,6 +32,10 @@ class RUI::Table < RUI::Base
 
   def column(header, align = :left, &content)
     @columns << { header:, align:, content: }
+  end
+
+  def actions(&block)
+    @actions - block
   end
 
   def align(align)

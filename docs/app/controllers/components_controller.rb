@@ -16,7 +16,7 @@ class ComponentsController < ApplicationController
   def slideout = render Views::Components::SlideoutView.new
 
   def table
-    employees = Array.new(15) do
+    employees = Array.new(5) do
       first_name = Faker::Name.first_name
       last_name = Faker::Name.last_name
       Employee.new(

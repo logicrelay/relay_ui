@@ -1,3 +1,15 @@
+GIT
+  remote: git@github.com:logicrelay/relay_ui.git
+  revision: 6cc2682703b644d73cd23dbb3b90db16aeafc5f9
+  branch: 0.4.0
+  specs:
+    relay_ui (0.3.0)
+      nokogiri (~> 1.18)
+      phlex (~> 2.1)
+      redcarpet (~> 3.6)
+      rouge (~> 4.5)
+      tabler_icons_ruby (~> 3.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -263,12 +275,6 @@ GEM
       psych (>= 4.0.0)
     redcarpet (3.6.1)
     regexp_parser (2.10.0)
-    relay_ui (0.3.0)
-      nokogiri (~> 1.18)
-      phlex (~> 2.1)
-      redcarpet (~> 3.6)
-      rouge (~> 4.5)
-      tabler_icons_ruby (~> 3.11)
     reline (0.6.0)
       io-console (~> 0.5)
     rouge (4.5.1)
@@ -372,7 +378,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
-  relay_ui
+  relay_ui!
   rubocop-rails-omakase
   sqlite3 (>= 2.1)
   stimulus-rails

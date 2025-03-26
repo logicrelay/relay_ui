@@ -30,13 +30,6 @@ module RUI::Forms
       @template.content_tag("div", super(value, { class: classes }.merge(opts)))
     end
 
-    def textarea(object_name, method, options = {})
-      # Tags::TextArea.new(object_name, method, self, options).render
-      labels = labels(object_method, custom_opts[:label], options)
-
-      @template.content_tag("div", labels + field, { class: "flex flex-col gap-1" })
-    end
-
     def select(method, choices = nil, options = {}, html_options = {}, &block)
       custom_opts, opts = partition_custom_opts(options)
       classes = apply_style_classes(SELECT_FIELD_STYLE, custom_opts, method)

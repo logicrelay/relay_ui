@@ -23,7 +23,7 @@ STRING
       rui_form_with do |f|
         f.text_field :text_field
         f.password_field :password_field
-        f.text_area :textarea
+        f.textarea :textarea
         f.color_field :color_field
         f.search_field :search_field
         f.telephone_field :telephone_field

@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class Views::Components::FormsView < Views::Base
+  include Phlex::Rails::Helpers::FormWith
+  include RUI::Forms::Helpers
+
+  def initialize(employee)
+    @employee = employee
+  end
+
   def view_template
     render Views::Layouts::ApplicationLayout.new do
       render RUI::Markdown::Unsafe.new do
@@ -9,6 +16,27 @@ class Views::Components::FormsView < Views::Base
 
 `RUI::Forms` description...
 STRING
+      end
+
+      rui_form_with do |f|
+        f.text_field :text_field
+        f.password_field :password_field
+        f.text_area :text_area
+        f.color_field :color_field
+        f.search_field :search_field
+        f.telephone_field :telephone_field
+        f.phone_field :phone_field
+        f.date_field :date_field
+        f.time_field :time_field
+        f.datetime_field :datetime_field
+        f.month_field :month_field
+        f.week_field :week_field
+        f.url_field :url_field
+        f.email_field :email_field
+        f.number_field :number_field
+        f.range_field :range_field
+        f.file_field :file_field
+        f.submit "Submit Button"
       end
       div class: "flex flex-col gap-4" do
         render RUI::Forms::Text.new { "RUI::Forms::Text" }

@@ -86,6 +86,10 @@ module Views
                   end
                 end
                 nav.text_link(
+                  href: form_component_path,
+                  selected: on?(form_component_path)
+                ) { "Forms" }
+                nav.text_link(
                   href: heading_component_path,
                   selected: on?(heading_component_path)
                 ) { "Headings" }

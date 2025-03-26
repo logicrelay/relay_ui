@@ -6,7 +6,12 @@ class ComponentsController < ApplicationController
   def cards = render Views::Components::CardsView.new
   def code_blocks = render Views::Components::CodeBlocksView.new
   def flashes = render Views::Components::FlashesView.new
-  def forms = render Views::Components::FormsView.new
+
+  def forms
+    employee = Employee.new
+    render Views::Components::FormsView.new(employee)
+  end
+
   def headings = render Views::Components::HeadingsView.new
   def icons = render Views::Components::IconsView.new
   def links = render Views::Components::LinksView.new

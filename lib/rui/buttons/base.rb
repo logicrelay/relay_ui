@@ -6,6 +6,9 @@ class RUI::Buttons::Base < RUI::Base
     @attrs = attrs
   end
 
+  # Style string public for use in forms
+  STYLE = "inline-block px-2 py-1 hover:cursor-pointer rounded-md transition duration-200 ease-in-out".freeze
+
   def view_template
     button(class: classes, **@attrs) do
       div(class: "flex flex-row items-center gap-2") do
@@ -22,8 +25,6 @@ class RUI::Buttons::Base < RUI::Base
   private
 
   def classes
-    "#{base_classes} #{variant_classes}"
+    "#{STYLE} #{variant_classes}"
   end
-
-  def base_classes = "inline-block px-2 py-1 hover:cursor-pointer rounded-md transition duration-200 ease-in-out"
 end

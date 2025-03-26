@@ -3,12 +3,9 @@ module RUI::Forms
     include ActionView::Helpers::TagHelper
 
     class_attribute :text_field_helpers, default: field_helpers - [ :label, :check_box, :radio_button, :fields_for, :fields, :hidden_field, :file_field ]
-    #  leans on the FormBuilder class_attribute `field_helpers`
-    #  you'll want to add a method for each of the specific helpers listed here if you want to style them
 
     TEXT_FIELD_STYLE = "bg-white ring ring-zinc-100 hover:ring-zinc-400 rounded px-2 py-1".freeze
     SELECT_FIELD_STYLE = "block bg-white ring ring-zinc-100 hover:ring-zinc-400 rounded px-2 py-1".freeze
-    SUBMIT_BUTTON_STYLE = "shadow bg-yellow-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded hover:bg-yellow-700".freeze
 
     text_field_helpers.each do |field_method|
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
@@ -24,9 +21,20 @@ module RUI::Forms
 
     def submit(value = nil, options = {})
       custom_opts, opts = partition_custom_opts(options)
-      classes = apply_style_classes(SUBMIT_BUTTON_STYLE, custom_opts)
+      style_classes = RUI::TailwindMerger.instance.merge(
+        RUI::Buttons::Base::STYLE,
+        RUI::Buttons::Primary::STYLE
+      )
+      classes = apply_style_classes(style_classes, custom_opts)
 
-      super(value, { class: classes }.merge(opts))
+      @template.content_tag("div", super(value, { class: classes }.merge(opts)))
+    end
+
+    def textarea(object_name, method, options = {})
+      # Tags::TextArea.new(object_name, method, self, options).render
+      labels = labels(object_method, custom_opts[:label], options)
+
+      @template.content_tag("div", labels + field, { class: "flex flex-col gap-1" })
     end
 
     def select(method, choices = nil, options = {}, html_options = {}, &block)
@@ -53,7 +61,7 @@ module RUI::Forms
 
       labels = labels(object_method, custom_opts[:label], options)
 
-      labels + field
+      @template.content_tag("div", labels + field, { class: "flex flex-col gap-1" })
     end
 
     def labels(object_method, label_options, field_options)

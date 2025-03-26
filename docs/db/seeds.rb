@@ -1,6 +1,11 @@
 # frozen_string_literal = true
 
 Employee.destroy_all
+Location.destroy_all
+
+[ "New York", "San Francisco", "Los Angeles", "Chicago" ].each do |name|
+  Location.create(name:)
+end
 
 50.times do
   last_name = Faker::Name.last_name

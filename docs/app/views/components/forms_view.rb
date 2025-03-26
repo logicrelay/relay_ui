@@ -4,6 +4,8 @@ class Views::Components::FormsView < Views::Base
   include Phlex::Rails::Helpers::FormWith
   include RUI::Forms::Helpers
 
+  register_output_helper :select
+
   def initialize(employee)
     @employee = employee
   end
@@ -21,7 +23,7 @@ STRING
       rui_form_with do |f|
         f.text_field :text_field
         f.password_field :password_field
-        f.text_area :text_area
+        f.text_area :textarea
         f.color_field :color_field
         f.search_field :search_field
         f.telephone_field :telephone_field
@@ -36,27 +38,11 @@ STRING
         f.number_field :number_field
         f.range_field :range_field
         f.file_field :file_field
+        f.collection_checkboxes :location_ids, Location.all, :id, :name
+        f.collection_radio_buttons :location_ids, Location.all, :id, :name
+        f.collection_select :location_ids, Location.all, :id, :name
         f.submit "Submit Button"
       end
-      div class: "flex flex-col gap-4" do
-        render RUI::Forms::Text.new { "RUI::Forms::Text" }
-        render RUI::Forms::Email.new { "RUI::Forms::Email" }
-        render RUI::Forms::Password.new { "RUI::Forms::Password" }
-        render RUI::Forms::Phone.new { "RUI::Forms::Phone" }
-        render RUI::Forms::Checkbox.new { "RUI::Forms::Checkbox" }
-        render RUI::Forms::Textarea.new { "RUI::Forms::Textarea" }
-        render RUI::Forms::Select.new(label: "RUI::Forms::Select") do |s|
-          s.option(value: "option1") { "Option 1" }
-          s.option(value: "option2") { "Option 2" }
-          s.option(value: "option3") { "Option 3" }
-        end
-        render RUI::Forms::Radio.new(label: "RUI::Forms::Radio") do |s|
-          s.option(value: "option1", name: "foo") { "Option 1" }
-          s.option(value: "option2", name: "foo") { "Option 2" }
-          s.option(value: "option3", name: "foo") { "Option 3" }
-        end
-      # render RUI::Forms::PhoneNumber.new
-    end
     end
   end
 end

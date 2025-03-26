@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:logicrelay/relay_ui.git
-  revision: 53af1be9ca60a184eb37a75c4871af897c5cf4e8
+  revision: 7c6c7d35aaf02658d15458837ff2c2d2e02bb8b9
   branch: 0.4.0
   specs:
     relay_ui (0.3.0)

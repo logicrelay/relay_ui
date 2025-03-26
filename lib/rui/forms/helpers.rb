@@ -5,7 +5,8 @@ module RUI::Forms::Helpers
     if options.present? && options[:html][:class].present?
       form_with_merged_classes(options[:html][:class], **options, &block)
     else
-      form_with(**options.merge(html: { class: DEFAULT_CLASSES }), &block)
+      # TODO: Remove reference to builder
+      form_with(**options.merge(builder: TailwindFormBuilder, html: { class: DEFAULT_CLASSES }), &block)
     end
   end
 

@@ -38,9 +38,10 @@ STRING
         f.number_field :number_field
         f.range_field :range_field
         f.file_field :file_field
-        f.collection_checkboxes :location_ids, Location.all, :id, :name
-        f.collection_radio_buttons :location_ids, Location.all, :id, :name
-        f.collection_select :location_ids, Location.all, :id, :name
+        f.label :location_ids, "Locations"
+        f.collection_check_boxes :location_ids, Location.all, :id, :name do |c|
+          c.label(class: "flex flex-row gap-3 items-center justify-middle") { c.check_box + c.text }
+        end
         f.submit "Submit Button"
       end
     end

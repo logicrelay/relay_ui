@@ -42,6 +42,11 @@ STRING
         f.collection_check_boxes :location_ids, Location.all, :id, :name do |c|
           c.label(class: "flex flex-row gap-3 items-center justify-middle") { c.check_box + c.text }
         end
+        f.collection_radio_buttons :location_ids, Location.all, :id, :name do |b|
+          div(class: "flex flex-row gap-3 items-center justify-middle") do
+            (b.radio_button || "") + (b.label || "")
+          end
+        end
         f.submit "Submit Button"
       end
     end

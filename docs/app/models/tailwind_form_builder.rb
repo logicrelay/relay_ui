@@ -30,37 +30,9 @@
       @template.content_tag("div", super(value, { class: classes }.merge(opts)))
     end
 
-    # def select(method, choices = nil, options = {}, html_options = {}, &block)
-    #   custom_opts, opts = partition_custom_opts(options)
-    #   classes = apply_style_classes(SELECT_FIELD_STYLE, custom_opts, method)
-
-    #   labels = labels(method, custom_opts[:label], options)
-    #   field = super(method, choices, opts, html_options.merge({ class: classes }), &block)
-
-    #   labels + field
-    # end
-
-    def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      custom_opts = partition_custom_opts(options)
-
-      check_boxes = @template.collection_check_boxes(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options), &block)
-
-      @template.content_tag("div", check_boxes, { class: "flex flex-col gap-3 items-start justify-middle" })
+    def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
+      @template.collection_select(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options))
     end
-
-      # def collection_radio_buttons(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      #   custom_opts = partition_custom_opts(options)
-
-      #   buttons = @template.collection_radio_buttons(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options), &block)
-
-      #   labels = labels(method, custom_opts, options)
-
-      #   @template.content_tag("div", labels + buttons, { class: "flex flex-col gap-3 items-start justify-middle" })
-      # end
-
-      def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-        @template.collection_select(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options))
-      end
 
     private
 
@@ -137,4 +109,3 @@
       "#{classes} #{field_classes} #{border_color_classes(method)}"
     end
   end
-# end

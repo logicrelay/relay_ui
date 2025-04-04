@@ -137,8 +137,8 @@ module Views
                 ) { "Text" }
                 nav.section_heading { "Utilities" }
                 nav.text_link(
-                  href: root_path,
-                  selected: on?(root_path)
+                  href: tailwind_merger_utility_path,
+                  selected: on?(tailwind_merger_utility_path)
                 ) { "RUI::TailwindMerger" }
               end
               render RUI::Layout::Main.new { yield }

@@ -10,8 +10,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
-# gem "relay_ui", git: "git@github.com:logicrelay/relay_ui.git", branch: "0.4.0"
-gem "relay_ui"
+gem "relay_ui", git: "git@github.com:logicrelay/relay_ui.git", branch: "0.5.0"
+# gem "relay_ui"
 gem "phlex-rails"
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"

@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get "components/table", as: :table_component
   get "components/text", as: :text_component
 
+  # Utilities
+  get "utilities/tailwind_merger", as: :tailwind_merger_utility
+
   # Examples
   get "examples/flash_example", as: :flash_example
   get "examples/flash_trigger", as: :flash_trigger

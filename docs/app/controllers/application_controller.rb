@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include RUI::Flash::Helper
+  include Pagy::Backend
 
   layout false
 end

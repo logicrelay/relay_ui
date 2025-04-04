@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.4.0] - 2025-04-04
+
+- Components:
+  - Tables
+- Tailwind Merger
+- Early version of forms
+- Sticky sidebar nav
+
 ## [0.3.0] - 2025-03-20
 
 - Components:

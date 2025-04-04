@@ -6,7 +6,12 @@ class ComponentsController < ApplicationController
   def cards = render Views::Components::CardsView.new
   def code_blocks = render Views::Components::CodeBlocksView.new
   def flashes = render Views::Components::FlashesView.new
-  def forms = render Views::Components::FormsView.new
+
+  def forms
+    employee = Employee.new
+    render Views::Components::FormsView.new(employee)
+  end
+
   def headings = render Views::Components::HeadingsView.new
   def icons = render Views::Components::IconsView.new
   def links = render Views::Components::LinksView.new
@@ -16,17 +21,9 @@ class ComponentsController < ApplicationController
   def slideout = render Views::Components::SlideoutView.new
 
   def table
-    employees = Array.new(15) do
-      first_name = Faker::Name.first_name
-      last_name = Faker::Name.last_name
-      Employee.new(
-        first_name:,
-        last_name:,
-        email: Faker::Internet.email(name: first_name, domain: "relayui.com"),
-        phone: "(#{Faker::PhoneNumber.area_code}) #{Faker::PhoneNumber.exchange_code}-#{Faker::PhoneNumber.subscriber_number}"
-      )
-    end
-    render Views::Components::TableView.new(employees)
+    employees = Employee.limit(5)
+    pagy, pagy_employees = pagy(Employee)
+    render Views::Components::TableView.new(employees, pagy, pagy_employees)
   end
 
   def text = render Views::Components::TextView.new

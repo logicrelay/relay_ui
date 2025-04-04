@@ -17,3 +17,31 @@ article.prose code::after {
 div.highlight {
   @apply bg-[#1D2939] rounded-lg;
 }
+
+.pagy {
+  @apply flex flex-row items-center justify-center gap-1 my-4 font-semibold text-sm text-zinc-500;
+
+  a:not(.gap) {
+    @apply block rounded px-3 py-1 bg-zinc-100 border border-zinc-300;
+
+    &:hover {
+      @apply bg-zinc-300;
+    }
+
+    &:not([href]) {
+      @apply text-zinc-300 bg-zinc-100 cursor-default;
+    }
+
+    &.current {
+      @apply text-white bg-zinc-400;
+    }
+  }
+
+  label {
+    @apply inline-block whitespace-nowrap bg-zinc-200 rounded-lg px-3 py-0.5;
+
+    input {
+      @apply bg-zinc-100 border-none rounded-md;
+    }
+  }
+}

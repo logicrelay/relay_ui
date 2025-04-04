@@ -86,6 +86,10 @@ module Views
                   end
                 end
                 nav.text_link(
+                  href: form_component_path,
+                  selected: on?(form_component_path)
+                ) { "Forms" }
+                nav.text_link(
                   href: heading_component_path,
                   selected: on?(heading_component_path)
                 ) { "Headings" }
@@ -131,6 +135,11 @@ module Views
                   href: text_component_path,
                   selected: on?(text_component_path)
                 ) { "Text" }
+                nav.section_heading { "Utilities" }
+                nav.text_link(
+                  href: tailwind_merger_utility_path,
+                  selected: on?(tailwind_merger_utility_path)
+                ) { "RUI::TailwindMerger" }
               end
               render RUI::Layout::Main.new { yield }
             end

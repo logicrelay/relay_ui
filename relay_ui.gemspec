@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "redcarpet", "~> 3.6"
   spec.add_dependency "rouge", "~> 4.5"
   spec.add_dependency "nokogiri", "~> 1.18"
+  spec.add_dependency "tailwind_merge", "~> 1.1"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "rspec"

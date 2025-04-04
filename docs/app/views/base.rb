@@ -2,4 +2,5 @@
 
 class Views::Base < Components::Base
   include Phlex::Rails::Helpers::AssetPath
+  include Pagy::Frontend
 end

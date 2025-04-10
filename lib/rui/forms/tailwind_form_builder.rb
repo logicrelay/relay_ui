@@ -50,16 +50,6 @@ module RUI::Forms
       @template.content_tag("div", labels + check_boxes, { class: "flex flex-col gap-3 items-start justify-middle" })
     end
 
-      # def collection_radio_buttons(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      #   custom_opts = partition_custom_opts(options)
-
-      #   buttons = @template.collection_radio_buttons(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options), &block)
-
-      #   labels = labels(method, custom_opts, options)
-
-      #   @template.content_tag("div", labels + buttons, { class: "flex flex-col gap-3 items-start justify-middle" })
-      # end
-
       def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
         @template.collection_select(@object_name, method, collection, value_method, text_method, objectify_options(options), @default_html_options.merge(html_options))
       end
@@ -105,7 +95,7 @@ module RUI::Forms
     def error_label(object_method, options)
       if errors_for(object_method).present?
         error_message = @object.errors[object_method].collect(&:titleize).join(", ")
-        tailwind_label(object_method, { text: error_message, class: " font-bold text-red-500" }, options)
+        tailwind_label(object_method, { text: error_message, class: " text-sm font-bold text-red-500" }, options)
       end
     end
 

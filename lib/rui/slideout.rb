@@ -9,9 +9,18 @@ class RUI::Slideout < RUI::Base
         a(href: "#", class: "cursor-default", data: { action: "slideout#hide" }) do
           div(id: "modal-curtain", class: "w-screen h-screen bg-black transition-opacity opacity-75", data: { slideout_target: "curtain" })
         end
-        div(class: "right-0 fixed inset-y-0 flex max-w-1/2 pointer-events-none") do
-          div(class: "w-screen pointer-events-auto", data: { slideout_target: "slideout" }) do
-            div(class: "w-full h-full bg-white shadow", &)
+        div(class: "fixed right-0 inset-y-0 w-1/2 h-full bg-white shadow flex flex-col pointer-events-auto", data: { slideout_target: "slideout" }) do
+          div class: "flex-grow flex flex-col gap-3 overflow-y-scroll p-10" do
+            div(class: "flex flex-row justify-between items-center") do
+              render RUI::Markdown::Safe.new { "## #{@title}" }
+
+              render RUI::Links::Destructive.new(
+                href: "#",
+                icon: "x",
+                data: { action: "slideout#hide" }
+              )
+            end
+            yield
           end
         end
       end

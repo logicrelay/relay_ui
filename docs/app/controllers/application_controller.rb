@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  include RUI::Flash::Helper
-  include Pagy::Backend
+  add_flash_types :success, :failure
 
   layout false
 end

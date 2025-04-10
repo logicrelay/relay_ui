@@ -57,33 +57,25 @@ STRING
       div class: "flex flex-col gap-3 my-4" do
         div do
           render RUI::Links::Primary.new(
-            href: flash_trigger_path(
-              notice: "This is a notice message! You can put your own text here."
-            )
+            href: flash_trigger_path(type: :notice)
           ) { "Flash Notice" }
         end
 
         div do
           render RUI::Links::Primary.new(
-            href: flash_trigger_path(
-              success: "This is a success message! You can put your own text here."
-            )
+            href: flash_trigger_path(type: :success)
           ) { "Flash Success" }
         end
 
         div do
           render RUI::Links::Primary.new(
-            href: flash_trigger_path(
-              alert: "This is an alert message! You can put your own text here."
-            )
+            href: flash_trigger_path(type: :alert)
           ) { "Flash Alert" }
         end
 
         div do
           render RUI::Links::Primary.new(
-            href: flash_trigger_path(
-              failure: "This is a failure message! You can put your own text here."
-            )
+            href: flash_trigger_path(type: :failure)
           ) { "Flash Failure" }
         end
 
@@ -94,10 +86,7 @@ STRING
       end
         div do
           render RUI::Links::Primary.new(
-            href: flash_trigger_path(
-              notice: "This is a notice message! You can put your own text here.",
-              alert: "This is an alert message! You can put your own text here."
-            )
+            href: flash_trigger_path(type: :multiple)
           ) { "Flash Multiple" }
         end
       end

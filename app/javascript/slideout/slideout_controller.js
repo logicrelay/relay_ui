@@ -8,7 +8,6 @@ export default class extends Controller {
   endClass = "-translate-x-0";
 
   connect() {
-    console.log("Slideout Connected!");
     this.slideoutTarget.classList.add(this.startClass);
     setTimeout(() => {
       document.body.classList.add("overflow-y-hidden")
@@ -28,6 +27,6 @@ export default class extends Controller {
       "duration-100",
       this.startClass
     );
-    document.body.classList.remove("overflow-y-hidden")
+    document.body.classList.remove("overflow-y-hidden");
   }
 }

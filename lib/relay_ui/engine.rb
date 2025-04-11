@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rui/forms/tailwind_form_builder"
+require "rui/forms/form_builder"
 
 module RUI
   if defined?(Rails)
@@ -8,7 +8,7 @@ module RUI
       isolate_namespace RUI
 
       initializer "relay_ui.set_default_form_builder" do |app|
-        app.config.action_view.default_form_builder = RUI::Forms::TailwindFormBuilder
+        app.config.action_view.default_form_builder = RUI::Forms::FormBuilder
       end
 
       initializer "relay_ui.autoload.components" do

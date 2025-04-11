@@ -8,14 +8,16 @@ class RUI::Links::Base < RUI::Base
   end
 
   def view_template
-    a(href: @href, class: classes, **@attrs) do
-      div(class: "flex flex-row items-center gap-2") do
-        if @icon
-          div(class: "size-4 my-1") do
-            render RUI::Icon.new(@icon)
+    div do
+      a(href: @href, class: classes, **@attrs) do
+        div(class: "flex flex-row items-center gap-2") do
+          if @icon
+            div(class: "size-4 my-1") do
+              render RUI::Icon.new(@icon)
+            end
           end
+          span { yield } if block_given?
         end
-        span { yield } if block_given?
       end
     end
   end

@@ -2,7 +2,7 @@
 
 class RUI::Navigation::Sidebar < RUI::Base
   def view_template
-    div(class: "lg:w-72 p-10 pb-36 hidden lg:flex flex-col bg-white z-50 lg:z-auto fixed w-screen md:w-auto h-screen lg:max-h-full overflow-y-auto", data: { "navigation-target": "sidebar" }) do
+    nav(id: "side-nav", class: "lg:w-72 p-10 pb-36 hidden lg:flex flex-col bg-white z-50 lg:z-auto fixed w-screen md:w-auto h-screen lg:max-h-full overflow-y-auto", data: { "navigation-target": "sidebar" }) do
       yield
     end
     button(class: "lg:hidden hidden bg-black/75 fixed w-screen h-screen", data: { navigation_target: "curtain", action: "navigation#toggle" })
@@ -17,11 +17,13 @@ class RUI::Navigation::Sidebar < RUI::Base
   def icon_link(icon:, href:, selected: false)
     if selected
       state_classes = "border-blue-700 text-zinc-700 **:[svg]:stroke-blue-700 font-semibold"
+      selected = "true"
     else
       state_classes = "border-transparent text-zinc-500 hover:border-zinc-200 hover:text-zinc-700 **:[svg]:stroke-zinc-400 hover:**:[svg]:stroke-zinc-700"
+      selected = "false"
     end
 
-    a(href:, class: "inline-flex items-center gap-2 py-1 #{state_classes}") do
+    a(href:, class: "inline-flex items-center gap-2 py-1 #{state_classes}", data: { selected: selected }) do
       div(class: "size-5 md:size-4") do
         render RUI::Icon.new(icon)
       end

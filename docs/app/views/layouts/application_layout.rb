@@ -124,10 +124,6 @@ module Views
                   end
                 end
                 nav.text_link(
-                  href: table_component_path,
-                  selected: on?(table_component_path)
-                ) { "Tables" }
-                nav.text_link(
                   href: text_component_path,
                   selected: on?(text_component_path)
                 ) { "Text" }

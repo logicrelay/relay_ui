@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ComponentsController < ApplicationController
+  include Pagy::Backend
+
   def badges = render Views::Components::BadgesView.new
   def buttons = render Views::Components::ButtonsView.new
   def cards = render Views::Components::CardsView.new

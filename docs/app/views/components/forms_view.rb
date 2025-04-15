@@ -2,7 +2,6 @@
 
 class Views::Components::FormsView < Views::Base
   include Phlex::Rails::Helpers::FormWith
-  include RUI::Forms::Helpers
 
   register_output_helper :select
 
